@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "forever index.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "dom-parser": "^0.1.5",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "forever-monitor": "^1.7.1",
     "html-beautify": "^1.0.4",
     "jsontoxml": "^1.0.0",
     "mammoth": "^1.4.4",
