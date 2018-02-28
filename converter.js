@@ -1,4 +1,4 @@
-var fs = require('fs');
+const fs = require('fs');
 const express=require('express');
 const mammoth = require('mammoth')
 const start=require('./start')

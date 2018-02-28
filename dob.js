@@ -1,5 +1,5 @@
 module.exports.dateChanger=function(str){
-  var dude=str.toString();
+  let dude=str.toString();
   console.log("dude is",dude);
 var x=dude;
 var str;
