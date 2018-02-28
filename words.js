@@ -8,7 +8,12 @@ module.exports.obj={
       dob:null,
       email:null,
       mobile:null,
-      address:null,
+      address:{
+       fullAddress:null,
+       pincode:null,
+       locality:null,
+       country:null
+       }
     },
       project:null,
       technicalSkills:null,

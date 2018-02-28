@@ -11,7 +11,7 @@ var textArr=[];
 var dataArr=[];
 textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), function( error, text ) {
 
-  console.log('***************************************************************************',text)
+  console.log('***************************************************************************')
 
   textArr=text.split('.');
   //console.log(textArr.length);
@@ -135,21 +135,24 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
       }//phone
 
       //pincode starts here
+      let text1=text + " "
+       if(/[^\d]\d{5,6}[^a-z|[^@|^\d]/g.test(text1.toString())){
+            let pincodereg=text1.toString().match(/[^\d]\d{5,6}[^a-z|[^@|^\d]/g)
+           var pincode=pincodereg.toString().match(/\d{5,6}/gm)
+            console.log("pincode:",pincode)
+          }
 
-      if(words.obj.details.address==null){
-        if(/[^\d]\d{5,6}[^a-z|[^@|^\d]/.test(text.toString())){
-          let pincodereg=text.toString().match(/[^\d]\d{5,6}[^a-z|[^@|^\d]/gm)
-          var pincode=pincodereg.toString().match(/\d{5,6}/gm)
-          // console.log("pincode:",pincode[0])
-        }
 
-        if(pincode!=null && pincode!= undefined && pincode.length>0)
-        {
-          var pincode1=pincode[0];
-          console.log("pincode",pincode1)
-          pincodes.pincodes(pincode1);
-        }
-      }//pincodes end here
+     if(pincode!=null && pincode!= undefined && pincode.length>0)
+       {
+         // var pincode1=pincode[0];
+         //console.log("pincode",pincode1)
+      pincodes.pincodes(pincode,text);
+       }
+
+
+
+        //pincodes end here
       fs.unlinkSync('./converted/' +file+'.docx')
        setTimeout(function(){
 

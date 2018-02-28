@@ -5,7 +5,9 @@ module.exports.logic=function(strongArr,arr,h1Arr,html,data){
   var pincodes=require('./pincode.js');
   var words=require('./words.js');
   var skill1=require('./skills.js');
+  var dateChanger=require("./dob.js");
   var new_arr=[];
+  var myName;
 
   for(i=0;i<strongArr.length;i++){
     strongArr[i]=strongArr[i].toString().replace(/<[a-z]+>/gm,"").replace(/<\/[a-z]+/gm,"").replace(/\<.*\>/gm,"");
@@ -40,9 +42,9 @@ module.exports.logic=function(strongArr,arr,h1Arr,html,data){
   //console.log(arr);
   console.log(update_arr);
 
-
   function foo(update_arr)
   {
+    myName=update_arr;
     var name=[];
     update_arr=update_arr.trim();
     name=update_arr.split(' ');
@@ -78,7 +80,7 @@ module.exports.logic=function(strongArr,arr,h1Arr,html,data){
 
   else if(strongArr != null && strongArr.length>0) {
 
-       if( strongArr[0].trim()!="CV" && strongArr[0].trim()!="RESUME")
+       if( strongArr[0].toLowerCase().trim()!="cv" && strongArr[0].toLowerCase().trim()!="resume" && strongArr[0].toLowerCase().trim()!="curriculum vitae")
        {
          console.log("Name is in strong :",update_arr[0]);
          foo(update_arr[0]);
@@ -122,7 +124,9 @@ module.exports.logic=function(strongArr,arr,h1Arr,html,data){
       if(dob1 != null && dob1!==undefined && dob1.length > 0){
         dob1[0]=dob1[0].replace(/<(\/)?[a-z]+>/gm,'')
         console.log("DOB : ",dob1[0]);
-        words.obj.details.dob=dob1[0];
+        var re=dateChanger.dateChanger(dob1[0])
+        console.log("re is",re);
+        words.obj.details.dob=re;
       }
       // else if(dob2 != null && dob2.length > 0)
       // {
@@ -159,20 +163,8 @@ module.exports.logic=function(strongArr,arr,h1Arr,html,data){
           console.log("No phone found");
         }//phone
 
-//pincode starts here
-        if(/[^\d]\d{5,6}[^a-z|[^@|^\d]/.test(arr.toString())){
-          let pincodereg=arr.toString().match(/[^\d]\d{5,6}[^a-z|[^@|^\d]/gm)
-          var pincode=pincodereg.toString().match(/\d{5,6}/gm)
-          // console.log("pincode:",pincode[0])
-        }
+        console.log(":::::::::::::::::::::::::::::::",myName);
 
-        if(pincode!=null && pincode!= undefined && pincode.length>0)
-        {
-          var pincode1=pincode[0];
-          console.log("pincode",pincode1)
-          pincodes.pincodes(pincode1);
-        }
-
-        skill1.skill1(data,strongArr,h1Arr,update_arr);
+        skill1.skill1(data,strongArr,h1Arr,update_arr,myName);
 
 }

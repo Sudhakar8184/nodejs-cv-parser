@@ -1,4 +1,5 @@
 var start=new Date();
+console.log = function(){};
 console.log(start);
 const path= require('path')
 var htmlBeautify = require("html-beautify");
@@ -23,7 +24,10 @@ function check(file,res){
       words.obj.details.dob=null;
       words.obj.details.email=null;
       words.obj.details.mobile=null;
-      words.obj.details.address=null;
+      words.obj.details.address.fullAddress=null;
+      words.obj.details.address.country=null;
+      words.obj.details.address.locality=null;
+      words.obj.details.address.pincode=null;
       words.obj.project=null;
       words.obj.technicalSkills=null;
       words.obj.skills=null;
@@ -31,6 +35,7 @@ function check(file,res){
       words.obj.careerObjective=null;
       words.obj.academicQualifications=null;
       words.obj.languages=null;
+
 
       var j=0;
       var strongArr=[],h1Arr=[];
