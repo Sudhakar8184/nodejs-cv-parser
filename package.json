@@ -19,6 +19,7 @@
     "jsontoxml": "^1.0.0",
     "mammoth": "^1.4.4",
     "multer": "^1.3.0",
+    "nodemon": "1.17.1",
     "request": "^2.83.0",
     "textract": "^2.2.0"
   }
