@@ -1,5 +1,4 @@
 var start=new Date();
-console.log = function(){};
 console.log(start);
 const path= require('path')
 var htmlBeautify = require("html-beautify");
