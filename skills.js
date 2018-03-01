@@ -11,7 +11,7 @@ module.exports.skill1=function(data,strongArr,h1Arr,update_arr,myName)
     // console.log("My upated array would be",update_arr);
     var blocks=[];
     var myKeys=[]
-    var addSkill=[],addCareer=[],addProject=[],addExp=[],addEdu=[],addLang=[],addSkillextra=[];
+    var addSkill=[],addCareer=[],addProject=[],addExp=[],addEdu=[],addLang=[],addSkillextra=[],addHobbie=[];
 
     let finalKeys = new RegExp(`(([^\\w*]<strong>|[^\\w*]<p>|[^\\w*]<h[1|3|2]\>)(\\n*|\\s*|\\t*)(${ keyUpgrade })((\\W){1,4})*(\\n*|\\s*\\t*)(<\/strong>|<\/p>|<\/h[1|2|3]>)(\\n*))`, 'gim')
     var myKeys=data.match(finalKeys);
@@ -44,16 +44,16 @@ module.exports.skill1=function(data,strongArr,h1Arr,update_arr,myName)
       }
     }
     //console.log(block_array);
-    let proFlag=false,skillFlag=false,extraskillFlag=false,careerFlag=false,expFlag=false,eduFlag=false,langFlag=false;
+    let proFlag=false,skillFlag=false,extraskillFlag=false,careerFlag=false,expFlag=false,eduFlag=false,langFlag=false,hobbieFlag=false;
     for(let i=0;i<block_array.length;i++)
     {
-      let skillFuc=[],careerFuc=[],projectFuc=[],eduFuc=[],expFuc=[],langFuc=[],extraskillFuc=[];
+      let skillFuc=[],careerFuc=[],projectFuc=[],eduFuc=[],expFuc=[],langFuc=[],extraskillFuc=[],hobbieFuc=[];
 
       let innerArray=block_array[i].split('\n');
 
       if(skillFuc==null || skillFuc==undefined || skillFuc.length==0)
       {
-        let skillreg=['technical skills','technology skills'];
+        let skillreg=['technical skills','technology skills','key skills'];
         skillFuc=search(skillreg,innerArray);
         if(skillFuc.length>0)
         {
@@ -64,7 +64,7 @@ module.exports.skill1=function(data,strongArr,h1Arr,update_arr,myName)
 
       if(extraskillFuc==null || extraskillFuc==undefined || extraskillFuc.length==0)
       {
-        let extraskillreg=['qualitative skills','additional skills','areas of expertise','strength'];
+        let extraskillreg=['qualitative skills','additional skills','areas of expertise','strength','extra'];
         extraskillFuc=search(extraskillreg,innerArray);
         if(extraskillFuc.length>0)
         {
@@ -128,14 +128,27 @@ module.exports.skill1=function(data,strongArr,h1Arr,update_arr,myName)
         }
         addLang=addLang.concat(langFuc);
       }
+      if(hobbieFuc==null || hobbieFuc==undefined || hobbieFuc.length==0)
+      {
+
+        let hobbiereg=['hobbie']
+        hobbieFuc=search(hobbiereg,innerArray);
+        if(hobbieFuc.length>0)
+        {
+          hobbieFlag=true;
+        }
+        addHobbie=addHobbie.concat(hobbieFuc);
+      }
     }
+
      // console.log(addSkill);
      // console.log(addCareer);
      //console.log(addProject);
-      console.log(addExp);
+      //console.log(addExp);
      // console.log(addEdu);
      // console.log(addLang);
      // console.log(addSkillextra);
+     console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",addHobbie);
 
 function search(arrayArg,targetArr)
 {
@@ -159,7 +172,7 @@ function search(arrayArg,targetArr)
     //console.log('returned answer',answer);
     return answer;
 }
-  execu.execu(data,addSkill,addSkillextra,addCareer,addLang,addProject,addExp,addEdu);
+  execu.execu(data,addSkill,addSkillextra,addCareer,addLang,addProject,addExp,addEdu,addHobbie);
 
 
   }

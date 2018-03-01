@@ -1,49 +1,54 @@
 
-module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addProject,addExp,addEdu){
+module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addProject,addExp,addEdu,addHobbie){
   var words=require("./words.js")
   const tableData = require('./tables').table
   const DomParser = require('dom-parser');
   const parser = new DomParser();
   const stream=require('stream')
   const readline=require('readline')
+  let hobbieExecu=activities(addHobbie)
+  //console.log("my hobbie execu returned array is :",hobbieExecu);
+  if(hobbieExecu!=undefined){
+      words.obj.hobbies=hobbieExecu;
+  }
   let skillExecu=activities(addSkill)
-  console.log("my skill execu returned array is :",skillExecu);
+  //console.log("my skill execu returned array is :",skillExecu);
   if(skillExecu!=undefined){
       words.obj.technicalSkills=skillExecu;
   }
 
   let extraskillExecu=activities(addSkillextra)
-  console.log("my extra skill execu returned array is :",extraskillExecu);
+  //console.log("my extra skill execu returned array is :",extraskillExecu);
   if(extraskillExecu!=undefined){
       words.obj.skills=extraskillExecu;
   }
 
   let careerExecu=activities(addCareer)
-  console.log("my career execu returned array is :",careerExecu);
+  //console.log("my career execu returned array is :",careerExecu);
   if(careerExecu!=undefined){
       words.obj.careerObjective=careerExecu.toString();
   }
 
   let langExecu=activities(addLang)
-  console.log("my lang execu returned array is :",langExecu);
+  //console.log("my lang execu returned array is :",langExecu);
   if(langExecu!=undefined){
       words.obj.languages=langExecu
   }
 
   let projectExecu=experience(addProject)
-  console.log("my project execu returned array is :",projectExecu);
+  //console.log("my project execu returned array is :",projectExecu);
   if(projectExecu!=undefined){
       words.obj.project=projectExecu
   }
 
   let expExecu=experience(addExp)
-  console.log("my experience execu returned array is :",expExecu);
+  //console.log("my experience execu returned array is :",expExecu);
   if(expExecu!=undefined){
       words.obj.professionalExperience=expExecu
   }
 
   let eduExecu=education(addEdu)
-  console.log("my education execu returned array is :",eduExecu);
+  //console.log("my education execu returned array is :",eduExecu);
   if(eduExecu!=undefined){
       words.obj.academicQualifications=eduExecu.filter(ele=>ele!=null)
   }
@@ -52,7 +57,7 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
     {
 
       if(myArr==null || myArr == undefined || myArr.length==0){
-        console.log("Not present");
+        //console.log("Not present");
         return;
       }
       else{
@@ -60,13 +65,13 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
         str=str.join('\n');
         var rege = /(^(\s*<li>)\n*.*(\n*\s*<\/li>)|^(\s*<p>)\n*.*(\n*\s*<\/p>))/gm
         var matchContent=str.match(rege);
-        //console.log("Matching content in li's and p's are : ",matchContent);
+        ////console.log("Matching content in li's and p's are : ",matchContent);
         if(matchContent==null || matchContent==undefined || matchContent.length==0){
           return;
         }
         else{
-          var returnArr=matchContent.toString().replace(/<[a-z]+>|\|\•|<\/[a-z]+>|<[a-z]+\/>|Languages|Tools|\t|\:|\n/gmi,'').trim().split(',')
-          //console.log("return array would be:",returnArr)
+          var returnArr=matchContent.toString().replace(/<[a-z]+>|\|\|\•|<\/[a-z]+>|<[a-z]+\/>|Languages|Tools|\t|\:|\n/gmi,'').trim().split(',')
+          ////console.log("return array would be:",returnArr)
           if(returnArr!=null && returnArr!=undefined){
             for(let i=0;i<returnArr.length;i++)
             {
@@ -79,7 +84,7 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
     }
 
 
-  
+
   function education(edu){
     console.error(edu);
 
@@ -88,14 +93,14 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
     edu.forEach( (ele,i) => {
         ele = ele.replace( /<\/body>|\s*(Page \d{2}\s*)/gim,'' )
         ele=ele.replace(/<h\d>/gm,'<strong>').replace(/<\/h\d>/gm,'</strong>')
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!! ele is",ele);
+        //console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!! ele is",ele);
         if (( parser.parseFromString(ele).getElementsByTagName('table') || parser.parseFromString(ele).getElementsByTagName('table') )&& ele.includes('<table>','</table>','<td>','</td>') ){
             arr[i] = tableData(data)
         }else if( parser.parseFromString(ele).getElementsByTagName('ul').length >= 1 ){
-            console.log(" 🤷‍♀asnkcnsalkn" )
+            //console.log(" 🤷‍♀asnkcnsalkn" )
             arr[i] = listData(ele)
         }else if( parser.parseFromString(ele).getElementsByTagName('strong').length >= 1 ){
-            console.log( edu )
+            //console.log( edu )
             strongList = dommer( ele, 'strong' )
             let strongArr = []
             strongList.forEach( (value, index, ar) => {
@@ -103,14 +108,14 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
             } )
             let finalStrong = []
             let flag = false;
-            console.log( " 😋", strongArr )
+            //console.log( " 😋", strongArr )
             edu=edu.toString().replace(/<h\d>/gm,'<strong>').replace(/<\/h\d>/gm,'</strong>')
             edu=edu.toString().split('<strong>');
             console.error(edu);
             // readNow(edu,strongArr)
   //           function readNow(baseText, lastArray){
   //   const buf = new Buffer(baseText);
-  //   // console.log(lastArray)
+  //   // //console.log(lastArray)
   //   const bufferStream = new stream.PassThrough();
   //   bufferStream.end(buf);
   //
@@ -133,19 +138,19 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
   //           newArr.push(newStr)
   //           newStr=null;
   //       }}
-  //       // console.log( " ❌",base)
+  //       // //console.log( " ❌",base)
   //
   //
   //   });
   //   rl.on('close', (data) => {
-  //        // console.log(lastObj)
+  //        // //console.log(lastObj)
   //        console.error(" fffffffffffffffffffffff::  ",newArr);
   //       return newArr;
   //   })
   //
   // }
             // strongArr.forEach( (el,i) => {
-            //     // console.log( ' 🇿🇼 ', el, new RegExp(`\\n*\\s*(${ el })(.*)\\n*\\s*(${ strongArr[i+1] })`,'gm'));
+            //     // //console.log( ' 🇿🇼 ', el, new RegExp(`\\n*\\s*(${ el })(.*)\\n*\\s*(${ strongArr[i+1] })`,'gm'));
             //
             //     if( strongArr[i+1] === null || strongArr[i+1] === undefined ) return ;
             //     if (ele.match(new RegExp(`\\n*\\s*(${ el })(.*)\\n*\\s*(${ strongArr[i+1] })`,'gm')) != null){
@@ -201,19 +206,19 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
         let degreeReg = /\s*(Bachelors of Science|MBA|Masters of Business Administration|Bachelor of Commerce|B\.S|HSC|SSC|PGDMPGDCA|M.Tech|B.Tech|B\.Tech|Biotechnology|Diploma|BA|Doctorate |Bachelors of (|commerce)|B(|\W)Tech(|\W)|M(|\W)Tech(|\W)|XII|X|12th|10th)\s*/g
         let universityReg = /(university|Institute|P.S.E.B|college|Vidhalaya|school)/gim
         let marksReg = /((\s*(\d{2}|\d{2}[\.](\d{1,2}))[\%])|(\s*\d{1}\.\d{1,2}\b)|\b(\d{1}|\d{2})\s*(cgpa|grades)\b|((cgpa(\s*:|\s*)|grades(\s*:|\s*)|percentage(\s*:|\s*))\s*((\d{1}.\d{1,2})|(\d{2}[\.](\d{1,2})|\d{2}))))/g
-        console.log( " ❌" , ele)
+        //console.log( " ❌" , ele)
         ele = ele.replace(/\s\s+/gm,' ').split(',').filter( el => el.length > 1 ).map( el => el.replace(/\.$|<\w+>|<\/\w+>/g,'').replace(/\t/g,' '))
         console.error( " ❌" , ele)
         // obj.year = ele.map( el => dateReg.test(el) ? el.match(dateReg) : undefined).filter( el => el != undefined ).map( el => el.toString().trim())
-        // let f = ele.map( el => dateReg.test(el) ? console.log( " 👳‍♀", el.match(dateReg), ' ::' ,el) : undefined)
-        // console.log( " 🤼‍♀", f)
+        // let f = ele.map( el => dateReg.test(el) ? //console.log( " 👳‍♀", el.match(dateReg), ' ::' ,el) : undefined)
+        // //console.log( " 🤼‍♀", f)
         obj.year = ele.map( el => dateReg.test(el) ? el.match(dateReg) : undefined).filter( el => el != undefined ).map( el => el.toString().trim())
 
           // ele.filter( el => replace())
         obj.university = ele.filter( el => el.match(universityReg) != null ? true : false).map(ele=> ele.replace(dateReg,''))
         obj.degree = ele.map( el => degreeReg.test( el ) ? el.match( degreeReg ) : undefined).filter(el => el != undefined).map( el => el.toString().trim() )
         obj.marks = ele.map( el => marksReg.test(el) ? el.match(marksReg) : undefined).filter( el => el != undefined ).map( el => el.toString().trim())
-        console.log( " 🔧", obj)
+        //console.log( " 🔧", obj)
         if(obj.year.length==0  &&obj.university.length==0  &&obj.marks.length==0 && obj.degree.length==0 ){
           return;
         }
@@ -223,7 +228,7 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
     function listData(data){
         var inputList2 = dommer( data, 'ul' )
         let list = []
-        console.log(inputList2[0].innerHTML)
+        //console.log(inputList2[0].innerHTML)
         if ( inputList2.length === 1){
             dom = parser.parseFromString( inputList2[0].innerHTML )
             ul = dom.getElementsByTagName('li')
@@ -240,23 +245,23 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
                 university:'',
                 marks:''
             }
-            console.log( ' 💯', value.innerHTML)
+            //console.log( ' 💯', value.innerHTML)
             list.push(breakStrong(value.innerHTML, listObj))
         }
         return list
     }
-    // console.log( ' 💯', arr[0] )
+    // //console.log( ' 💯', arr[0] )
     return arr[0]
 }
 
 function experience(exp){
-  console.log("In experience function",exp)
+  //console.log("In experience function",exp)
   if(exp !=null && exp != undefined)
   {
 
     var str=exp.splice(1,exp.length-2).join('\n')
 
-    console.log("In experience function",str)
+    //console.log("In experience function",str)
 var keys3 = /(^(\s*<h[1|2|3]>|\s*<strong>)\n*(.+)([^(Roles (&amp;|and|)|key|)Responsibilities|^Key Responsibilities Handling|^(Primary|Secondary) Responsibilities(\-|:)?|^Key Accomplishments(:)?|]).*(\n*\s*(<\/h[1|2|3]>|<\/strong>))\n*(((<[a-z]>)\n*\s*((([A-Za-z]+\s*\d{4}\s*[\-|\W ]?\s*[A-Za-z]+\s*(\d{4})?)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?\s*)+)(\\(.*\\))?)\n*\s*(<\/[a-z]+>))?|(^\s*(<[a-z]+><\/[a-z]+>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^\s*(<em><\/em>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^(\s*<p>)\n*\s*[a-z]+\s([a-z\s*\-\–]+?\d+[a-z\s*\-\–]+?)+)(\n*\s*<\/p>))/gmi
 
 var matches4 = str.match(keys3)
@@ -278,7 +283,7 @@ var matches4 = str.match(keys3)
     var exparr1;
            var exparr=c.toString().replace(/<[a-z]+>|\|\•|<\/[a-z]+>|<[a-z]+\/>|\t|\:|\n/gmi,'').trim().split(',')
 
-           console.log("experiences are:",exparr)
+           //console.log("experiences are:",exparr)
            obj.title="null";
            obj.duration="null";
            obj.description=exparr.toString();
@@ -306,20 +311,20 @@ if(matches4.length > 1){
       {
         var h_i=str.match(keys1);
         h_j=h_i.join('\n').split('\n');
-        // console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",h_j);
+        // //console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",h_j);
         if(h_j.length>5)
         {
             b.push(h_i);
-            // console.log("h_i",h_i);
+            // //console.log("h_i",h_i);
         }
 
       }
     }
-    // console.log(matches5);
+    // //console.log(matches5);
     b.push(str.match(new RegExp(`${ matches5 }\\n?(.*\\n)+`,'gm')))
 }else{
     var regarr = matches4.map(element => element.trim().replace(/\s+|\n+|\t/g, '\\n*\\s*'))
-    console.log(regarr)
+    //console.log(regarr)
     b.push(str.match(new RegExp(`${ regarr }\\n?(.*\\n)+`,'gm')))
 }
 
@@ -327,7 +332,7 @@ var b = b.filter((x)=>{
   if(x!=null)return x;
 });
 
-console.log("hello b WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",b)
+//console.log("hello b WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",b)
 if(b!=null && b!= undefined){
 let c = b.map(element=> element.join('\n').split('\n'))
 var final_experience=[];
@@ -345,7 +350,7 @@ let experience=b[j].toString().split('\n')
 experience.pop()
 experience.pop()
 experience=experience.join('\n')
-console.log("EEEEEEEEEEEEEEEEEEEE",experience)
+//console.log("EEEEEEEEEEEEEEEEEEEE",experience)
 //    experience=experience.splice(0,experience.length-2)
    let exptitle=experience.split('\n').splice(0,3)
    if(exptitle != null && exptitle != undefined){
@@ -353,8 +358,8 @@ console.log("EEEEEEEEEEEEEEEEEEEE",experience)
    obj.title=exptitle
    }
    //    experience=experience.splice(0,experience.length-2)
-// console.log("!!!!!",duration);
-// console.log("EEEEEEEEEEEEEEEEEEEE",experience)
+// //console.log("!!!!!",duration);
+// //console.log("EEEEEEEEEEEEEEEEEEEE",experience)
 let expdur=experience.split('\n').splice(0,5)
 let duration = expdur.toString().match(/((([A-Za-z]+(\.|)\s*\d{4}\s*(\-|\s*|\b.*\b)\s*([A-Za-z]+(\.|)\s*\d{4}|present))|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?[a-z]*\s*)+)(\(.*\)|)|([A-Za-z]+(\.|)\s*\d{4}))/gmi)
 if(duration != null && duration != undefined){
@@ -371,11 +376,11 @@ if(duration != null && duration != undefined){
 }
    let keys1 = /(^(\s*<li>)\n*.*(\n*\s*<\/li>))/gm
    let keys2=/^(\s*<p>)\n*.*(\n*\s*<\/p>)/gm
-//    console.log("eeeeeeeeeeeeeeeeeeeeeeeeee",experience)
+//    //console.log("eeeeeeeeeeeeeeeeeeeeeeeeee",experience)
    if(keys1.test(experience)){
     let description=experience.match(keys1)
     if(description!=null && description!= undefined){
-        console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",description)
+        //console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",description)
         regex=new RegExp(exptitle,'i');
         regex1=new RegExp(duration,'i');
 
@@ -394,11 +399,11 @@ if(duration != null && duration != undefined){
    if(keys2.test(experience)){
     let description=experience.match(keys2)
     if(description!=null && description!= undefined){
-        console.log("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ",description)
+        //console.log("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ",description)
         regex=new RegExp(exptitle,'gi');
         regex1=new RegExp(duration,'gi');
-      description=description.toString().replace(/((([A-Za-z]+(\.|)\s*\d{4}\s*(\-|\s*|\b.*\b)\s*([A-Za-z]+(\.|)\s*\d{4}|present))|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?[a-z]*\s*)+)(\(.*\)|)|([A-Za-z]+(\.|)\s*\d{4}))|<[a-z]+>|<\/[a-z]+>|<[a-z]+\/>|&amp;|\t|\–|\-|\:|((([A-Za-z]+\s*\d{4}\s*[\-| ]\s*[a-z]*\s*)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?[a-z]*\s*)+)(\(.*\))?|\n|\(|\)|\\(.*\\)|job responsibilitie(s|)|key accomplishment|Responsibilitie(|s)/gmi,'').replace(/`${regex}`/i,'').replace(/`${regex1}`/i,'').trim()
-
+      description=description.toString().replace(/((([A-Za-z]+(\.|)\s*\d{4}\s*(\-|\s*|\b.*\b)\s*([A-Za-z]+(\.|)\s*\d{4}|present))|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?[a-z]*\s*)+)(\(.*\)|)|([A-Za-z]+(\.|)\s*\d{4}))|<[a-z]+>|<\/[a-z]+>|<[a-z]+\/>|&amp;|\t|\–|\-|\:|((([A-Za-z]+\s*\d{4}\s*[\-| ]\s*[a-z]*\s*)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?[a-z]*\s*)+)(\(.*\))?|\n|\(|\)|\\(.*\\)|job responsibilitie(s|)|key accomplishment|Responsibilitie(|s)/gmi,'').trim()
+     description=description.replace('/\s*\n*\/gm',"")
     }
    obj.description=description
    }

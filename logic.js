@@ -115,10 +115,10 @@ module.exports.logic=function(strongArr,arr,h1Arr,html,data){
     }//End of Gender
 
 //DOB starts here
-    if(/\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>)(\s)?[a-zA-Z]+(\s)?(,)?(\s)?\d{4}/.test(arr) ||  /\d{1,4}[/|-]\d{2}[|/|-]\d{1,4}/.test(arr) || /\d{1,2}(th|nd|rd|st|\s|,)*[A-Za-z]+(\s|\,)*\d{4}/.test(arr))
+    if(/(((dob|DOB)\:?\s*|((D|d)ate\s?of\s?(B|b)irth)\:?\s)(.+)|\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>)(\s)?[a-zA-Z]+(\s)?(,)?(\s)?\d{4})/.test(arr) ||  /\d{1,4}[/|-]\d{2}[|/|-]\d{1,4}/.test(arr) || /\d{1,2}(th|nd|rd|st|\s|,)*[A-Za-z]+(\s|\,)*\d{4}/.test(arr))
     {
       var dob1=[];
-      var dob1=arr.toString().match(/(\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>)(\s)?[a-zA-Z]+(\s)?(,)?(\s)?\d{4})|(\d{1,4}[/|-]\d{2}[|/|-]\d{1,4})|\d{1,2}(th|nd|rd|st|\s|,)*[A-Za-z]+(\s|\,)*\d{4}/gmi)
+      var dob1=arr.toString().match(/(((dob|DOB)\:?\s*|((D|d)ate\s?of\s?(B|b)irth)\:?\s)(.+)|(\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>)(\s)?[a-zA-Z]+(\s)?(,)?(\s)?\d{4})|(\d{1,4}[/|-]\d{2}[|/|-]\d{1,4})|\d{1,2}(th|nd|rd|st|\s|,)*[A-Za-z]+(\s|\,)*\d{4})/gmi)
       //var dob2=arr.toString().match(/\d{1,4}[/|-]\d{2}[|/|-]\d{1,4}/)
 
       if(dob1 != null && dob1!==undefined && dob1.length > 0){

@@ -15,12 +15,13 @@ module.exports.obj={
        country:null
        }
     },
-      project:null,
       technicalSkills:null,
       skills:null,
+      project:null,
       professionalExperience:null,
       careerObjective:null,
       academicQualifications:null,
-      languages:null
+      languages:null,
+      hobbies:null
 
  }
