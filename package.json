@@ -9,6 +9,7 @@
     "dom-parser": "^0.1.5",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "forever": "^0.15.3",
     "forever-monitor": "^1.7.1",
     "html-beautify": "^1.0.4",
     "mammoth": "^1.4.4",
@@ -20,7 +21,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "forever start index.js"
+    "start": "forever start index.js"
   },
   "repository": {
     "type": "git",
