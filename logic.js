@@ -115,12 +115,11 @@ module.exports.logic=function(strongArr,arr,h1Arr,html,data){
     }//End of Gender
 
 //DOB starts here
-    if(/(((dob|DOB)\:?\s*|((D|d)ate\s?of\s?(B|b)irth)\:?\s)(.+)|\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>)(\s)?[a-zA-Z]+(\s)?(,)?(\s)?\d{4})/.test(arr) ||  /\d{1,4}[/|-]\d{2}[|/|-]\d{1,4}/.test(arr) || /\d{1,2}(th|nd|rd|st|\s|,)*[A-Za-z]+(\s|\,)*\d{4}/.test(arr))
+if( /((\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>)(\s)?(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s)?(,)?(\s)?\d{4})|(\d{1,4}[/|-]\d{2}[|/|-]\d{1,4})|\d{1,2}(th|nd|rd|st|\s|,)*(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s|\,)*\d{4})/gmi.test(arr))
     {
-      var dob1=[];
-      var dob1=arr.toString().match(/(((dob|DOB)\:?\s*|((D|d)ate\s?of\s?(B|b)irth)\:?\s)(.+)|(\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>)(\s)?[a-zA-Z]+(\s)?(,)?(\s)?\d{4})|(\d{1,4}[/|-]\d{2}[|/|-]\d{1,4})|\d{1,2}(th|nd|rd|st|\s|,)*[A-Za-z]+(\s|\,)*\d{4})/gmi)
-      //var dob2=arr.toString().match(/\d{1,4}[/|-]\d{2}[|/|-]\d{1,4}/)
 
+      var dob1=[];
+      var dob1 = arr.toString().match(/((\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>)(\s)?(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s)?(,)?(\s)?\d{4})|(\d{1,4}[/|-]\d{2}[|/|-]\d{1,4})|\d{1,2}(th|nd|rd|st|\s|,)*(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s|\,)*\d{4})/gmi);
       if(dob1 != null && dob1!==undefined && dob1.length > 0){
         dob1[0]=dob1[0].replace(/<(\/)?[a-z]+>/gm,'')
         console.log("DOB : ",dob1[0]);
@@ -153,9 +152,9 @@ module.exports.logic=function(strongArr,arr,h1Arr,html,data){
         } //End of email
 
 //contact starts here
-      if(/(\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?([\(]\d{1}[\)])?[(]?\d{3,4}[)]?[\-|\s|\.]*?\d{3}[\-|\s|\.]*?\d{2}[\-|\s|\.]?\d{1,2})\b/.test(arr))
+      if(/((\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?([\(]\d{1}[\)])?[(]?\d{3,4}[)]?[\-|\s|\.]*?\d{3}[\-|\s|\.]*?\d{2}[\-|\s|\.]?\d{1,2})\b|(\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?[\(]?\d{5}[\)]?[\-|\s|\.]*\d{5})\b)/.test(arr))
         {
-        var phone=arr.toString().match(/(\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?([\(]\d{1}[\)])?[(]?\d{3,4}[)]?[\-|\s|\.]*?\d{3}[\-|\s|\.]*?\d{2}[\-|\s|\.]?\d{1,2})\b/gm);
+        var phone=arr.toString().match(/((\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?([\(]\d{1}[\)])?[(]?\d{3,4}[)]?[\-|\s|\.]*?\d{3}[\-|\s|\.]*?\d{2}[\-|\s|\.]?\d{1,2})\b|(\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?[\(]?\d{5}[\)]?[\-|\s|\.]*\d{5})\b)/gm);
         console.log("phone id is :",phone[0]);
         words.obj.details.mobile=phone[0].trim();
         }
@@ -163,7 +162,7 @@ module.exports.logic=function(strongArr,arr,h1Arr,html,data){
           console.log("No phone found");
         }//phone
 
-        console.log(":::::::::::::::::::::::::::::::",myName);
+        // console.log(":::::::::::::::::::::::::::::::",myName);
 
         skill1.skill1(data,strongArr,h1Arr,update_arr,myName);
 

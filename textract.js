@@ -1,5 +1,5 @@
 const path =require('path')
-module.exports.textRact=function(file,res){
+module.exports.textRact=function(file,res,data1){
 var textract = require('textract');
 var mammoth=require('mammoth');
 var fs=require('fs');
@@ -11,7 +11,7 @@ var textArr=[];
 var dataArr=[];
 textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), function( error, text ) {
 
-  console.log('***************************************************************************')
+  console.log('***************************************************************************',text)
 
   textArr=text.split('.');
   //console.log(textArr.length);
@@ -67,17 +67,28 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
       var arr2Len=arr2.length-7;
       //console.log(arr2.length)
       var j=0;
-      var myArr=[];
+      var myArr=[],myArr_front=[];
       for(let i=arr2Len;i<arr2.length;i++)
       {
         myArr[j]=arr2[i];
         j++;
       }
 
+      for(let i=0;i<7;i++)
+      {
+        myArr_front[i]=arr2[i]
+      }
+
       var keyword=myArr.join('~')
+      var keyword_front=myArr_front.join('~')
+
       keyword=keyword.trim();
+      keyword_front=keyword_front.trim();
+
       console.log(keyword);
-      var remove=new RegExp(`((\n*.*))${keyword}`,"gmi")
+      console.log(keyword_front);
+
+      var remove=new RegExp(`${keyword_front}((\n*.*))${keyword}`,"gmi")
       //console.log(remove);
       a=a.toString();
       var toDelete=a.match(remove);
@@ -93,13 +104,13 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
         let count=0;
         for(let i=0;i<2;i++)
         {
-          if(head[i]=="page" || head[i]=="Page" || head[i]=="PAGE")
+          if(head[i]=="page" || head[i]=="Page" || head[i]=="PAGE"||head[i]=="RESUME"||head[i]=="Resume")
           count++;
         }
         if(count==0)
         {
           words.obj.details.name.firstName=head[0];
-          words.obj.details.name.lastName="null"
+          words.obj.details.name.lastName=head[1]
         }
 
       }
@@ -123,9 +134,9 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
       if(words.obj.details.mobile==null)
       {
 
-        if(/(\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?([\(]\d{1}[\)])?[(]?\d{3,4}[)]?[\-|\s|\.]*?\d{3}[\-|\s|\.]*?\d{2}[\-|\s|\.]?\d{1,2})\b/.test(text))
+        if(/((\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?([\(]\d{1}[\)])?[(]?\d{3,4}[)]?[\-|\s|\.]*?\d{3}[\-|\s|\.]*?\d{2}[\-|\s|\.]?\d{1,2})\b|(\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?[\(]?\d{5}[\)]?[\-|\s|\.]*\d{5})\b)/.test(text))
         {
-        var phone=text.toString().match(/(\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?([\(]\d{1}[\)])?[(]?\d{3,4}[)]?[\-|\s|\.]*?\d{3}[\-|\s|\.]*?\d{2}[\-|\s|\.]?\d{1,2})\b/gm);
+        var phone=text.toString().match(/((\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?([\(]\d{1}[\)])?[(]?\d{3,4}[)]?[\-|\s|\.]*?\d{3}[\-|\s|\.]*?\d{2}[\-|\s|\.]?\d{1,2})\b|(\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?[\(]?\d{5}[\)]?[\-|\s|\.]*\d{5})\b)/gm);
         console.log("phone id is :",phone[0]);
         words.obj.details.mobile=phone[0]
         }
@@ -136,21 +147,18 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
 
       //pincode starts here
       let text1=text + " "
-       if(/[^\d]\d{5,6}[^a-z|[^@|^\d]/g.test(text1.toString())){
-            let pincodereg=text1.toString().match(/[^\d]\d{5,6}[^a-z|[^@|^\d]/g)
-           var pincode=pincodereg.toString().match(/\d{5,6}/gm)
-            console.log("pincode:",pincode)
-          }
 
-
-     if(pincode!=null && pincode!= undefined && pincode.length>0)
-       {
-         // var pincode1=pincode[0];
-         //console.log("pincode",pincode1)
-      pincodes.pincodes(pincode,text);
+    if(/[^\d]\d{5,6}[^a-z|[^@|^\d]/g.test(text1.toString())){
+         let pincodereg=text1.toString().match(/[^\d]\d{5,6}[^a-z|[^@|^\d]/g)
+        var pincode=pincodereg.toString().match(/\d{5,6}/gm)
+         console.log("pincode:",pincode)
+         if(pincode!=null && pincode!= undefined && pincode.length>0)
+           {
+             // var pincode1=pincode[0];
+             //console.log("pincode",pincode1)
+          pincodes.pincodes(pincode,text,data1);
+           }
        }
-
-
 
         //pincodes end here
       fs.unlinkSync('./converted/' +file+'.docx')

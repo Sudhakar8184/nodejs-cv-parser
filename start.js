@@ -45,8 +45,8 @@ function check(file,res){
       //console.log(html);
       var messages = result.messages; // Any messages, such as warnings during conversion
       var data=htmlBeautify(html).toString();
-      data=data.replace(/(<p>)?\n*\s*<img[\n*|\s*]+.*\/>\s*[a-z\s]+\s*\n*(<\/p>)?/gmi,"").replace(/^(\s*<p>)\n*\s*(Page\s*\d*)(\n*\s*<\/p>)|^\s*<a\s*id="page[\d*]">|\|\/gm,"");
-//making each and every line as a seperate string and storing in an array named arr
+        data=data.replace(/(<p>)?\n*\s*<img[\n*|\s*]+.*\/>\s*[a-z\s]+\s*\n*(<\/p>)?/gmi,"").replace(/^(\s*<p>)\n*\s*(Page\s*\d*)(\n*\s*<\/p>)|^\s*<a\s*id="page[\d*]">|\|\|\►|<(strong|h[1-6]|p)>\n*\s*(\.)?<\/(strong|h[1-6]|p)>|\s\s+&amp;|<br\s*\/>/gm,"");
+        //making each and every line as a seperate string and storing in an array named arr
       var arr=[];
       arr=data.split('\n');
       for(i=0;i<arr.length;i++){
@@ -70,7 +70,7 @@ function check(file,res){
 
       //console.log(h1Arr);
       logic.logic(strongArr,arr,h1Arr,html,data);
-      textRact.textRact(file,res);
+      textRact.textRact(file,res,data);
       html=null;
       data=null;
       strongArr=null;
