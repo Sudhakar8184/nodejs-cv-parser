@@ -70,7 +70,7 @@ module.exports.pincodes=function(pincode,text,data)
                            var abc=text.match(keys1)
                            console.log("my abc is",abc);
                        if(keys1.test(text)){
-                           // words1.obj.details.address.fullAddress=f_addr[i];
+                           let formatedAddress=f_addr[i];
                             if(newArr[i]!=null||newArr[i]!=undefined)
                             up_ad=newArr[i].split(' ');
                             up_ad=up_ad.filter((ele)=>{
@@ -86,6 +86,8 @@ module.exports.pincodes=function(pincode,text,data)
                             if(add!==null){
                               add=add.map((ele)=>ele.replace(/<[a-z]+>|<\/[a-z]+>|\t|address/gmi,'').trim())
                               words1.obj.details.address.fullAddress=add;
+                            }else{
+                              words1.obj.details.address.fullAddress=formatedAddress;
                             }
 
                             arrStr.length=0;
