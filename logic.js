@@ -141,9 +141,9 @@ if( /((\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\
 
 
 //Email Starts here
-      if(/[a-z]+\w+([.\w]+)+@[a-z]+([.][a-z]+){1,2}/.test(arr))
+      if(/[A-Za-z]+\w+([.\w]+)+@[a-z]+([.][a-z]+){1,2}/.test(arr))
       {
-        var mailId=arr.toString().match(/[a-z]+\w+([.\w]+)+@[a-z]+([.][a-z]+){1,2}/);
+        var mailId=arr.toString().match(/[A-Za-z]+\w+([.\w]+)+@[a-z]+([.][a-z]+){1,2}/);
         console.log("email id is :",mailId[0]);
         words.obj.details.email=mailId[0];
         }

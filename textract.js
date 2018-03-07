@@ -110,7 +110,7 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
         if(count==0)
         {
           words.obj.details.name.firstName=head[0];
-          words.obj.details.name.lastName=head[1]
+          words.obj.details.name.lastName=head[1];
         }
 
       }

@@ -52,6 +52,7 @@ function check(file,res){
       for(i=0;i<arr.length;i++){
         arr[i]=arr[i].trim();
       }
+      fs.writeFileSync('./data.txt',data)
         //console.log("1st ",arr[1]);
 
       var dom = parser.parseFromString(html);
