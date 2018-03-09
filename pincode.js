@@ -1,15 +1,15 @@
-
 module.exports.pincodes=function(pincode,text,data)
 {
-      var request = require('request');
-      var words1=require('./words.js');
+      const request = require('request');
+      const words1=require('./words.js');
       console.log("0",pincode[0]);
       console.log("1",pincode[1]);
-      var up_ad=[],arrStr = [],arrStr1=[],newArr=[],f_addr=[];
-      let address="";
-      fs.writeFileSync("fil.txt",data);
+      let up_ad=[],arrStr = [],address_long=[],countArr=[],address_up=[];
+      let address1="";
+      let count=0,k2,add,reg,add1;
 
-     for(var j=0;j<pincode.length;j++){
+
+     for(let j=0;j<pincode.length;j++){
 
      request({url:`https://maps.googleapis.com/maps/api/geocode/json?address=${pincode[j]}&key=AIzaSyATAf58891KC6ohOJPsWL4561cUbsqz2qg`,
              json:true
@@ -23,27 +23,23 @@ module.exports.pincodes=function(pincode,text,data)
             if(body.results[0].address_components.length!=null && body.results[0].address_components.length!= undefined && body.results[0].address_components.length>0)
             {
               for(let i=0;i<body.results[0].address_components.length;i++){
-                            address=address+' '+body.results[0].address_components[i].long_name;
+                            address1=address1+' '+body.results[0].address_components[i].long_name;
+                            address_long.push(body.results[0].address_components[i].long_name);
+                              count++;
+                          }
+                          countArr.push(count);
+
+
              }
-          newArr.push(address);
-             address="";
-                f_addr.push(body.results[0].formatted_address);
-             }
-           }})
-      }
 
+       console.log("new array",address1);
+          console.log("started");
 
-
-
-            setTimeout(function(){
-        console.log("new array",newArr,f_addr);
-        console.log("started");
-             for(let i=0;i<newArr.length;i++){
                console.log("!!!!!!!!!!!!!!!!!!!!!");
-                var str=f_addr[i]+" ";
-                var tempStr='';
-                var len = str.length;
-               for(var k=0;k<len;k++){
+                let str=body.results[0].formatted_address+" ";
+                let tempStr='';
+                let len = str.length;
+               for(let k=0;k<len;k++){
                   if(str.charAt(k)==' '||str.charAt(k)==','){
                    arrStr.push(tempStr);
                    tempStr ='';}
@@ -60,47 +56,97 @@ module.exports.pincodes=function(pincode,text,data)
              console.log("array list to compare",arrStr);
 
                  if(arrStr.length>0)
-                       for(l=0;l<arrStr.length;l++){
+                       for(let l=0;l<arrStr.length;l++) {
                            m1=arrStr[l];
                         r=`(\\b)${m1}(\\b)`;
                            console.log("array regex ",r);
                            let keys1 = new RegExp(r, 'gm')
                            //    console.log("array keys1 ",keys1);
 
-                           var abc=text.match(keys1)
+                           let abc=text.match(keys1)
                            console.log("my abc is",abc);
-                       if(keys1.test(text)){
-                           let formatedAddress=f_addr[i];
-                            if(newArr[i]!=null||newArr[i]!=undefined)
-                            up_ad=newArr[i].split(' ');
+                          if(keys1.test(text)) {
+                          let formatedAddress=body.results[0].formatted_address;
+                            if(address1!=null||address1!=undefined)
+                            up_ad=address1.split(' ');
                             up_ad=up_ad.filter((ele)=>{
                               if(ele!=undefined||ele!=''||ele!=null) return ele
                               });
                             console.log("3<",up_ad);
-                                  var reg=new RegExp(`.*${up_ad[0]}((\\,)\\s[a-z]+)?`,"gmi")
+                                   reg=new RegExp(`.*${up_ad[0]}((\\,)\\s[a-z]+)?`,"gmi")
                                   console.error(reg)
-                                  var add=data.match(reg)
+                                   add=data.match(reg)
+                                  if(add!==null && add!=undefined){
+                                     add=add.map((ele)=>ele.replace(/<[a-z]+>|<\/[a-z]+>|\t|\n|address/gmi,'').replace(/\-/g,',').trim());
+                                     add1=add.toString().split(',');
+                                    console.log("length",add1,add1.length);}
+
+                          if(add1!==null && add1!=undefined && add1.length<3)
+                                   {
+                                    reg=new RegExp(`(((address)(\s|\.|\:|\-|\:\-|\–|\-))|((Flat)(no|number|\s|\.)(\s|\.|\:|\-|\:\-|\–|\-|))|((House)(no|number|\s|\.)(\s|\.|\:|\-|\:\-|\–|\-|))|((street)(no|number|\s|\.|\:|\-|\:\-|\–|\-|))|((landmark)(\s|\.|\:|\-|\:\-|\–|\-))|((locality)(\s|\.|\:|\-|\:\-|\–|\-))|((h\.no)(\s|\.|\:|\-|\:\-|\–|\-|)))((.*\n)*)?.*${up_ad[0]}((\\,)\\s[a-z]+)?`,"gmi");
+                                    add=data.match(reg)
+                                   if(add!==null && add!=undefined){
+                                     add=add.map((ele)=>ele.replace(/<[a-z]+>|<\/[a-z]+>|\t|\n|\:|\s\s+|address/gmi,'').trim())
+                                     console.log("one ",add);}
+                                     else{
+                                       add=add1.toString();
+                                     }
+                               }
+                                     console.log("another ",add);
                             words1.obj.details.address.pincode=up_ad[0];
-                            words1.obj.details.address.locality=up_ad[1];
-                            words1.obj.details.address.country=up_ad[up_ad.length-1];
-                            if(add!==null){
-                              add=add.map((ele)=>ele.replace(/<[a-z]+>|<\/[a-z]+>|\t|address/gmi,'').trim())
-                              words1.obj.details.address.fullAddress=add;
+                              console.log("address long",address_long);
+                              console.log("count arr",countArr);
+                               for(let k=0;k<address_long.length;k++){
+                              if(address_long[k]==up_ad[0])
+                                  k1=k;
+                                }
+
+                            for(let i1=0;i1<countArr.length;i1++)
+                             {
+                              if(k1==0 && i1==0)
+                              { k2=i1;
+                                break;
+                              }
+                              else if(k1==countArr[i1-1])
+                              { k2=i1;
+                                break;
+                              }
+                            }
+
+                            address_up=address_long.slice(k1,countArr[k2]);
+
+                            console.log("update aaddress",address_up);
+
+                             if(address_up.length>2)
+                             {
+                               words1.obj.details.address.state=address_up[address_up.length-2];
+                               words1.obj.details.address.country=address_up[address_up.length-1];
+                             }
+                             else {
+                               words1.obj.details.address.state=null;
+                               words1.obj.details.address.country=address_up[1];
+                             }
+
+                            if(add!==null && add!=undefined){
+                          words1.obj.details.address.fullAddress=add;
                             }else{
-                              words1.obj.details.address.fullAddress=formatedAddress;
+                          //  words1.obj.details.address.fullAddress=formatedAddress;
+                          }
+                          arrStr.length=0;
+                          pincode.length=0;
+
+                          }
+
                             }
 
-                            arrStr.length=0;
-                            newArr.length=0;
 
-                            }
+address1="";
 
-                }
+   }})
 
-                }
+}
 
 
-          },2500);
 
 
 

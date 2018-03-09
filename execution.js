@@ -1,31 +1,37 @@
-module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addProject,addExp,addEdu,addHobbie,myKeys){
-  var words=require("./words.js")
-  const tableData = require('./tables').table
-  const DomParser = require('dom-parser');
-  const parser = new DomParser();
-  const stream=require('stream')
-  const readline=require('readline')
-  let hobbieExecu=activities(addHobbie)
-  //console.log("my hobbie execu returned array is :",hobbieExecu);
-  if(hobbieExecu!=undefined){
-      words.obj.hobbies=hobbieExecu;
-  }
-  let skillExecu=activities(addSkill)
-  //console.log("my skill execu returned array is :",skillExecu);
-  if(skillExecu!=undefined){
+module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addProject,addExp,addEdu,addHobbie,myKeys,misdata){
+    // var misdata=data
+    var words=require("./words.js")
+    const tableData = require('./tables').table
+    const DomParser = require('dom-parser');
+    const parser = new DomParser();
+    const stream=require('stream')
+    const readline=require('readline')
+
+    //   console.error(misdata)
+    //console.log("my hobbie execu returned array is :",hobbieExecu);
+    let misExecu =mis(misdata)
+    if(misExecu!= undefined){
+       words.obj.miscellaneous=misExecu
+    }
+    let hobbieExecu=activities(addHobbie)
+    if(hobbieExecu!=undefined){
+        words.obj.hobbies=hobbieExecu;
+    }
+    let skillExecu=activities(addSkill)
+    //console.log("my skill execu returned array is :",skillExecu);
+    if(skillExecu!=undefined){
       words.obj.technicalSkills=skillExecu;
-  }
-
-  let extraskillExecu=activities(addSkillextra)
-  //console.log("my extra skill execu returned array is :",extraskillExecu);
-  if(extraskillExecu!=undefined){
+    }
+    let extraskillExecu=activities(addSkillextra)
+    //console.log("my extra skill execu returned array is :",extraskillExecu);
+    if(extraskillExecu!=undefined){
       words.obj.skills=extraskillExecu;
-  }
+    }
 
-  let careerExecu=activities(addCareer)
-  //console.log("my career execu returned array is :",careerExecu);
-  if(careerExecu!=undefined){
-      words.obj.careerObjective=careerExecu.toString();
+    let careerExecu=activities(addCareer)
+    //console.log("my career execu returned array is :",careerExecu);
+    if(careerExecu!=undefined){
+        words.obj.careerObjective=careerExecu.toString();
   }
 
   let langExecu=activities(addLang)
@@ -60,38 +66,13 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
         return;
       }
       else{
-        var str=myArr.splice(1,myArr.length-2);
-        str=str.join('\n');
-        // for(i=0;i<myKeys.length;i++){
-        //     var reg=new RegExp(myKeys[i],'gmi')
-        //     str=str.replace(/${reg}/gm,'')
-        //     if(i === myKeys.length){
-        //         return strs
-        //     }
-        // }
-
-
-        // console.log("myarrAAAAAA",str)
-        var rege = /(^(\s*<li>)\n*.*(\n*\s*<\/li>)|^(\s*<p>)\n*.*(\n*\s*<\/p>))/gmi
-        var matchContent=str.match(rege);
-        ////console.log("Matching content in li's and p's are : ",matchContent);
-        if(matchContent==null || matchContent==undefined || matchContent.length==0){
-          return;
+        str=myArr.join('\n');
+        for(let i=0;i<myKeys.length;i++){
+            let reg=new RegExp(`${myKeys[i]}`,'gmi')
+            // console.error("AAAAA",str,"SSSSs",myKeys[i])
+            str=str.replace(reg,'')
         }
-        else{
-            // console.log("ASSSSSSSS",matchContent)
-          var returnArr=matchContent.map((ele)=>ele.replace(/<[a-z]+>|\|\|\•|\●|<\/[a-z]+>|<[a-z]+\/>|Languages|Tools|\t|\:|\n|\●|\•|►|\s\s+/gmi,'').trim())
-          ////console.log("return array would be:",returnArr)
-          if(returnArr!=null && returnArr!=undefined){
-            for(let i=0;i<returnArr.length;i++)
-            {
-              returnArr[i]=returnArr[i].trim();
-            }
-          }
-        }
-         returnArr = returnArr.filter(function(x){
-            return (x !== (undefined || null || ''));
-          });
+        let returnArr=mis(str)
         return returnArr;
       }
     }
@@ -271,9 +252,22 @@ function experience(exp){
   console.log("In experience function",exp)
   if(exp !=null && exp != undefined)
   {
-    var str=exp.splice(1,exp.length-2).join('\n')
+
+    var str=exp.join('\n')
+    for(let i=0;i<myKeys.length;i++){
+        let reg=new RegExp(`${myKeys[i]}`,'gmi')
+        str=str.replace(reg,'')
+        if(i === myKeys.length){
+
+            return str
+        }
+    }
+    // misdata=mis(misdata,str)
+    // console.error('LLLLLLL',misdata)
+    // var str=exp.splice(1,exp.length-2).join('\n')
     str=str.replace(/<table>|<\/table>|<td>|<\/td>|<tr>|<\/tr>|<th>|<\/th>|<thead>|<\/thead>|<tbody>|<\/tbody>|<(strong|h[1-6]|p)>\n*\s*(\.)?<\/(strong|h[1-6]|p)>/gmi,"")
     str=str.replace(/(<\/strong>|<\/h[1-6])\n*\s*(.*)?\n*\s*<\/p>\n*\s*<p>\n*\s*(<strong>|<h[1-6]>)/gmi,"")
+    var misexp = str
     // for(i=0;i<myKeys.length;i++){
     //     var reg=new RegExp(myKeys[i],'gmi')
     //     str=str.replace(/${reg}/gm,'')
@@ -281,7 +275,7 @@ function experience(exp){
     //         return str
     //     }
     // }
-    console.log("In experience function AAAAAAAAA",str)
+    // console.error("In experience function AAAAAAAAA",str)
 var keys3 = /(^(\s*<h[1|2|3]>|\s*<strong>)\n*(.*)([^(Roles (&amp;|and|)|key|)Responsibilities|^Key Responsibilities Handling|^(Primary|Secondary|Job) Responsibilities(\-|:)?|^Key Accomplishments(:)?|^Company’s Profile|^Page 1 of 3]).*(\n*\s*(<\/h[1|2|3]>|<\/strong>))\n*(((<[a-z]>)\n*\s*((([A-Za-z]+\s*\d{4}\s*[\-|\W ]?\s*[A-Za-z]+\s*(\d{4})?)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?\s*)+)(\\(.*\\))?)\n*\s*(<\/[a-z]+>))?|(^\s*(<[a-z]+><\/[a-z]+>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^\s*(<em><\/em>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^(\s*<p>)\n*\s*[a-z]+\s([a-z\s*\-\–]+?\d{4}[a-z\s*\-\–]+?)+)(\n*\s*<\/p>))/gmi
 
 var matches4 = str.match(keys3)
@@ -292,7 +286,8 @@ var matches4 = str.match(keys3)
           startDate:null,
           endDate:null,
           description:null,
-          role:null
+          role:null,
+          miscellaneous:null
     }
 
 
@@ -358,18 +353,20 @@ if(b!=null && b!= undefined){
 let c = b.map(element=> element.join('\n').split('\n'))
 var final_experience=[];
 var obj={
-    title:"",
-      startDate:"",
-      endDate:"",
-      description:"",
-      role:""
-}
+        title:null,
+          startDate:null,
+          endDate:null,
+          description:null,
+          role:null,
+          miscellaneous:null
+    }
 for(let j=0;j<b.length;j++){
     obj.title=null;
     obj.startDate=null;
     obj.endDate=null;
     obj.description=null;
     obj.role=null;
+    obj.miscellaneous=null;
 let experience=b[j].toString().split('\n')
 experience.pop()
 experience.pop()
@@ -390,6 +387,9 @@ if(duration != null && duration != undefined){
    regexDuStart=duration.toString().match(/.*(\-|\–|\b(to)\b)/img)
 
    regexDuend=duration.toString().match(/(\-|\–|\b(to)\b).*/img)
+   // if(regexDuStart!=undefined&&regexDuStart!=null&&regexDuend!=undefined&&regexDuend!=null){
+   //   totalDuration(regexDuStart,regexDuend)
+   // }
 
    obj.startDate=regexDuStart.toString().replace(/(\-|\–|\b(to)\b)/gmi,'');
     obj.endDate=regexDuend.toString().replace(/(\-|\–|\b(to)\b)/gmi,'');
@@ -436,11 +436,46 @@ if(duration != null && duration != undefined){
    obj.description=description
    }
 
+   var misstr=b[j].toString()
+
+   for(let i=0;i<matches4.length;i++){
+    var regarr = matches4[i].replace(/\s+|\n+|\t/gm, '\\n*\\s*').replace(/\(/gm,'\\(').replace(/\)/gm,'\\)')
+    let reg=new RegExp(`${regarr}`,'gmi')
+
+    var misstr=misstr.replace(reg,'')
+
+    misexp=misexp.replace(reg,'')
+
+    }
+    // console.error(misstr)
+    let regdata =misstr.trim().replace(/\s+|\n+|\t/g, '\\n*\\s*').replace(/\(/gm,'\\(').replace(/\)/gm,'\\)').replace(/\//gmi,'\\/').replace(/\+/gmi,'\\+').replace(/\$/gmi,'\\$')
+       let reg=new RegExp(`${ regdata }`,'gmi')
+    //    console.error("::::????????>>>>>>",reg)
+       misexp=misexp.replace(reg,"")
+    // console.error("::::????????>>>>>>",misexp)
+    // console.error(j,b.length)
+
+    if(misexp!=null && misexp!=undefined ){
+        let keys1 = /(^(\s*<li>)\n*.*(\n*\s*<\/li>)|^(\s*<p>)\n*.*(\n*\s*<\/p>))/gm
+         let c=misexp.match(keys1)
+         if(c!=null&& c!=undefined){
+
+         let exparr=c.map((ele)=>ele.replace(/<[a-z]+>|\|\•|<\/[a-z]+>|<[a-z]+\/>|\t|\:|\n|\s\s+/gmi,'').trim())
+
+                exparr = exparr.filter(function(x){
+                 return (x !== (undefined || null || ''));
+               });
+               if(j == b.length-1){
+                // console.error("::::????????>>>>>>",misexp)
+                obj.miscellaneous=exparr
+            }
+
+     }
 
 
-   final_experience[j]=Object.assign({},obj);
+ }
 
-
+    final_experience[j]=Object.assign({},obj);
 }
 return final_experience;
 }
@@ -448,7 +483,23 @@ return final_experience;
 
 }
 
+}
+// function mis(fulldata,data1){
 
+
+// }
+function mis(data2){
+    let keys1 = /(^(\s*<li>)\n*.*(\n*\s*<\/li>)|^(\s*<p>)\n*.*(\n*\s*<\/p>))/gm
+    let c=data2.match(keys1)
+    if(c!=null&& c!=undefined){
+    let exparr=c.map((ele)=>ele.replace(/<[a-z]+>|\|\|\•|\●|<\/[a-z]+>|<[a-z]+\/>|Languages|Tools|\t|\:|\n|\●|\•|►|\s\s+/gmi,'').trim())
+    if(exparr!=null && exparr!=undefined){
+        exparr = exparr.filter(function(x){
+            return (x !== (undefined || null || ''));
+          });
+        return exparr
+    }
+}
 }
 
 }

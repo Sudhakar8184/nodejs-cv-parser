@@ -3,7 +3,7 @@ const express=require('express');
 const mammoth = require('mammoth')
 const start=require('./start')
 const path = require('path')
-cloudconvert = new (require('cloudconvert'))('UKvszMDkLHT3o6zuiXvhnLCg1fnq25zcuFqHcY0fJcyzQlKZP293vWTp0dSle5ZfMppUGSW_sB8VbDvz_mb6w');
+cloudconvert = new (require('cloudconvert'))('IqOdtZsGcSZU3b91jDy_XVYOMvFDszyt2GPebgeN2AyXe9dlVKPNRiynbDyWb0Y3A9iYyfc6hAim5XcUQI95uQ');
 
  function convert(file,new_name,format,res){
      if(format=='doc'||format=='pdf'){

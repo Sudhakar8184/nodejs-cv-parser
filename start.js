@@ -25,8 +25,17 @@ function check(file,res){
       words.obj.details.mobile=null;
       words.obj.details.address.fullAddress=null;
       words.obj.details.address.country=null;
-      words.obj.details.address.locality=null;
+      words.obj.details.address.state=null;
       words.obj.details.address.pincode=null;
+      words.obj.details.fatherName=null;
+      words.obj.details.motherName=null;
+      words.obj.details.martialStatus=null;
+      words.obj.details.nationality=null;
+      words.obj.details.uniqueID=null;
+      words.obj.details.licenseNumber=null;
+      words.obj.details.passportNumber=null;
+      words.obj.details.panNumber=null;
+      words.obj.details.visaStatus=null;
       words.obj.project=null;
       words.obj.technicalSkills=null;
       words.obj.skills=null;
@@ -35,6 +44,7 @@ function check(file,res){
       words.obj.academicQualifications=null;
       words.obj.languages=null;
       words.obj.hobbies=null;
+      words.obj.miscellaneous=null;
 
       var j=0;
       var strongArr=[],h1Arr=[];
@@ -45,7 +55,7 @@ function check(file,res){
       //console.log(html);
       var messages = result.messages; // Any messages, such as warnings during conversion
       var data=htmlBeautify(html).toString();
-        data=data.replace(/(<p>)?\n*\s*<img[\n*|\s*]+.*\/>\s*[a-z\s]+\s*\n*(<\/p>)?/gmi,"").replace(/^(\s*<p>)\n*\s*(Page\s*\d*)(\n*\s*<\/p>)|^\s*<a\s*id="page[\d*]">|\|\|\►|<(strong|h[1-6]|p)>\n*\s*(\.)?<\/(strong|h[1-6]|p)>|\s\s+&amp;|<br\s*\/>/gm,"");
+        data=data.replace(/(<p>)?\n*\s*<img[\n*|\s*]+.*\/*>\s*[a-z\s]+\s*\n*(<\/p>)?/gmi,"").replace(/^(\s*<p>)\n*\s*(Page\s*\d*)(\n*\s*<\/p>)|^\s*<a\s*id="page[\d*]">|\|\|\►|<(strong|h[1-6]|p)>\n*\s*(\.)?<\/(strong|h[1-6]|p)>|\s\s+&amp;|<br\s*\/>/gm,"");
         //making each and every line as a seperate string and storing in an array named arr
       var arr=[];
       arr=data.split('\n');

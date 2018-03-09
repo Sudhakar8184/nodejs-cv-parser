@@ -11,9 +11,18 @@ module.exports.obj={
       address:{
        fullAddress:null,
        pincode:null,
-       locality:null,
+       state:null,
        country:null
-       }
+     },
+     fatherName:null,
+     motherName:null,
+     martialStatus:null,
+     nationality:null,
+     uniqueID:null,
+     licenseNumber:null,
+     passportNumber:null,
+     panNumber:null,
+     visaStatus:null
     },
       technicalSkills:null,
       skills:null,
@@ -22,6 +31,7 @@ module.exports.obj={
       careerObjective:null,
       academicQualifications:null,
       languages:null,
-      hobbies:null
+      hobbies:null,
+      miscellaneous:null
 
  }

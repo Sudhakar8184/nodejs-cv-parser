@@ -164,6 +164,116 @@ if( /((\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\
 
         // console.log(":::::::::::::::::::::::::::::::",myName);
 
+//father's name starts here
+          if(/(father(('|’|)s)?\s*name\s*(\W)?).*/gmi.test(data))
+          {
+            var fn=data.toString().match(/(father(('|’|)s)?\s*name\s*(\W)?).*/gmi);
+            console.log("fatherName is : " ,fn[0]);
+            let ffn=fn[0].toString().replace(/(father(('|’|)s)?\s*name\s*(\W)?)|<.*>/gmi,'')
+            words.obj.details.fatherName=ffn.trim();
+          }
+          else{
+            console.log("no fathers name found");
+          } //father's name ends here
+
+//mother's's name starts here
+                    if(/(mother(('|’|)s)?\s*name\s*(\W)?).*/gmi.test(data))
+                    {
+                      var mn=data.toString().match(/(mother(('|’|)s)?\s*name\s*(\W)?).*/gmi);
+                      console.log("motherName is : " ,mn[0]);
+                      let mmn=mn[0].toString().replace(/(mother(('|’|)s)?\s*name\s*(\W)?)|<.*>/gmi,'')
+                      words.obj.details.motherName=mmn.trim();
+                    }
+                    else{
+                      console.log("no mother's name found");
+                    } //mother's name ends here
+
+//passport starts here
+if(/(passport\s*(no|num|number|)\s*(\:|\:\-|\–|\-).*)/gmi.test(data))
+{
+  var passport=data.toString().match(/(passport\s*(no|num|number|)\s*(\:|\:\-|\–|\-).*)/gmi);
+  console.log("passport is : " ,passport[0]);
+  let pass=passport[0].toString().replace(/(passport\s*(no|num|number|)\s*(\:|\:\-|\–|\-))|<.*>|/gmi,'')
+  words.obj.details.passportNumber=pass.trim();
+}
+else{
+  console.log("no passport found");
+} //passport ends here
+
+//licnese starts here
+if(/(License\s*(no|num|number|)\s*(\:|\:\-|\–|\-).*)/gmi.test(data))
+{
+  var license=data.toString().match(/(License\s*(no|num|number|)\s*(\:|\:\-|\–|\-).*)/gmi);
+  console.log("license is : " ,license[0]);
+  let lic=license[0].toString().replace(/(License\s*(no|num|number|)\s*(\:|\:\-|\–|\-))|<.*>|/gmi,'')
+  words.obj.details.licenseNumber=lic.trim();
+}
+else{
+  console.log("no license found");
+} //license ends here
+
+//panNumber starts here
+if(/(pan\s*(card)?\s*(no|num|number|)\s*(\:|\:\-|\–|\-).*)/gmi.test(data))
+{
+  var pan=data.toString().match(/(pan\s*(card)?\s*(no|num|number|)\s*(\:|\:\-|\–|\-).*)/gmi);
+  console.log("pan is : " ,pan[0]);
+  let pa=pan[0].toString().replace(/(pan\s*(card)?\s*(no|num|number|)\s*(\:|\:\-|\–|\-))|<.*>|/gmi,'')
+  words.obj.details.panNumber=pa.trim();
+}
+else{
+  console.log("no pan found");
+} //pan ends here
+
+//uniqueID starts here
+if(/(unique\s*(id|identity|identification)\s*(\:|\:\-|\–|\-).*)/gmi.test(data))
+{
+  var unique_id=data.toString().match(/(unique\s*(id|identity|identification)\s*(\:|\:\-|\–|\-).*)/gmi);
+  console.log("unique id  is : " ,unique_id[0]);
+  let ui=unique_id[0].toString().replace(/(unique\s*(id|identity|identification)\s*(\:|\:\-|\–|\-))|<.*>|/gmi,'')
+  words.obj.details.uniqueID=ui.trim();
+}
+else{
+  console.log("no unique id is found");
+} //uniqueID ends here
+
+//visaStatus starts here
+if(/(Visa\s*Status\s*(\:|\:\-|\–|\-)).*/gmi.test(data))
+{
+  var visa=data.toString().match(/(Visa\s*Status\s*(\:|\:\-|\–|\-)).*/gmi);
+  console.log("visa id  is : " ,visa[0]);
+  let visaa=visa[0].toString().replace(/(Visa\s*Status\s*(\:|\:\-|\–|\-))|<.*>|/gmi,'')
+  words.obj.details.visaStatus=visaa.trim();
+}
+else{
+  console.log("no unique id is found");
+} //visaStatus ends here
+
+//Nationality Starts here
+if(/(Nationality\s*(\:|\:\-|\–|\-)).*/gmi.test(data))
+{
+  var nationalityy=data.toString().match(/(Nationality\s*(\:|\:\-|\–|\-)).*/gmi);
+  console.log("nationality   is : " ,nationalityy[0]);
+  let nation=nationalityy[0].toString().replace(/(Nationality\s*(\:|\:\-|\–|\-))|<.*>|/gmi,'')
+  words.obj.details.nationality=nation.trim();
+}
+else{
+  console.log("no nationality is found");
+} //nationality ends here
+
+//Martial Status starts here
+if(/(Marital\s*Status\s*(\:|\:\-|\–|\-)).*/gmi.test(data))
+{
+  var martial=data.toString().match(/(Marital\s*Status\s*(\:|\:\-|\–|\-)).*/gmi);
+  console.log("martial   is : " ,martial[0]);
+  let ms=martial[0].toString().replace(/(Marital\s*Status\s*(\:|\:\-|\–|\-))|<.*>|/gmi,'')
+  words.obj.details.martialStatus=ms.trim();
+}
+else{
+  console.log("no nationality is found");
+} //martial status ends here
+
+
+
         skill1.skill1(data,strongArr,h1Arr,update_arr,myName);
 
 }

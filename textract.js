@@ -10,8 +10,8 @@ var words=require('./words.js')
 var textArr=[];
 var dataArr=[];
 textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), function( error, text ) {
-
-  console.log('***************************************************************************',text)
+  text=text.replace(/\b(\d|page|resume|cv|curriculum vitae)\b/gmi,'');
+  // console.log('***************************************************************************',text)
 
   textArr=text.split('.');
   //console.log(textArr.length);
@@ -20,6 +20,9 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
   mammoth.extractRawText({path: path.join(__dirname , "/converted/"+file+".docx")})
     .then(function(result){
       var data = result.value; // The raw text
+      data=data.replace(/\b(\d|page|resume|cv|curriculum vitae)\b/gmi,'')
+      // console.log('***************************************************************************',data)
+
       var messages = result.messages;
       //console.log(data.trim().toString())
       dataArr=data.split('.');
@@ -53,11 +56,40 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
       text=text.toString();
       text=text.trim();
       data=data.trim();
-
+      console.log('Data :***************************************************************************',data)
+      console.log('Text:***************************************************************************',text)
       let a = text.replace(/\W+/gm,"~")
       let b = data.replace(/\W+/gm,"~");
       //console.log("%%%%%%%%%%%%%%%%",a);
       //console.log("%%%%%%%%%%%%%%%%",b);
+
+      //address
+      let ad_r='';
+       if(/((address(\s|\.|\:|\-|\:\-|\–|\-))|((House)(\s|\s.|\:|\.|\:\-|\–|\-)(no|number)(\.|\:|\s|\:\-|\–|\-|))|((street)(\s|\s.|\:|\.|\:\-|\–|\-|)(no|number|))|((h\.no)(\s|\.|\:|\-|\:\-|\–|\-|)))(.*\n)/gmi.test(data1)){
+       ad_r=data1.match(/(^.*)?((address(\s|\.|\:|\-|\:\-|\–|\-))|((House)(\s|\s.|\:|\.|\:\-|\–|\-)(no|number)(\.|\:|\s|\:\-|\–|\-|))|((street)(\s|\s.|\:|\.|\:\-|\–|\-|)(no|number|))|((h\.no)(\s|\.|\:|\-|\:\-|\–|\-|)))(.*\n)/gmi);
+              ad_r=ad_r.toString().replace(/\:|\s\s+|\n|address|\d{7,}|[A-Za-z]+\w+([.\w]+)+@[a-z]+([.][a-z]+){1,2}/g,'');
+        console.log("address:",ad_r);
+      }
+      else{
+        console.log("no address");
+      }
+
+      //pincode starts here
+           let text1=text+' ';
+           let pincodereg, pincode;
+              if(/[^\d]\d{5,6}[^a-z|[^@|^\d]/g.test(text1.toString())){
+                 pincodereg=text1.toString().match(/[^\d]\d{5,6}[^a-z|[^@|^\d]/g)
+                 pincode=pincodereg.toString().match(/\d{5,6}/gm)
+                 console.log("pincode:",pincode)
+                if(pincode!=null && pincode!= undefined && pincode.length>0)
+                  {
+                    pincodes.pincodes(pincode,text1,data1);
+                  }
+
+              }
+          else {
+            words.obj.details.address.fullAddress=ad_r;
+          }//pincodes end here
 
        let arr1=a.split('~'); //high data
        let arr2=b.split('~'); //low data
@@ -97,23 +129,116 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
       a=a.replace(/~/gm,' ');
       a=a.trim();
       console.log("MY header***************",a);
-      head=a.split(' ');
-      //console.log(head);
-      if(head.length>1  )
-      {
-        let count=0;
-        for(let i=0;i<2;i++)
-        {
-          if(head[i]=="page" || head[i]=="Page" || head[i]=="PAGE"||head[i]=="RESUME"||head[i]=="Resume")
-          count++;
-        }
-        if(count==0)
-        {
-          words.obj.details.name.firstName=head[0];
-          words.obj.details.name.lastName=head[1];
-        }
+      //address in header;
+      header=a;
+      name=a;
+      head=name.split(' ');
+      if(head.length>2){
+
+        if(head[1].includes(head[0])){
+          console.log(head[0],head[1]);
+          let reg1=new RegExp(`${head[0]}`,'g')
+          console.log(reg1);
+          head[1]=head[1].toString().replace(reg1,'')
+          console.log(head[1]);
+            words.obj.details.name.firstName=head[0];
+            words.obj.details.name.lastName=head[1];
+          }
+          else{
+            let name1='';
+            let last_name='';
+            let count=0;
+            for(let i=1;i<head.length;i++){
+              console.log(head[0],head[i]);
+              if(head[0]==head[i]){
+
+                count=count+1;
+                for(let j=0;j<i;j++){
+                  name1=name1+' '+head[j];
+                }
+                console.log("updated headeris :",name1);
+                let header_name=name1.replace(/(\d{2,4}|phone|email|mobile|address).*/gmi,'');
+                header_name=header_name.trim();
+                console.log(header_name);
+                header_name=header_name.split(' ');
+                words.obj.details.name.firstName=header_name[0];
+                if(header_name!=null && header_name!=undefined)
+                {
+                  if(header_name.length>2){
+                    console.log("**");
+                    for(let k=1;k<header_name.length;k++){
+                       last_name=last_name+' '+header_name[k];
+                       console.log(last_name);
+                    }
+                    words.obj.details.name.lastName=last_name;
+                  }
+                  else{
+                    words.obj.details.name.lastName=header_name[1]
+                  }
+
+                }
+                let  header_address=name1.match(/\d{2,4}.*\d{5,6}/)
+                if(header_address!=null && header_address!=undefined){
+                  console.log("!!!!!!!!@!!!!!!!!!",header_address[0]);
+                  words.obj.details.address.fullAddress=header_address[0];
+                }
+
+                break;
+              }
+              console.log(count);
+
+            }
+            if(count==0){
+              let header_name=name.replace(/(\d{2,4}|phone|email|mobile|address|male|female|-|:).*/gmi,'');
+              header_name=header_name.trim();
+              console.log("###",header_name);
+              header_name=header_name.split(' ');
+              words.obj.details.name.firstName=header_name[0];
+              if(header_name!=null && header_name!=undefined)
+              {
+                if(header_name.length>2){
+                  console.log("**");
+                  for(let k=1;k<header_name.length;k++){
+                     last_name=last_name+' '+header_name[k];
+                     console.log(last_name);
+                  }
+                  words.obj.details.name.lastName=last_name;
+                }
+                else{
+                  words.obj.details.name.lastName=header_name[1]
+                }
+
+              }
+              else{
+                words.obj.details.name.lastName=null;
+              }
+              let  header_address=name.match(/\d{2,4}.*\d{5,6}/)
+              if(header_address!=null && header_address!=undefined){
+                console.log("!!!!!!!!@!!!!!!!!!",header_address[0]);
+                words.obj.details.address.fullAddress=header_address[0];
+              }
+            }
+          }
+
 
       }
+
+
+      // if(head.length>1  )
+      // {
+      //   let count=0;
+      //   for(let i=0;i<2;i++)
+      //   {
+      //     if(head[i]=="page" || head[i]=="Page" || head[i]=="PAGE"||head[i]=="RESUME"||head[i]=="Resume")
+      //     count++;
+      //   }
+      //   if(count==0)
+      //   {
+      //     words.obj.details.name.firstName=head[0];
+      //     words.obj.details.name.lastName=head[1];
+      //   }
+      //
+      // }
 
 
       //Email Starts here
@@ -145,26 +270,14 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
         }
       }//phone
 
-      //pincode starts here
-      let text1=text + " "
 
-    if(/[^\d]\d{5,6}[^a-z|[^@|^\d]/g.test(text1.toString())){
-         let pincodereg=text1.toString().match(/[^\d]\d{5,6}[^a-z|[^@|^\d]/g)
-        var pincode=pincodereg.toString().match(/\d{5,6}/gm)
-         console.log("pincode:",pincode)
-         if(pincode!=null && pincode!= undefined && pincode.length>0)
-           {
-             // var pincode1=pincode[0];
-             //console.log("pincode",pincode1)
-          pincodes.pincodes(pincode,text,data1);
-           }
-       }
-
-        //pincodes end here
       fs.unlinkSync('./converted/' +file+'.docx')
-       setTimeout(function(){
 
-         res.send(words); }, 3000);
+        setTimeout(function(){
+
+          res.send(words); }, 3000);
+
+
 
        })
 
