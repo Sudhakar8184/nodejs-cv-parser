@@ -53,7 +53,7 @@ module.exports.pincodes=function(pincode,text,data)
                       if(ele!=undefined) return ele}
                     });
 
-             console.log("array list to compare",arrStr);
+             //console.log("array list to compare",arrStr);
 
                  if(arrStr.length>0)
                        for(let l=0;l<arrStr.length;l++) {
@@ -61,7 +61,7 @@ module.exports.pincodes=function(pincode,text,data)
                         r=`(\\b)${m1}(\\b)`;
                            console.log("array regex ",r);
                            let keys1 = new RegExp(r, 'gm')
-                           //    console.log("array keys1 ",keys1);
+                              console.log("array keys1 ",keys1);
 
                            let abc=text.match(keys1)
                            console.log("my abc is",abc);
@@ -101,12 +101,12 @@ module.exports.pincodes=function(pincode,text,data)
                                   k1=k;
                                 }
 
-                            for(let i1=0;i1<countArr.length;i1++)
-                             {
+                            for(let i1=0;i1<countArr.length;i1++){
                               if(k1==0 && i1==0)
                               { k2=i1;
                                 break;
                               }
+
                               else if(k1==countArr[i1-1])
                               { k2=i1;
                                 break;
@@ -128,6 +128,7 @@ module.exports.pincodes=function(pincode,text,data)
                              }
 
                             if(add!==null && add!=undefined){
+                              console.log("add is",add);
                           words1.obj.details.address.fullAddress=add;
                             }else{
                           //  words1.obj.details.address.fullAddress=formatedAddress;

@@ -1,140 +1,359 @@
 <p>
-   <strong>Jason VanNimwegen</strong>
+   <strong>Resume </strong>
 </p>
 <p>
-   10600 Gemini Drive  Riverside, CA 92503  (909) 641-8058  j_vannimwegen@yahoo.com
+   <strong>Shreya Jain</strong>
 </p>
 <p>
-   <strong>Senior Business Analyst</strong>
+   240 Burwood highwayBurwood VIC 3125Phone:Mobile: 0405840019jain@deakin.edu.au
 </p>
 <p>
-   <strong>Business Analyst generalist with experience in data analysis and reporting projects. Technical expertise with the Alteryx analytics platform against a SQL backend and Tableau presentation layer.</strong>
-</p>
-<ul>
-   <li>
-      Fast learner who can quickly acquire the knowledge needed to evaluate metrics, test hypotheses and achieve measurable and actionable outcomes in a new operation; seamlessly made transition from education to healthcare industries.
-   </li>
-   <li>
-      Problem solver with repeated success in leveraging database technology through interpreting data to improve business processes.
-   </li>
-</ul>
-<p>
-   <strong><em>Performance Review Excerpts</em></strong>
+   <strong>Career Profile</strong>
 </p>
 <p>
-   “Jason’s performance is a <strong>stellar example</strong> of someone stepping up to fill a leadership void on the team. In the absence of a manager for the team, he managed the team assignments … and was <strong>successful</strong> with several of the key projects within our overall Call Center Strategy.”
+   Third year Bachelor of Information Technology student with an excellent work ethic and an ability to learn and adapt to a changing environment. project experience in software and website development. Demonstrated excellent customer service and ability to develop strong working relationships.
 </p>
-<p>
-   “Jason is an <strong>active change agent</strong> in the organization … [he] exhibits the highest level of dedication to support change … and works hard to make it transparent to end users.”
-</p>
-<p>
-   “Jason is a <strong>very valuable team member</strong> and is <strong>well-respected</strong><strong>by his peers and business partners. </strong>He is seen as a <strong>team player</strong> and takes the necessary steps on an ongoing basis to increase his knowledge. He has done an <strong>exceptional job</strong> leading the dashboard development …”
-</p>
-<p>
-   <strong>Experience</strong>
-</p>
-<p>
-   <strong>Kaiser Permanente – Corona, CA</strong>
-</p>
-<p>
-   <strong>Senior Business Consultant (Jan. 2009 to Present)</strong>
-</p>
-<p>
-   Lead reporting and data analysis project plans for call centers serving California, Colorado, mid-Atlantic, and Northwest states; internal departments (regulatory, sales, marketing); and employer groups.
-</p>
-<ul>
-   <li>
-      Function as a technical and data analysis SME for Pega CRM and Genesys telephony systems, provide data integration for <strong>end-to-end view of customer </strong>contacts and develop custom reports using Alteryx.
-   </li>
-   <li>
-      Wrote specs for an ETL project aggregation layer using Alteryx that enabled rapid data analysis on customer service workflow data, <strong>reducing turn-around time</strong> from hours to minutes.
-   </li>
-   <li>
-      Design an early warning ICD/10 <strong>Tableau dashboard with an Alteryx backend</strong> to monitor up stream provider claims activity and customer contact volume.
-   </li>
-   <li>
-      Develop a line of business cost allocation model, for a nine figure budget, in Excel using pivot tables, VLOOKUP’s and graphs with an Alteryx back end for multi-platform data wrangling and consolidation. 
-   </li>
-   <li>
-      Wrote a data map between telephony and contact documentation SQL database systems. Output from data mapping process is used through the Measure and Analyze Six Sigma project phases to <strong>increase customer satisfaction and reduce call handle time.</strong>
-   </li>
-   <li>
-      Wrote business requirements for forecasting models to<strong> predict impact</strong> of Health Care Reform initiatives to contact center call volume, including cross collaboration with PMO and other matrixed departments.
-   </li>
-   <li>
-      Wrote a data analysis model to justify inter-departmental budget transfers. The model combines tracking data from three disparate database systems: CRM, telephony, and workforce forecasting.
-   </li>
-   <li>
-      Collaborated with a department that frequently had urgent requests, resulting in a <strong>better working relationship</strong> between the department and the analytics team, and less escalated requests.
-   </li>
-   <li>
-      Recommended improvements for a service center that enabled its staff to achieve several <strong>year-over-year improvements </strong>from March 2010 to March 2011—including a double-digit increase in the percentage of calls answered within the target time.
-   </li>
-</ul>
-<p>
-   <strong>New York Life, Mass Mutual, Southern California </strong>
-</p>
-<h4>
-   <a href="https://www.linkedin.com/title/financial-services-professional?trk=pprofile_title">Financial Services Professional</a>  (Jan. 2006 to Oct. 2008)
-</h4>
-<p>
-   Served in three commission-only sales positions with insurance and financial companies. Earned distinction of "Executive Council" at New York Life, a rare accomplishment for a new agent, and increased internal referrals at AAA, contributing to the team meeting the cross-selling goal. 
-</p>
-<p>
-   <em>(Exact dates and job titles associated with each position available upon request for employment verification.)</em>
-</p>
-<p>
-   <strong>Corona-Norco Unified School District – Corona, CA</strong>
-</p>
-<p>
-   <strong>Supervisor-Technology and Assessment (Jan. 2002 to Jan. 2006)</strong>
-</p>
-<p>
-   Analyzed existing data models and improved existing data processes and conducted internal consulting to assess business practices and recommend improvements.
-</p>
-<ul>
-   <li>
-      Design and implementation of project plan for a high-profile strategic initiative to migrate data from a variety of complex database (db) sources into a single database, <strong>ensuring regulatory compliance</strong> with both state and national agencies.
-   </li>
-   <li>
-      Implemented a COTS database (db) program to scan 350,000 documents yearly and produce reports, <strong>reducing turnaround time from several weeks to less than 24 hours</strong>.
-   </li>
-   <li>
-      Developed MS Access dashboard single-screen views drawing from 5 different complex database (db) modules.
-   </li>
-   <li>
-      Developed multi-dimensional data models using <strong>SPSS statistical analysis</strong> software to analyze data contained in five database modules and wrote reports for end-users.
-   </li>
-</ul>
-<p>
-   <strong>Corona-Norco Unified School District – Corona, CA</strong>
-</p>
-<p>
-   <strong>Data Analyst (Computer Operator) (Aug. 1999 to Dec. 2002)</strong>
-</p>
-<p>
-   Spearheaded new processes that enabled district to track data for the first time.
-</p>
-<ul>
-   <li>
-      Created a project plan for a centralized reporting methodology that delivered confidential student information; reduced research time for 2,500 personnel from weeks to one day. 
-   </li>
-   <li>
-      Developed new methods to disaggregate student achievement and demographic data using SPSS statistical analysis software.
-   </li>
-</ul>
 <p>
    <strong>Education</strong>
 </p>
+<table>
+   <tr>
+      <td>
+         <p>
+            <strong>Diploma of Computing</strong>Deakin College, MelbourneGrade: 89.8
+         </p>
+</td>
+      <td>
+         <p>
+            <strong>03/2015 - 10/2015</strong>
+         </p>
+</td>
+</tr>
+   <tr>
+      <td>
+         <p>
+            <strong>Bachelor of Information Technology</strong>Deakin University, MelbourneMajors: IT Security and Programming
+         </p>
+</td>
+      <td>
+         <p>
+            <strong>03/2016 - current</strong>
+         </p>
+</td>
+</tr>
+</table>
 <p>
-   <strong>Masters of Business Administration, </strong>2004<strong> – </strong>University of Phoenix
+   <strong>Key Skills</strong>
 </p>
 <p>
-   <strong>Technology Skills </strong>
+   <strong>Communication</strong>
 </p>
 <p>
-   T-SQL and Oracle SQL  Alteryx (data wrangling and analysis) Tableau
+   Good written and verbal communication skills. (IELTS bands- 8.5)
 </p>
 <p>
-   Toad Data Point  Crystal Reports (SAP application)
+   <strong>Teamwork</strong>
 </p>
+<ul>
+   <li>
+      Able to communicate effectively with others
+   </li>
+   <li>
+      Able to recognize and understand the viewpoints of others
+   </li>
+   <li>
+      Able to appreciate the contribution you are expected to make
+   </li>
+</ul>
+<p>
+   <strong>IT skills</strong>
+</p>
+<ol>
+   <li>
+      Have worked with the following languages: 
+   </li>
+</ol>
+<ul>
+   <li>
+      Java
+   </li>
+   <li>
+      C
+   </li>
+   <li>
+      C++
+   </li>
+   <li>
+      C#
+   </li>
+   <li>
+      HTML
+   </li>
+   <li>
+      JavaScript
+   </li>
+</ul>
+<ol>
+   <li>
+      Have knowledge about networking, including configuring the devices and setting up networks.
+   </li>
+   <li>
+      Good knowledge of database management using SQL and MySQL.
+   </li>
+   <li>
+      Hardware skills: 
+   </li>
+</ol>
+<ul>
+   <li>
+      Have knowledge about installing windows, software, applications, antivirus and patches
+   </li>
+   <li>
+      Working knowledge of modern networking devices and printers
+   </li>
+   <li>
+      Skilled in installing and troubleshooting computer hardware and peripherals.
+   </li>
+</ul>
+<p>
+   <strong>Professional Development</strong>
+</p>
+<table>
+   <tr>
+      <td>
+         <p>
+            <strong>Diploma of Computing</strong>Deakin College
+         </p>
+</td>
+      <td>
+         <p>
+            <strong>10/2015</strong>
+         </p>
+</td>
+</tr>
+   <tr>
+      <td colspan="2">
+         <p>
+            Completed Diploma of Computing with a weighted average mark of 89.8.
+         </p>
+         <p>
+            Achieved <strong>Deakin College 2015 Academic Scholarship Award</strong>.
+         </p>
+         <p>
+            Learnt the following IT skills:
+         </p>
+         <ul>
+            <li>
+               C#
+            </li>
+            <li>
+               HTML
+            </li>
+            <li>
+               PHP
+            </li>
+            <li>
+               python
+            </li>
+            <li>
+               CSS
+            </li>
+</ul>
+</td>
+</tr>
+</table>
+<p>
+   <strong>Work Experience</strong>
+</p>
+<table>
+   <tr>
+      <td>
+         <p>
+            <strong>Crew MemberHungry Jacks</strong>
+         </p>
+</td>
+      <td>
+         <p>
+            <strong>01/2017 - current</strong>
+         </p>
+</td>
+</tr>
+   <tr>
+      <td colspan="2">
+         <ul>
+            <li>
+               Taking customer orders
+            </li>
+            <li>
+               Serving customer food and drinks
+            </li>
+            <li>
+               Handling cash
+            </li>
+            <li>
+               Cleaning the store
+            </li>
+</ul>
+</td>
+</tr>
+   <tr>
+      <td>
+         <p>
+            <strong>Student mentor</strong>Navitas
+         </p>
+</td>
+      <td>
+         <p>
+            <strong>07/2015 – 03/2016</strong>
+         </p>
+</td>
+</tr>
+   <tr>
+      <td colspan="2">
+         <ul>
+            <li>
+               Help organize the events in Deakin College
+            </li>
+            <li>
+               Assisting the new students in their enrolment
+            </li>
+            <li>
+               Printing out their timetables and id cards
+            </li>
+            <li>
+               guiding the campus tours
+            </li>
+</ul>
+</td>
+</tr>
+   <tr>
+      <td colspan="2"></td>
+</tr>
+   <tr>
+      <td>
+         <p>
+            <strong>Front-of-house staff</strong>Monster Pizza
+         </p>
+</td>
+      <td>
+         <p>
+            <strong>02/2015 – 12/2016</strong>
+         </p>
+</td>
+</tr>
+   <tr>
+      <td colspan="2">
+         <ul>
+            <li>
+               Taking customer calls
+            </li>
+            <li>
+               confirming and printing online orders
+            </li>
+            <li>
+               using the EFTPOS machine for transactions
+            </li>
+            <li>
+               operating the console
+            </li>
+</ul>
+</td>
+</tr>
+   <tr>
+      <td></td>
+      <td></td>
+</tr>
+   <tr>
+      <td colspan="2"></td>
+</tr>
+</table>
+<p>
+   <strong>Voluntary Experience</strong>
+</p>
+<table>
+   <tr>
+      <td>
+         <p>
+            <strong>Personal care Worker</strong>Opal Gracedale
+         </p>
+</td>
+      <td>
+         <p>
+            <strong>11/2015 - 12/2015</strong>
+         </p>
+</td>
+</tr>
+   <tr>
+      <td colspan="2">
+         <ul>
+            <li>
+               Providing person centered care to the elderly in Opal Gracedale aged care.
+            </li>
+            <li>
+               assisting the residents in the activities of daily living.
+            </li>
+</ul>
+</td>
+</tr>
+</table>
+<table>
+   <tr>
+      <td>
+         <p>
+            <strong>Creative Lead</strong>Googleplex LPU
+         </p>
+</td>
+      <td>
+         <p>
+            <strong>10/2013 - 06/2014</strong>
+         </p>
+</td>
+</tr>
+   <tr>
+      <td colspan="2">
+         <p>
+            Core team member of the GooglePlex LPU.
+         </p>
+         <p>
+            <strong>Achievements</strong>
+         </p>
+         <ul>
+            <li>
+               Hosted Googleplex LPU Fest 2013
+            </li>
+            <li>
+               Won the first prize for drawing Google Doodle in Google Development Group LPU Fest
+            </li>
+            <li>
+               Won the second prize in the innovative application idea category.
+            </li>
+</ul>
+</td>
+</tr>
+   <tr>
+      <td></td>
+      <td></td>
+</tr>
+   <tr>
+      <td colspan="2"></td>
+</tr>
+</table>
+<p>
+   <strong>Referees</strong>
+</p>
+<table>
+   <tr>
+      <td>
+         <p>
+            <strong>Workplace</strong>Vishesh GuptaStudent Committee 
+         </p>
+         <p>
+            0420898817
+         </p>
+         <p>
+            vgupta@deakin.edu.au
+         </p>
+</td>
+      <td></td>
+</tr>
+</table>

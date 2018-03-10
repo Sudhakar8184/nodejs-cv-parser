@@ -6,7 +6,8 @@ var fs=require('fs');
 
 var pincodes=require('./pincode.js')
 var words=require('./words.js')
-
+var execution=require('./execution.js')
+var misce=execution.misc;
 var textArr=[];
 var dataArr=[];
 textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), function( error, text ) {
@@ -149,7 +150,7 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
             let last_name='';
             let count=0;
             for(let i=1;i<head.length;i++){
-              console.log(head[0],head[i]);
+              //console.log(head[0],head[i]);
               if(head[0]==head[i]){
 
                 count=count+1;
@@ -166,9 +167,9 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
                 {
                   if(header_name.length>2){
                     console.log("**");
-                    for(let k=1;k<header_name.length;k++){
+                    for(let k=1;k<3;k++){
                        last_name=last_name+' '+header_name[k];
-                       console.log(last_name);
+                       console.log("lastName 1",last_name);
                     }
                     words.obj.details.name.lastName=last_name;
                   }
@@ -177,15 +178,17 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
                   }
 
                 }
-                let  header_address=name1.match(/\d{2,4}.*\d{5,6}/)
+                let  header_address=name1.match(/\d{2,4}.*\d{4,6}/)
+
                 if(header_address!=null && header_address!=undefined){
-                  console.log("!!!!!!!!@!!!!!!!!!",header_address[0]);
-                  words.obj.details.address.fullAddress=header_address[0];
+                  let header_address1=header_address[0].toString().replace(/(phone|email|mobile).*/gim,'')
+                  console.log("!!!!!!!!@!!!!!!!!! 1",header_address1);
+                  words.obj.details.address.fullAddress=header_address1;
                 }
 
                 break;
               }
-              console.log(count);
+              //console.log(count);
 
             }
             if(count==0){
@@ -198,9 +201,9 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
               {
                 if(header_name.length>2){
                   console.log("**");
-                  for(let k=1;k<header_name.length;k++){
+                  for(let k=1;k<3;k++){
                      last_name=last_name+' '+header_name[k];
-                     console.log(last_name);
+                     console.log("lastName2",last_name);
                   }
                   words.obj.details.name.lastName=last_name;
                 }
@@ -214,8 +217,9 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
               }
               let  header_address=name.match(/\d{2,4}.*\d{5,6}/)
               if(header_address!=null && header_address!=undefined){
-                console.log("!!!!!!!!@!!!!!!!!!",header_address[0]);
-                words.obj.details.address.fullAddress=header_address[0];
+                let header_address1=header_address[0].toString().replace(/(phone|email|mobile).*/gim,'')
+                console.log("!!!!!!!!@!!!!!!!!! 2",header_address1);
+                words.obj.details.address.fullAddress=header_address1;
               }
             }
           }

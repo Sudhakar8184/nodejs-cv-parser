@@ -1,5 +1,6 @@
 module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addProject,addExp,addEdu,addHobbie,myKeys,misdata){
     // var misdata=data
+    var DateDiff = require('date-diff');
     var words=require("./words.js")
     const tableData = require('./tables').table
     const DomParser = require('dom-parser');
@@ -60,7 +61,7 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
 
     function activities(myArr)
     {
-//   console.log("mykeysAAAAA",myKeys)
+  console.error("mykeysAAAAA",myArr)
       if(myArr==null || myArr == undefined || myArr.length==0){
         //console.log("Not present");
         return;
@@ -356,6 +357,7 @@ var obj={
         title:null,
           startDate:null,
           endDate:null,
+          duration:null,
           description:null,
           role:null,
           miscellaneous:null
@@ -364,6 +366,7 @@ for(let j=0;j<b.length;j++){
     obj.title=null;
     obj.startDate=null;
     obj.endDate=null;
+    obj.duration=null;
     obj.description=null;
     obj.role=null;
     obj.miscellaneous=null;
@@ -387,9 +390,14 @@ if(duration != null && duration != undefined){
    regexDuStart=duration.toString().match(/.*(\-|\–|\b(to)\b)/img)
 
    regexDuend=duration.toString().match(/(\-|\–|\b(to)\b).*/img)
-   // if(regexDuStart!=undefined&&regexDuStart!=null&&regexDuend!=undefined&&regexDuend!=null){
-   //   totalDuration(regexDuStart,regexDuend)
-   // }
+   if(regexDuStart!=undefined&&regexDuStart!=null&&regexDuend!=undefined&&regexDuend!=null){
+     let totaldur=totalDuration(regexDuStart,regexDuend)
+     if(totaldur!=null && totaldur!=undefined){
+         console.error(totaldur)
+        obj.duration=totaldur
+     }
+
+   }
 
    obj.startDate=regexDuStart.toString().replace(/(\-|\–|\b(to)\b)/gmi,'');
     obj.endDate=regexDuend.toString().replace(/(\-|\–|\b(to)\b)/gmi,'');
@@ -501,5 +509,131 @@ function mis(data2){
     }
 }
 }
+function totalDuration(start,end){
+    console.error("start",start,"end",end)
+    let startMonth=start.toString().match(/jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december|\b\d{2}\b/gmi)
+    let endMonth=end.toString().match(/jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december|present|current|\b\d{2}\b/gmi)
+    let startYear=start.toString().match(/\d{4}/gmi)
+    let endYear=end.toString().match(/\d{4}/gmi)
+    // console.error(startMonth,endMonth,startYear,endYear)
+    if(startYear!=null&&endYear!=null&&startYear!=undefined&&endYear!=undefined){
+        startYear=startYear.toString()
+        endYear=endYear.toString()
+        let arr=[]
+        arr.push(startMonth[0],endMonth[0])
+        return monthdate(arr)
+    }else{
+        startYear=startYear.toString()
+        var today = new Date();
+        var dd = today.getDate();
+         endMonth = today.getMonth()+1; //January is 0!
+         endYear = today.getFullYear();
+        //  console.error("endmonth",endMonth)
+        let arr=[]
+        arr.push(startMonth[0],endMonth)
+        // console.error()
+       return monthdate(arr)
+    }
+    // console.error(year)
+    function monthdate(arr){
+    var regex=/jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december/i
+// console.error(arr)
 
+for(let i=0;i<arr.length;i++)
+  {
+
+    if(regex.test(arr[i])){
+      if(isNaN(arr[i])){
+        str=arr[i].toLowerCase()
+        console.error(str)
+      }
+
+      switch(true)
+      {
+
+
+          case (str=="january"||str=="jan"):
+          arr[i]=1;
+          console.log(arr[i])
+          break;
+          case (str=="february"||str=="feb"):
+          arr[i]=2;
+          console.log(arr[i])
+          break;
+          case (str=="march"||str=="mar"):
+          arr[i]=3;
+          console.log(arr[i])
+          break;
+          case (str=="april"||str=="apr"):
+          arr[i]=4;
+          console.log(arr[i])
+          break;
+          case (str=="may"):
+          arr[i]=5;
+          console.log(arr[i])
+          break;
+          case (str=="june"||str=="jun"):
+          arr[i]=6;
+          console.log(arr[i])
+          break;
+          case (str=="july"||str=="jul"):
+          arr[i]=7;
+          console.log(arr[i])
+          break;
+          case (str=="august"||str=="aug"):
+          arr[i]=8;
+          console.log(arr[i])
+          break;
+          case (str=="september"||str=="sept"||str=="sep"):
+          arr[i]=9;
+          console.log(arr[i])
+          break;
+          case (str=="october"||str=="oct"):
+          arr[i]=10;
+          console.log(arr[i])
+          break;
+          case (str=="november"||str=="nov"):
+          arr[i]=11;
+          console.log(arr[i])
+          break;
+          case (str=="december"||str=="dec"):
+          arr[i]=12;
+          console.log(arr[i])
+          break;
+          default :
+          console.error(arr[i])
+          arr[i]=arr[i]
+      }
+
+    }
+         }
+         console.error(arr)
+        return diffdate(arr)
+      }
+
+      function diffdate(arr){
+          console.error(arr)
+ if(Number.isInteger(parseInt(arr[0],10)) && Number.isInteger(parseInt(arr[1],10)) && startYear!=null&&endYear!=null&&startYear!=undefined&&endYear!=undefined ){
+    startMonth=arr[0].toString();
+    endMonth=arr[1].toString();
+    let date1 = new Date(startYear,startMonth , 1); // 2015-12-1
+    let date2 = new Date(endYear,endMonth, 28);
+    var diff = new DateDiff(date1, date2);
+//  console.error(startYear,endYear,startMonth,endMonth)
+console.error(diff.months())
+    let months=parseInt(diff.months())
+    if(months!=null&&months!=undefined){
+        months=months.toString().replace(/\-/gmi,'')
+        if(months >= 12){
+            year=months/12
+            years=parseInt(year)*12
+            month=months-years
+            return month +" months "+ parseInt(year) +" years "
+        }else{
+            return months+"months 0 years"
+        }
+    }
+    }
+  }
+}
 }

@@ -56,7 +56,7 @@ var regex=/jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february
 
 for(let i=0;i<arr.length;i++)
   {
-    if(regex.test(arr[i]))
+    if(regex.test(arr[i])){
       console.log("lopala")
       str=arr[i].toLowerCase()
       switch(true)
@@ -111,6 +111,7 @@ for(let i=0;i<arr.length;i++)
           console.log(arr[i])
           break;
       }
+    }
   }
 console.log(arr)
 for(let i=0;i<arr.length;i++)
