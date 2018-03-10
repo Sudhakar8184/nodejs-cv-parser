@@ -61,7 +61,7 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
 
     function activities(myArr)
     {
-  console.error("mykeysAAAAA",myArr)
+//   console.error("mykeysAAAAA",myArr)
       if(myArr==null || myArr == undefined || myArr.length==0){
         //console.log("Not present");
         return;
@@ -158,7 +158,7 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
             // ele = ele.toString().replace(/<\w+>|<\/\w+>/gm,'').trim()
             let listArr = []
             checkData = strongArr
-            console.error(checkData);
+            // console.error(checkData);
             edu.forEach( el => {
                 var listObj={
                     degree:'',
@@ -169,7 +169,7 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
                 }
                 listArr.push(breakStrong(el,listObj))
             })
-            console.error(listArr);
+            // console.error(listArr);
             arr[i] = listArr //end of strong
         }else{
             let listArr = []
@@ -180,7 +180,7 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
                 marks:''
             }
             ele = ele.toString().replace(/<\w+>|<\/\w+>/gm,'').replace(/(,,+)/g,',').trim()
-            console.error("!!!!!!!!!!!!!!!!!!!!!!!!!ele is",ele)
+            // console.error("!!!!!!!!!!!!!!!!!!!!!!!!!ele is",ele)
             listArr.push(breakStrong(ele, listObj))
             arr[i] = listArr
         }
@@ -195,10 +195,10 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
     }
 
     function breakStrong(ele,obj){
-      console.error(ele);
+    //   console.error(ele);
         // let dateReg = /((\s*(19[5-9]\d|20[0-4]\d|2050))|(Jan|Apr|May|June|July|Aug|Sep|Oct|Nov|Dec)\s\d{2})/gi
         let dateReg = /(\s*([^\w]|^)(19[5-9]\d|20[0-4]\d|2050))/gi
-        let degreeReg = /\s*(Bachelors of Science|MBA|Masters of Business Administration|Bachelor of Commerce|B\.S|HSC|SSC|PGDMPGDCA|M.Tech|B.Tech|B\.Tech|Biotechnology|Diploma|BA|Doctorate |Bachelors of (|commerce)|B(|\W)Tech(|\W)|M(|\W)Tech(|\W)|XII|X|12th|10th)\s*/g
+        let degreeReg = /\s*(Bachelor(|s) of Science|MBA|Masters of Business Administration|Bachelor of Commerce|B\.S|HSC|SSC|PGDM|PGDCA|M.Tech|B.Tech|B\.Tech|Biotechnology|Diploma|\bBA\b|Doctorate |Bachelors of (|commerce)|B(|\W)Tech(|\W)|M(|\W)Tech(|\W)|XII|\bX\b|12th|10th|([A-Za-z]+\s*[A-Za-z]+)\s*(M|m)anagement)\s*/gmi
         let universityReg = /(university|Institute|P.S.E.B|college|Vidhalaya|school)/gim
         let marksReg = /((\s*(\d{2}|\d{2}[\.](\d{1,2}))[\%])|(\s*\d{1}\.\d{1,2}\b)|\b(\d{1}|\d{2})\s*(cgpa|grades)\b|((cgpa(\s*:|\s*)|grades(\s*:|\s*)|percentage(\s*:|\s*))\s*((\d{1}.\d{1,2})|(\d{2}[\.](\d{1,2})|\d{2}))))/g
         //console.log( " ❌" , ele)
@@ -211,7 +211,20 @@ module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addP
 
           // ele.filter( el => replace())
         obj.university = ele.filter( el => el.match(universityReg) != null ? true : false).map(ele=> ele.replace(dateReg,''))
-        obj.degree = ele.map( el => degreeReg.test( el ) ? el.match( degreeReg ) : undefined).filter(el => el != undefined).map( el => el.toString().trim() )
+        let arrayDegree = ele.map( el => degreeReg.test( el ) ? el.match( degreeReg ) : undefined).filter(el => el != undefined).map( el => el.toString().trim() )
+        if(arrayDegree!=null && arrayDegree!=undefined)
+        {
+          if(arrayDegree.length>1){
+            let stringDegree='';
+            for(let i=0;i<arrayDegree.length;i++){
+              stringDegree=stringDegree+','+arrayDegree[i]
+            }
+            obj.degree=stringDegree;
+          }
+          else{
+            obj.degree=arrayDegree;
+          }
+        }
         obj.marks = ele.map( el => marksReg.test(el) ? el.match(marksReg) : undefined).filter( el => el != undefined ).map( el => el.toString().trim())
         //console.log( " 🔧", obj)
         if(obj.year.length==0  &&obj.university.length==0  &&obj.marks.length==0 && obj.degree.length==0 ){
@@ -276,8 +289,8 @@ function experience(exp){
     //         return str
     //     }
     // }
-    // console.error("In experience function AAAAAAAAA",str)
-var keys3 = /(^(\s*<h[1|2|3]>|\s*<strong>)\n*(.*)([^(Roles (&amp;|and|)|key|)Responsibilities|^Key Responsibilities Handling|^(Primary|Secondary|Job) Responsibilities(\-|:)?|^Key Accomplishments(:)?|^Company’s Profile|^Page 1 of 3]).*(\n*\s*(<\/h[1|2|3]>|<\/strong>))\n*(((<[a-z]>)\n*\s*((([A-Za-z]+\s*\d{4}\s*[\-|\W ]?\s*[A-Za-z]+\s*(\d{4})?)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?\s*)+)(\\(.*\\))?)\n*\s*(<\/[a-z]+>))?|(^\s*(<[a-z]+><\/[a-z]+>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^\s*(<em><\/em>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^(\s*<p>)\n*\s*[a-z]+\s([a-z\s*\-\–]+?\d{4}[a-z\s*\-\–]+?)+)(\n*\s*<\/p>))/gmi
+    console.error("In experience function AAAAAAAAA",str)
+var keys3 = /(^(\s*<h[1|2|3]>|\s*<strong>)\n*(.*)([^(Roles (&amp;|and|)|key|)Responsibilities|^Key Responsibilities Handling|^(Primary|Secondary|Job) Responsibilities(\-|:)?|^Key Accomplishments(:)?|^Company’s Profile|^Page 1 of 3]).*(\n*\s*(<\/h[1|2|3]>|<\/strong>))\n*(((<[a-z]>)\n*\s*((([A-Za-z]+\s*\d{4}\s*[\-|\W ]?\s*[A-Za-z]+\s*(\d{4})?)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?\s*)+)(\\(.*\\))?)\n*\s*(<\/[a-z]+>))?|(^\s*(<[a-z]+><\/[a-z]+>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^\s*(<em><\/em>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^(\s*<p>)\n*\s*[A-Za-z]+\s([A-Za-z\s*\-\–]+?\d{4}[A-Za-z\s*\-\–]+?)+)(\n*\s*<\/p>))/gm
 
 var matches4 = str.match(keys3)
 // console.log(matches4)
@@ -607,19 +620,19 @@ for(let i=0;i<arr.length;i++)
 
     }
          }
-         console.error(arr)
+        //  console.error(arr)
         return diffdate(arr)
       }
 
       function diffdate(arr){
-          console.error(arr)
+
  if(Number.isInteger(parseInt(arr[0],10)) && Number.isInteger(parseInt(arr[1],10)) && startYear!=null&&endYear!=null&&startYear!=undefined&&endYear!=undefined ){
     startMonth=arr[0].toString();
     endMonth=arr[1].toString();
     let date1 = new Date(startYear,startMonth , 1); // 2015-12-1
     let date2 = new Date(endYear,endMonth, 28);
     var diff = new DateDiff(date1, date2);
-//  console.error(startYear,endYear,startMonth,endMonth)
+ console.error(startYear,endYear,startMonth,endMonth)
 console.error(diff.months())
     let months=parseInt(diff.months())
     if(months!=null&&months!=undefined){
