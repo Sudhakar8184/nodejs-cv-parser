@@ -26,6 +26,7 @@ module.exports.obj={
     },
       technicalSkills:null,
       skills:null,
+      extraSkills:null,
       project:null,
       professionalExperience:null,
       careerObjective:null,

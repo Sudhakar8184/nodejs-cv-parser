@@ -39,6 +39,7 @@ function check(file,res){
       words.obj.project=null;
       words.obj.technicalSkills=null;
       words.obj.skills=null;
+      words.obj.extraSkills=null;
       words.obj.professionalExperience=null;
       words.obj.careerObjective=null;
       words.obj.academicQualifications=null;
