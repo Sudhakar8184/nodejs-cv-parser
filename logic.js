@@ -9,6 +9,9 @@ module.exports.logic=function(strongArr,arr,h1Arr,html,data){
   var new_arr=[];
   var myName;
 
+
+var logicregex=`(Marital\\s*Status\\s*(\:|\:\-|\–|\\-)|Phone\\s+(num|no|number)|Birtday|DOB|Date\\s*of\\s*birth|Email|mail|Phone|Contact|Mobile|(mother(('|’|)s)?\\s*name\\s*(:|:-|–|\\-))|(father(('|’|)s)?\\s*name\\s*(:|:-|–|\\-))|passport\\s*(no|num|number|)\\s*(:|:-|–|\\-)|pan\\s*(card)?\\s*(no|num|number|)\\s*(:|:-|–|\\-)|License\\s*(no|num|number|)\\s*(:|:-|–|\\-)|(Nationality\\s*(:|:-|–|\\-))|(Visa\\s*Status\\s*(:|:-|–|\\-))|(unique\\s*(id|identity|identification)\\s*(:|:-|–|\\-)))`
+// var xyz=new RegExp(`${logicregex}`,'gmi')
   for(i=0;i<strongArr.length;i++){
     strongArr[i]=strongArr[i].toString().replace(/<[a-z]+>/gm,"").replace(/<\/[a-z]+/gm,"").replace(/\<.*\>/gm,"");
     strongArr[i]=strongArr[i].trim();
@@ -18,7 +21,7 @@ module.exports.logic=function(strongArr,arr,h1Arr,html,data){
     h1Arr[i]=h1Arr[i].toString().replace(/<[a-z]+>/gm,"").replace(/<\/[a-z]+/gm,"").replace(/\<.*\>/gm,"");
     h1Arr[i]=h1Arr[i].trim();
   }
-  console.log(data);
+  // console.log(data);
   //console.log("Array would be :",arr);
   console.log("strong array would be :",strongArr);
   console.log("h1 array would be:",h1Arr);
@@ -114,31 +117,6 @@ module.exports.logic=function(strongArr,arr,h1Arr,html,data){
       console.log("NO gender found")
     }//End of Gender
 
-//DOB starts here
-if( /((\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>)(\s)?(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s)?(,)?(\s)?\d{4})|(\d{1,4}[/|-]\d{2}[|/|-]\d{1,4})|\d{1,2}(th|nd|rd|st|\s|,)*(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s|\,)*\d{4})/gmi.test(arr))
-    {
-
-      var dob1=[];
-      var dob1 = arr.toString().match(/((\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>)(\s)?(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s)?(,)?(\s)?\d{4})|(\d{1,4}[/|-]\d{2}[|/|-]\d{1,4})|\d{1,2}(th|nd|rd|st|\s|,)*(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s|\,)*\d{4})/gmi);
-      if(dob1 != null && dob1!==undefined && dob1.length > 0){
-        dob1[0]=dob1[0].replace(/<(\/)?[a-z]+>/gm,'')
-        console.log("DOB : ",dob1[0]);
-        var re=dateChanger.dateChanger(dob1[0])
-        console.log("re is",re);
-        words.obj.details.dob=re;
-      }
-      // else if(dob2 != null && dob2.length > 0)
-      // {
-      //   console.log("DOB : ",dob2[0]);
-      //   words.obj.details.dateOfBirth=dob2[0];
-      // }
-      }
-      else{
-        console.log("No DOB found");
-      } //End of DOB
-
-
-
 
 //Email Starts here
       if(/[A-Za-z]+\w+([.\w]+)+@[a-z]+([.][a-z]+){1,2}/.test(arr))
@@ -151,25 +129,20 @@ if( /((\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\
           console.log("No mail found");
         } //End of email
 
-//contact starts here
-      if(/((\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?([\(]\d{1}[\)])?[(]?\d{3,4}[)]?[\-|\s|\.]*?\d{3}[\-|\s|\.]*?\d{2}[\-|\s|\.]?\d{1,2})\b|(\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?[\(]?\d{5}[\)]?[\-|\s|\.]*\d{5})\b)/.test(arr))
-        {
-        var phone=arr.toString().match(/((\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?([\(]\d{1}[\)])?[(]?\d{3,4}[)]?[\-|\s|\.]*?\d{3}[\-|\s|\.]*?\d{2}[\-|\s|\.]?\d{1,2})\b|(\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?[\(]?\d{5}[\)]?[\-|\s|\.]*\d{5})\b)/gm);
-        console.log("phone id is :",phone[0]);
-        words.obj.details.mobile=phone[0].trim();
-        }
-        else{
-          console.log("No phone found");
-        }//phone
 
         // console.log(":::::::::::::::::::::::::::::::",myName);
 
 //father's name starts here
-          if(/(father(('|’|)s)?\s*name\s*(\W)?).*/gmi.test(data))
+          if(/(father(('|’|)s)?\s*name\s*(\:|\:\-|\–|\-)).*/gmi.test(data))
           {
-            var fn=data.toString().match(/(father(('|’|)s)?\s*name\s*(\W)?).*/gmi);
+            var fn=data.toString().match(/(father(('|’|)s)?\s*name\s*(\:|\:\-|\–|\-)).*/gmi);
             console.log("fatherName is : " ,fn[0]);
             let ffn=fn[0].toString().replace(/(father(('|’|)s)?\s*name\s*(\W)?)|<.*>/gmi,'')
+            ffn=ffn.trim();
+            ffn=ffn.replace(/(\t{1,}|Birthday|Gender|mobile|phone|email|(mobile|phone)\s+(num|no|number)|visa(\s+status)?|nationality|dob|date of birth)(.*)/, "❌$1")
+            ffn=ffn.replace(/❌.*/,'')
+            console.log(ffn)
+
             words.obj.details.fatherName=ffn.trim();
           }
           else{
@@ -177,11 +150,15 @@ if( /((\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\
           } //father's name ends here
 
 //mother's's name starts here
-                    if(/(mother(('|’|)s)?\s*name\s*(\W)?).*/gmi.test(data))
+                    if(/(mother(('|’|)s)?\s*name\s*(\:|\:\-|\–|\-)).*/gmi.test(data))
                     {
                       var mn=data.toString().match(/(mother(('|’|)s)?\s*name\s*(\W)?).*/gmi);
                       console.log("motherName is : " ,mn[0]);
                       let mmn=mn[0].toString().replace(/(mother(('|’|)s)?\s*name\s*(\W)?)|<.*>/gmi,'')
+                      mmn=mmn.trim();
+                      mmn=mmn.replace(/(\t{1,}|Birthday|Gender|mobile|phone|email|(mobile|phone)\s+(num|no|number)|visa(\s+status)?|nationality|dob|date of birth)(.*)/, "❌$1")
+                      mmn=mmn.replace(/❌.*/,'')
+                      console.log(mmn)
                       words.obj.details.motherName=mmn.trim();
                     }
                     else{
@@ -194,6 +171,10 @@ if(/(passport\s*(no|num|number|)\s*(\:|\:\-|\–|\-).*)/gmi.test(data))
   var passport=data.toString().match(/(passport\s*(no|num|number|)\s*(\:|\:\-|\–|\-).*)/gmi);
   console.log("passport is : " ,passport[0]);
   let pass=passport[0].toString().replace(/(passport\s*(no|num|number|)\s*(\:|\:\-|\–|\-))|<.*>|/gmi,'')
+  pass=pass.trim();
+  pass=pass.replace(/(\t{1,}|Birthday|Gender|mobile|phone|email|(mobile|phone)\s+(num|no|number)|visa(\s+status)?|nationality|dob|date of birth)(.*)/i, "❌$1")
+  pass=pass.replace(/❌.*/,'')
+  console.log(pass)
   words.obj.details.passportNumber=pass.trim();
 }
 else{
@@ -206,6 +187,10 @@ if(/(License\s*(no|num|number|)\s*(\:|\:\-|\–|\-).*)/gmi.test(data))
   var license=data.toString().match(/(License\s*(no|num|number|)\s*(\:|\:\-|\–|\-).*)/gmi);
   console.log("license is : " ,license[0]);
   let lic=license[0].toString().replace(/(License\s*(no|num|number|)\s*(\:|\:\-|\–|\-))|<.*>|/gmi,'')
+  lic=lic.trim();
+  lic=lic.replace(/(\t{1,}|Birthday|Gender|mobile|phone|email|(mobile|phone)\s+(num|no|number)|visa(\s+status)?|nationality|dob|date of birth)(.*)/i, "❌$1")
+  lic=lic.replace(/❌.*/,'')
+  console.log(lic)
   words.obj.details.licenseNumber=lic.trim();
 }
 else{
@@ -218,6 +203,10 @@ if(/(pan\s*(card)?\s*(no|num|number|)\s*(\:|\:\-|\–|\-).*)/gmi.test(data))
   var pan=data.toString().match(/(pan\s*(card)?\s*(no|num|number|)\s*(\:|\:\-|\–|\-).*)/gmi);
   console.log("pan is : " ,pan[0]);
   let pa=pan[0].toString().replace(/(pan\s*(card)?\s*(no|num|number|)\s*(\:|\:\-|\–|\-))|<.*>|/gmi,'')
+  pa=pa.trim();
+  pa=pa.replace(/(\t{1,}|Birthday|Gender|mobile|phone|email|(mobile|phone)\s+(num|no|number)|visa(\s+status)?|nationality|dob|date of birth)(.*)/i, "❌$1")
+  pa=pa.replace(/❌.*/,'')
+  console.log(pa)
   words.obj.details.panNumber=pa.trim();
 }
 else{
@@ -230,6 +219,10 @@ if(/(unique\s*(id|identity|identification)\s*(\:|\:\-|\–|\-).*)/gmi.test(data)
   var unique_id=data.toString().match(/(unique\s*(id|identity|identification)\s*(\:|\:\-|\–|\-).*)/gmi);
   console.log("unique id  is : " ,unique_id[0]);
   let ui=unique_id[0].toString().replace(/(unique\s*(id|identity|identification)\s*(\:|\:\-|\–|\-))|<.*>|/gmi,'')
+  ui=ui.trim();
+  ui=ui.replace(/(\t{1,}|Birthday|Gender|mobile|phone|email|(mobile|phone)\s+(num|no|number)|visa(\s+status)?|nationality|dob|date of birth)(.*)/i, "❌$1")
+  ui=ui.replace(/❌.*/,'')
+  console.log(ui)
   words.obj.details.uniqueID=ui.trim();
 }
 else{
@@ -242,6 +235,10 @@ if(/(Visa\s*Status\s*(\:|\:\-|\–|\-)).*/gmi.test(data))
   var visa=data.toString().match(/(Visa\s*Status\s*(\:|\:\-|\–|\-)).*/gmi);
   console.log("visa id  is : " ,visa[0]);
   let visaa=visa[0].toString().replace(/(Visa\s*Status\s*(\:|\:\-|\–|\-))|<.*>|/gmi,'')
+  visaa=visaa.trim();
+  visaa=visaa.replace(/(\t{1,}|Birthday|Gender|mobile|phone|email|(mobile|phone)\s+(num|no|number)|visa(\s+status)?|nationality|dob|date of birth)(.*)/i, "❌$1")
+  visaa=visaa.replace(/❌.*/,'')
+  console.log(visaa)
   words.obj.details.visaStatus=visaa.trim();
 }
 else{
@@ -254,6 +251,10 @@ if(/(Nationality\s*(\:|\:\-|\–|\-)).*/gmi.test(data))
   var nationalityy=data.toString().match(/(Nationality\s*(\:|\:\-|\–|\-)).*/gmi);
   console.log("nationality   is : " ,nationalityy[0]);
   let nation=nationalityy[0].toString().replace(/(Nationality\s*(\:|\:\-|\–|\-))|<.*>|/gmi,'')
+  nation=nation.trim();
+  nation=nation.replace(/(\t{1,}|Birthday|Gender|mobile|phone|email|(mobile|phone)\s+(num|no|number)|visa(\s+status)?|nationality|dob|date of birth)(.*)/i, "❌$1")
+  nation=nation.replace(/❌.*/,'')
+  console.log(nation)
   words.obj.details.nationality=nation.trim();
 }
 else{
@@ -261,11 +262,15 @@ else{
 } //nationality ends here
 
 //Martial Status starts here
-if(/(Marital\s*Status\s*(\:|\:\-|\–|\-)).*/gmi.test(data))
+if(/(Marital\s*Status\s*(\:|\:\-|\–|\-)).*(\\t)?/gmi.test(data))
 {
-  var martial=data.toString().match(/(Marital\s*Status\s*(\:|\:\-|\–|\-)).*/gmi);
+  var martial=data.toString().match(/(Marital\s*Status\s*(\:|\:\-|\–|\-)).*(\\t)?/gmi);
   console.log("martial   is : " ,martial[0]);
   let ms=martial[0].toString().replace(/(Marital\s*Status\s*(\:|\:\-|\–|\-))|<.*>|/gmi,'')
+  ms=ms.trim();
+  ms=ms.replace(/(\t{1,}|Birthday|Gender|mobile|phone|email|(mobile|phone)\s+(num|no|number)|visa(\s+status)?|nationality|dob|date of birth)(.*)/i, "❌$1")
+  ms=ms.replace(/❌.*/,'')
+  console.log(ms)
   words.obj.details.martialStatus=ms.trim();
 }
 else{
@@ -275,5 +280,42 @@ else{
 
 
         skill1.skill1(data,strongArr,h1Arr,update_arr,myName);
+
+
+        //DOB starts here
+        if( /((\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>)(\s)?(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s)?(,)?(\s)?\d{4})|(\d{1,4}[/|-]\d{2}[|/|-]\d{1,4})|\d{1,2}(th|nd|rd|st|\s|,)*(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s|\,)*\d{4})/gmi.test(skill1.misdata))
+            {
+
+              var dob1=[];
+              var dob1 = skill1.misdata.match(/((\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>)(\s)?(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s)?(,)?(\s)?\d{4})|(\d{1,4}[/|-]\d{2}[|/|-]\d{1,4})|\d{1,2}(th|nd|rd|st|\s|,)*(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s|\,)*\d{4})/gmi);
+              if(dob1 != null && dob1!==undefined && dob1.length > 0){
+                dob1[0]=dob1[0].replace(/<(\/)?[a-z]+>/gm,'')
+                console.log("DOB : ",dob1[0]);
+                var re=dateChanger.dateChanger(dob1[0])
+                console.log("re is",re);
+                words.obj.details.dob=re;
+              }
+              // else if(dob2 != null && dob2.length > 0)
+              // {
+              //   console.log("DOB : ",dob2[0]);
+              //   words.obj.details.dateOfBirth=dob2[0];
+              // }
+              }
+              else{
+                console.log("No DOB found");
+              } //End of DOB
+              //contact starts here
+                    if(/((\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?([\(]\d{1}[\)])?[(]?\d{3,4}[)]?[\-|\s|\.]*?\d{3}[\-|\s|\.]*?\d{2}[\-|\s|\.]?\d{1,2})\b|(\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?[\(]?\d{5}[\)]?[\-|\s|\.]*\d{5})\b)/.test(skill1.misdata))
+                      {
+                      var phone=skill1.misdata.match(/((\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?([\(]\d{1}[\)])?[(]?\d{3,4}[)]?[\-|\s|\.]*?\d{3}[\-|\s|\.]*?\d{2}[\-|\s|\.]?\d{1,2})\b|(\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?[\(]?\d{5}[\)]?[\-|\s|\.]*\d{5})\b)/gm);
+                      console.log("phone id is :",phone[0]);
+                      words.obj.details.mobile=phone[0].trim();
+                      }
+                      else{
+                        console.log("No phone found");
+                      }//phone
+
+
+
 
 }

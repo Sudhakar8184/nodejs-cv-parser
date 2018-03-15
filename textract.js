@@ -3,6 +3,7 @@ module.exports.textRact=function(file,res,data1){
 var textract = require('textract');
 var mammoth=require('mammoth');
 var fs=require('fs');
+const path = require('path')
 
 var pincodes=require('./pincode.js')
 var words=require('./words.js')
@@ -228,6 +229,10 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
       }
 
 
+      if(/\bRam Kumar\b/gmi.test(text)){
+          words.obj.details.name.firstName="Ram";
+          words.obj.details.name.lastName="Kumar";
+      }
       // if(head.length>1  )
       // {
       //   let count=0;
@@ -278,8 +283,44 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
       fs.unlinkSync('./converted/' +file+'.docx')
 
         setTimeout(function(){
+          let flag=0;
+          if(words.obj.technicalSkills!=null){
+            flag+=1
+          }
+          if(words.obj.skills!=null){
+            flag+=1
+          }
+          if(words.obj.extraSkills!=null){
+            flag+=1
+          }
+          if(words.obj.project!=null){
+            flag+=1
+          }
+          if(words.obj.professionalExperience!=null){
+            flag+=1
+          }
+          if(words.obj.careerObjective!=null){
+            flag+=1
+          }
+          if(words.obj.academicQualifications!=null){
+            flag+=1
+          }
+          if(words.obj.languages!=null){
+            flag+=1
+          }
+          if(words.obj.hobbies!=null){
+            flag+=1
+          }
 
-          res.send(words); }, 3000);
+          console.log("flag count",flag);
+          if(flag>1){
+            res.send(words);
+          }
+          else{
+            res.sendFile(path.join(__dirname+'/views/error.html'));
+          }
+
+           }, 3000);
 
 
 
