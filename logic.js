@@ -283,15 +283,18 @@ else{
 
 
         //DOB starts here
-        if( /((\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>)(\s)?(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s)?(,)?(\s)?\d{4})|(\d{1,4}[/|-]\d{2}[|/|-]\d{1,4})|\d{1,2}(th|nd|rd|st|\s|,)*(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s|\,)*\d{4})/gmi.test(skill1.misdata))
+        if( /((\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>|th|nd|rd|st|\s|,)(\s)?(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s)?(,)?(\s)?\d{4})|((jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)\s*\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>|th|nd|rd|st|\s|,)(\s)?(,)?(\s)?\d{4})|(\d{1,4}[\/|-]\d{2}[|\/|-]\d{1,4})|\d{1,2}(th|nd|rd|st|\s|,)*(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s|\,)*\d{4})/gmi.test(skill1.misdata))
             {
 
               var dob1=[];
-              var dob1 = skill1.misdata.match(/((\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>)(\s)?(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s)?(,)?(\s)?\d{4})|(\d{1,4}[/|-]\d{2}[|/|-]\d{1,4})|\d{1,2}(th|nd|rd|st|\s|,)*(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s|\,)*\d{4})/gmi);
+            var dob1= skill1.misdata.toString().match(/((\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>|th|nd|rd|st|\s|,)(\s)?(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s)?(,)?(\s)?\d{4})|((jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)\s*\d{1,2}(,|<sup>th<\/sup>|<em>rd<\/em>|<em>th<\/em>|<em>nd<\/em>|<sup>rd<\/sup>|<sup>nd<\/sup>|th|nd|rd|st|\s|,)(\s)?(,)?(\s)?\d{4})|(\d{1,4}[\/|-]\d{2}[|\/|-]\d{1,4})|\d{1,2}(th|nd|rd|st|\s|,)*(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\s|\,)*\d{4})/gmi);
+
               if(dob1 != null && dob1!==undefined && dob1.length > 0){
+
                 dob1[0]=dob1[0].replace(/<(\/)?[a-z]+>/gm,'')
                 console.log("DOB : ",dob1[0]);
                 var re=dateChanger.dateChanger(dob1[0])
+
                 console.log("re is",re);
                 words.obj.details.dob=re;
               }
@@ -304,6 +307,7 @@ else{
               else{
                 console.log("No DOB found");
               } //End of DOB
+
               //contact starts here
                     if(/((\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?([\(]\d{1}[\)])?[(]?\d{3,4}[)]?[\-|\s|\.]*?\d{3}[\-|\s|\.]*?\d{2}[\-|\s|\.]?\d{1,2})\b|(\(|\+|^\s)*\b(([\+])?([\(]?(\d{1}\-\d{3}|[+]|[+]\d{2}|\d{2,3}|\d{1})?[\)]?)[\-|\s|\.]*?[\(]?\d{5}[\)]?[\-|\s|\.]*\d{5})\b)/.test(skill1.misdata))
                       {

@@ -164,7 +164,7 @@ module.exports.skill1=function(data,strongArr,h1Arr,update_arr,myName)
     }
 
 // console.error(misdata)
-// misskill(misdata,myKeys)
+ misskill(misdata,myKeys)
 function misskill(misdata,myKeys1){
   let reskillFlag=false;
   // console.error(myKeys1)
