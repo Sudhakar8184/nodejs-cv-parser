@@ -319,6 +319,18 @@ else{
                         console.log("No phone found");
                       }//phone
 
+                     if(/(- Email me on Indeed).*/gmi.test(skill1.misdata)){
+                        var  mailId=skill1.misdata.toString().match(/(- Email me on Indeed).*/gmi)
+                        console.log(mailId)
+                          mailId=mailId.toString().replace(/- Email me on Indeed:/gm,'')
+                          console.log("email id is :",mailId);
+                          words.obj.details.email=mailId;
+
+                      }
+                      else{
+                        console.log("no mail");
+                      }
+
 
 
 

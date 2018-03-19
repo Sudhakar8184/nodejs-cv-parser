@@ -1,5 +1,6 @@
 module.exports.execu=function(data,addSkill,addSkillextra,addCareer,addLang,addProject,addExp,addEdu,addHobbie,addreskill,myKeys,misdata){
  // var misdata=data
+ console.log("in execu");
  var DateDiff = require('date-diff');
  var words=require("./words.js")
  const tableData = require('./tables').table

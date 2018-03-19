@@ -67,14 +67,19 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
 
       //address
       let ad_r='';
-       if(/((address(\s|\.|\:|\-|\:\-|\–|\-))|((House)(\s|\s.|\:|\.|\:\-|\–|\-)(no|number)(\.|\:|\s|\:\-|\–|\-|))|((street)(\s|\s.|\:|\.|\:\-|\–|\-|)(no|number|))|((h\.no)(\s|\.|\:|\-|\:\-|\–|\-|)))(.*\n)/gmi.test(data1)){
-       ad_r=data1.match(/(^.*)?((address(\s|\.|\:|\-|\:\-|\–|\-))|((House)(\s|\s.|\:|\.|\:\-|\–|\-)(no|number)(\.|\:|\s|\:\-|\–|\-|))|((street)(\s|\s.|\:|\.|\:\-|\–|\-|)(no|number|))|((h\.no)(\s|\.|\:|\-|\:\-|\–|\-|)))(.*\n)/gmi);
-              ad_r=ad_r.toString().replace(/\:|\s\s+|\n|address|\d{7,}|[A-Za-z]+\w+([.\w]+)+@[a-z]+([.][a-z]+){1,2}/g,'');
+      if(/.*(- Email me on Indeed)/gmi.test(data1)){
+        ad_r=data1.match(/.*(- Email me on Indeed)/gmi);
+        ad_r=ad_r.toString().replace(/\:|\s\s+|\n|address|\d{7,}|[A-Za-z]+\w+([.\w]+)+@[a-z]+([.][a-z]+){1,2}/g,'').replace(/- Email me on Indeed/g,'');
         console.log("address:",ad_r);
       }
-      else{
-        console.log("no address");
-      }
+      else  if(/((address(\s|\.|\:|\-|\:\-|\–|\-))|((House)(\s|\s.|\:|\.|\:\-|\–|\-)(no|number)(\.|\:|\s|\:\-|\–|\-|))|((street)(\s|\s.|\:|\.|\:\-|\–|\-|)(no|number|))|((h\.no)(\s|\.|\:|\-|\:\-|\–|\-|)))(.*\n)/gmi.test(data1)){
+      ad_r=data1.match(/(^.*)?((address(\s|\.|\:|\-|\:\-|\–|\-))|((House)(\s|\s.|\:|\.|\:\-|\–|\-)(no|number)(\.|\:|\s|\:\-|\–|\-|))|((street)(\s|\s.|\:|\.|\:\-|\–|\-|)(no|number|))|((h\.no)(\s|\.|\:|\-|\:\-|\–|\-|)))(.*\n)/gmi);
+             ad_r=ad_r.toString().replace(/\:|\s\s+|\n|address|\d{7,}|[A-Za-z]+\w+([.\w]+)+@[a-z]+([.][a-z]+){1,2}/g,'');
+       console.log("address:",ad_r);
+     }
+     else{
+       console.log("NO ad_r")
+     }
 
       //pincode starts here
            let text1=text+' ';
@@ -275,7 +280,7 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
         words.obj.details.mobile=phone[0]
         }
         else{
-        console.log("No phone found");
+        console.log("No phone found in textract");
         }
       }//phone
 
