@@ -225,7 +225,7 @@ const fs=require('fs')
          obj.degree=offo;
        }
 
-       let universityReg = /(university|Institute|P.S.E.B|college|Vidhalaya|school)/gim
+       let universityReg = /(university|Institute|P.S.E.B|college|Vidhalaya|school|Academy)/gim
        let marksReg = /((\s*(\d{2}|\d{2}[\.](\d{1,2}))[\%])|(\s*\d{1}\.\d{1,2}\b)|\b(\d{1}|\d{2})\s*(cgpa|grades)\b|((cgpa(\s*:|\s*)|grades(\s*:|\s*)|percentage(\s*:|\s*))\s*((\d{1}.\d{1,2})|(\d{2}[\.](\d{1,2})|\d{2}))))/g
        //console.log( " ❌" , ele)
        ele = ele.replace(/\s\s+/gm,' ').split(',').filter( el => el.length > 1 ).map( el => el.replace(/\.$|<\w+>|<\/\w+>/g,'').replace(/\t/g,' '))
