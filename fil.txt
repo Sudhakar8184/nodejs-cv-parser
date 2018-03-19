@@ -1,7 +1,7 @@
 <table>
    <tr>
       <td>
-         
+
          <p>
             <strong>Correspondence &amp; Permanent Address:</strong>
          </p>
@@ -41,7 +41,7 @@
          <p>
             15<sup>th</sup> May, 1985
          </p>
-         
+
          <p>
             <strong>Gender</strong>: Male
          </p>
@@ -58,7 +58,7 @@
             <strong>Read, write and speak:</strong>
          </p>
          <p>
-            English, Hindi ,Punjabi 
+            English, Hindi ,Punjabi
          </p>
          <p>
             <strong>Strengths:</strong>
@@ -75,7 +75,7 @@
          <p>
             ● Dedication &amp;      Devotion.
          </p>
-         
+
          <p>
             <strong>Interests and Hobbies:</strong>
          </p>
@@ -86,7 +86,7 @@
             ● Playing Cricket
          </p>
          <p>
-            ● Watching Lawn Tennis                 
+            ● Watching Lawn Tennis
          </p>
          <p>
             <strong>Preferences:</strong>
@@ -95,7 +95,7 @@
             Location: Global
          </p>
          <p>
-            
+
          </p>
 </td>
       <td>
@@ -111,7 +111,7 @@
          <p>
              Looking for a brake in such company by learning advance technologies to sharp my technical skills more and also to give the best performance to the Organization.
          </p>
-         
+
          <p>
             PROFESSIONAL EXPERIENCE
          </p>
@@ -119,14 +119,14 @@
                 <strong>FIS Global Services                                              Gurgaon</strong>
          </p>
          <p>
-            
+
          </p>
          <p>
             <strong>        Role- Customer Service Associate                      Devoting Time: 51 months</strong>
          </p>
-         
+
          <p>
-            
+
          </p>
          <p>
             <strong>        Company’s Profile:</strong>
@@ -149,7 +149,7 @@
             <strong>Primary Responsibilities:</strong>
          </p>
          <p>
-            Provide accurate and updated information in a respectful, friendly and courteous manner 
+            Provide accurate and updated information in a respectful, friendly and courteous manner
          </p>
          <ul>
             <li>
@@ -180,28 +180,28 @@
                 <strong>Mr Site Takeaway Pvt. Ltd               </strong><strong>               Patiala</strong>
          </p>
          <p>
-            
+
          </p>
          <p>
             <strong>        Role- Host Administrator                                 Devoting Time : 8 months</strong>
          </p>
          <p>
-            
+
          </p>
          <p>
-            
+
          </p>
          <p>
-            
+
          </p>
          <p>
-            
+
          </p>
          <p>
             <strong>       Company’s Profile: </strong>
          </p>
          <p>
-            Mr Site was set up in 2004 and has swiftly become the UK’s favorite provider of innovative website-building packages, web hosting and e-commerce software. It creates online tools that are not only technically excellent – they’re incredibly easy to use. 
+            Mr Site was set up in 2004 and has swiftly become the UK’s favorite provider of innovative website-building packages, web hosting and e-commerce software. It creates online tools that are not only technically excellent – they’re incredibly easy to use.
          </p>
          <p>
             Mr Site has helped thousands of people all over the world build and manage their own websites. From youth clubs in Yorkshire to beauticians in Bangladesh to shoe shops in London, all kinds of organizations have been able to make their mark online with us.
@@ -213,10 +213,10 @@
             •     Responsible for the operations of domains moving IN and OUT with the company. Keeping and tracking records for all domains registered with company.
          </p>
          <p>
-            •      Working together with Top level registrars like Enom, Nominet, Zip hosting, Packweb, Net4 etc on the behalf of company’s clients. 
+            •      Working together with Top level registrars like Enom, Nominet, Zip hosting, Packweb, Net4 etc on the behalf of company’s clients.
          </p>
          <p>
-            •      Maintaining accounts registrations, renewals and expiry periodically or as when needed. 
+            •      Maintaining accounts registrations, renewals and expiry periodically or as when needed.
          </p>
          <p>
             •       Reporting direct to Manager, India and UK for the daily reporting as well as monthly data.
@@ -237,7 +237,7 @@
             •      View the list of zones names in which the administrator will manage hosts.
          </p>
          <p>
-            •      Assign or remove additional addresses to or from a host.      
+            •      Assign or remove additional addresses to or from a host.
          </p>
          <p>
             <strong>Intelent Global Services Pvt Ltd                   Mohali      </strong>
@@ -252,23 +252,23 @@
 </tr>
    <tr>
       <td rowspan="2">
-         
+
 </td>
       <td>
          <p>
-            
+
          </p>
          <p>
-              Delivering through  <strong>20 state-of-the-art centres across 8 locations in India</strong> - Mumbai, Pune, Mohali, Delhi, Kolkata, Bangalore, Chennai,Pondicherry and Dehradun.  
+              Delivering through  <strong>20 state-of-the-art centres across 8 locations in India</strong> - Mumbai, Pune, Mohali, Delhi, Kolkata, Bangalore, Chennai,Pondicherry and Dehradun. 
          </p>
          <p>
-              Managing a wide array of processes across verticals including Financial services, Insurance, Telecom, Travel, Retail, Media, Consumer Durables, Healthcare etc. 
+              Managing a wide array of processes across verticals including Financial services, Insurance, Telecom, Travel, Retail, Media, Consumer Durables, Healthcare etc.
          </p>
          <p>
-              Providing customised outsourcing services and solutions to over 40 clients 
+              Providing customised outsourcing services and solutions to over 40 clients
          </p>
          <p>
-              ISO 9001-2000 certified   
+              ISO 9001-2000 certified
          </p>
          <p>
             <strong>Job Responsibilities:</strong>

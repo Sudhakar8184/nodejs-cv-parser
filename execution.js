@@ -307,6 +307,7 @@ const fs=require('fs')
      str=str.replace(/(<\/strong>|<\/h[1-6])\n*\s*(.*)?\n*\s*<\/p>\n*\s*<p>\n*\s*(<strong>|<h[1-6]>)/gmi,"")
      str=str.replace(/((Roles (&amp;|and|)|key|)\s*Responsibilities\s*(\-\:|\:|\-|\:\-|\–|)(Handling)?|(Primary|Secondary|Job) Responsibilities\s*(\-\:|\:|\-|\:\-|\–|)|Key Accomplishment(s|)\s*(\-\:|\:|\-|\:\-|\–|)|Company’s Profile\s*(\-\:|\:|\-|\:\-|\–|)|Page 1 of 3)/gmi,"")
      str=str.replace(/<(strong|h[1-6]|p|[a-z]+)>\n*\s*(\.)?<\/(strong|h[1-6]|p|[a-z]+)>/gmi,'')
+
      var misexp = str
      // for(i=0;i<myKeys.length;i++){
      //     var reg=new RegExp(myKeys[i],'gmi')
@@ -321,6 +322,8 @@ const fs=require('fs')
  var keys3 = /(((((((J|j)an|(F|f)eb|(M|m)ar|(A|a)pr|(M|m)ay|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(M|m)arch|(A|a)pril|(M|m)ay|(J|j)une|(J|j)uly|(A|a)ugust|(S|s)eptember|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}\s*(\-|\–|\s*|\b.*\b)\s*(((J|j)an|(F|f)eb|(|M|m)ar|(A|a)pr|(|M|m)ay|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(|M|m)arch|(A|a)pril|(|M|m)ay|(J|j)une|(J|j)uly|(A|a)ugust|september|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}|(P|p)resent|(C|c)urrent))|((\d{2}|\d{4})\s*[\/|\-]\s*(\d{4}|\d{2})\s*[\-|\–]?\s*([a-z]*\s*))+)(\(.*\)|)|(((J|j)an|(Ff)eb|(M|m)ar|(A|a)pr|(M|a)y|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(M|a)rch|april|(M|a)y|(J|j)une|(J|j)uly|(A|a)ugust|(S|s)eptember|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}))|^)(\s*<h[1|2|3]>|\s*<strong>)\n*(.*)(\n*\s*(<\/h[1|2|3]>|<\/strong>))\n*(((<[a-z]>)\n*\s*((([A-Za-z]+\s*\d{4}\s*[\-|\W ]?\s*[A-Za-z]+\s*(\d{4})?)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?\s*)+)(\\(.*\\))?)\n*\s*(<\/[a-z]+>))?|(^\s*(<[a-z]+><\/[a-z]+>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^\s*(<em><\/em>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^(\s*<p>)\n*\s*[A-Za-z]+\s([A-Za-z\s*\-\–]+?\d{4}[A-Za-z\s*\-\–]+?)+)(\n*\s*<\/p>))/gm
 
  var matches4 = str.match(keys3)
+
+
  // console.log(matches4)
    if(matches4 == null){
      var obj={
