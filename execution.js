@@ -362,7 +362,7 @@ const fs=require('fs')
          var matches6 = regarr[j].trim('\n')
          var matches5 = regarr[++j]
 
-         let regex = `(${ matches6 })\\n?(.*\\n)+\n?(\\s*${ matches5 })`
+         let regex = `(${ matches6 })\\n?(.*\\n)+?\n?(\\s*${ matches5 })`
          keys1 = new RegExp(regex,'gm')
 
          if(str.match(keys1))
@@ -370,9 +370,12 @@ const fs=require('fs')
          var h_i=str.match(keys1);
          h_j=h_i.join('\n').split('\n');
          // //console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",h_j);
+
          if(h_j.length>5)
          {
+
              b.push(h_i);
+             str=removedata(str,h_i,matches5)
              // //console.log("h_i",h_i);
          }
        }
@@ -419,7 +422,7 @@ const fs=require('fs')
  //console.log("EEEEEEEEEEEEEEEEEEEE",experience)
  //    experience=experience.splice(0,experience.length-2)
  //    let expcompany = experience.split('\n').splice(0,5)
-     expcompany =experience.toString().match(/.*\b(IL|PA|HQ|MI|PVT|CA|LTD|CA|LLC|LLP)/gm)
+     expcompany =experience.toString().match(/.*\b(IL|PA|HQ|MI|PVT|CA|LTD|CA|LLC|LLP|CN)/gm)
     if(expcompany!=null&&expcompany!=null){
      expcompany=expcompany.toString().replace(/<[a-z\d]+>|<\/[a-z\d]+>|<[a-z\d]+\/>|&amp;|\t|\:|(([A-Za-z]+\s*\d{4}[ \-|\–]?)|\d{2}\/\d{4})|Present|\–|\n|(\(.*\))|(([A-Za-z]+\s*\d{4}\s*[\-|\s*|]\s*)+\s*|\s\s+)|Page 1 of 3/gmi,'').trim().trim(',')
      obj.companyName=expcompany
@@ -549,6 +552,32 @@ const fs=require('fs')
 
 
 // }
+function removedata(fulldata,block,match2){
+
+  data1=block.join('\n')
+  console.log("in remove1")
+  // console.error("BBBBBBBBBBBBBBBB",data1);
+  if(data1!= null && data1 != undefined){
+    // console.error("ASSS>>>",data1)
+    console.log("in remove2")
+      let reg1=new RegExp(`${match2}`,'gmi')
+      // console.error("AAAAA",reg,"SSSSs",myKeys[i])
+      data1=data1.replace(reg1,'')
+      // console.error('SSSSSS',data1)
+
+      let regdata =data1.trim().replace(/\s+|\n+|\t/g, '\\n*\\s*').replace(/\(/gm,'\\(').replace(/\)/gm,'\\)').replace(/\//gmi,'\\/').replace(/\+/gmi,'\\+').replace(/\$/gmi,'\\$').replace(/\?/gmi,'\\?').replace(/\[/gmi,'\\[').replace(/\]/gmi,'\\]')
+    let reg=new RegExp(`${ regdata }`,'gmi')
+    console.error("::::????????>>>>>>",regdata)
+
+      console.error("::::????????>>>>>>",reg)
+      // console.error("LLLLLLLLLLLLLLLLL",misdata)
+      // console.error("LLLLLLLLLLLLLLLLL",fulldata)
+      // console.log(fulldata)
+      fulldata=fulldata.replace(reg,'')
+      console.log(fulldata);
+     return fulldata
+  }
+}
 function mis(data2){
  let keys1 = /(^(\s*<li>)\n*.*(\n*\s*<\/li>)|^(\s*<p>)\n*.*(\n*\s*<\/p>))/gm
  let c=data2.match(keys1)
