@@ -85,6 +85,7 @@ const fs=require('fs')
 
 
  function education(edu){
+     console.error(edu)
    edu=edu.splice(1,edu.length-2);
    edu=[edu.toString().replace(/<strong>\s*\W\s*<\/strong>/gm,'')]
    let arr = {}
@@ -94,8 +95,9 @@ const fs=require('fs')
        ele=ele.replace(/<(strong|h[1-6]|p|[a-z]+)>\n*\s*(\.)?<\/(strong|h[1-6]|p|[a-z]+)>/gmi,'')
        fs.writeFileSync('./expdata.txt',ele)
        //console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!! ele is",ele);
-       if (( parser.parseFromString(ele).getElementsByTagName('table') || parser.parseFromString(ele).getElementsByTagName('table') )&& ele.includes('<table>','</table>','<td>','</td>') ){
-           arr[i] = tableData(data)
+       if (( parser.parseFromString(ele).getElementsByTagName('table') || parser.parseFromString(ele).getElementsByTagName('table') )&& ele.includes('<table>','</table>','<td>','</td>') ){  
+       
+        arr[i] = tableData(data)
        }else if( parser.parseFromString(ele).getElementsByTagName('ul').length >= 1 ){
            //console.log(" 🤷‍♀asnkcnsalkn" )
            arr[i] = listData(ele)
@@ -290,7 +292,7 @@ const fs=require('fs')
  }
 
  function experience(exp){
-   console.log("In experience function",exp)
+   console.error("In experience function",exp)
    if(exp !=null && exp != undefined)
    {
 
@@ -322,7 +324,10 @@ const fs=require('fs')
  var keys3 = /(((((((J|j)an|(F|f)eb|(M|m)ar|(A|a)pr|(M|m)ay|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(M|m)arch|(A|a)pril|(M|m)ay|(J|j)une|(J|j)uly|(A|a)ugust|(S|s)eptember|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}\s*(\-|\–|\s*|\b.*\b)\s*(((J|j)an|(F|f)eb|(|M|m)ar|(A|a)pr|(|M|m)ay|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(|M|m)arch|(A|a)pril|(|M|m)ay|(J|j)une|(J|j)uly|(A|a)ugust|september|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}|(P|p)resent|(C|c)urrent))|((\d{2}|\d{4})\s*[\/|\-]\s*(\d{4}|\d{2})\s*[\-|\–]?\s*([a-z]*\s*))+)(\(.*\)|)|(((J|j)an|(Ff)eb|(M|m)ar|(A|a)pr|(M|a)y|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(M|a)rch|april|(M|a)y|(J|j)une|(J|j)uly|(A|a)ugust|(S|s)eptember|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}))|^)(\s*<h[1|2|3]>|\s*<strong>)\n*(.*)(\n*\s*(<\/h[1|2|3]>|<\/strong>))\n*(((<[a-z]>)\n*\s*((([A-Za-z]+\s*\d{4}\s*[\-|\W ]?\s*[A-Za-z]+\s*(\d{4})?)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?\s*)+)(\\(.*\\))?)\n*\s*(<\/[a-z]+>))?|(^\s*(<[a-z]+><\/[a-z]+>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^\s*(<em><\/em>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^(\s*<p>)\n*\s*[A-Za-z]+\s([A-Za-z\s*\-\–]+?\d{4}[A-Za-z\s*\-\–]+?)+)(\n*\s*<\/p>))/gm
 
  var matches4 = str.match(keys3)
-
+ if(matches4 == null|| matches4 == undefined){
+    var keys4=/<p>\n*\s*([a-z]+)\s([a-z]+)\s([a-z]+)?\n*\s*<\/p>/gmi
+    matches4 = str.match(keys4)
+}
 
  // console.log(matches4)
    if(matches4 == null){

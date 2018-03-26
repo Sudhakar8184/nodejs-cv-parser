@@ -1,12 +1,11 @@
 
  module.exports.table=function(html){
-    console.log("In tables function");
+    console.error("In tables function");
     var DomParser = require('dom-parser');
     var parser = new DomParser();
     var fs=require('fs');
 
     var obj={};
-    var finalRows=[]
     var tableArr=[];
     var final_obj=[];
     var dom = parser.parseFromString(html);
@@ -20,6 +19,7 @@
     }
 
     for(l=0;l<tableArr.length;l++){
+        var finalRows=[]
     var heading=[];
     var str=tableArr[l];
     var count = (str.match(/<tr>/g)).length;
@@ -50,9 +50,9 @@
     }
 
     var regex=[];
-    regex[0]=/examination|degree|education/i
+    regex[0]=/examination|degree|education|qualification/i
     regex[1]=/board|university/i
-    regex[2]=/institute|school|college/i
+    regex[2]=/institute|school|college|institution/i
     regex[3]=/mark(s|)|cgpa(s|)|%|percentage(s|)|score(s|)|grade(s|)/i
     regex[4]=/year|passout/i
     for(n=0;n<heading.length;n++){
@@ -80,7 +80,7 @@
             heading[n]=""
         }
     }
-
+console.error(heading)
     if(heading.length==finalRows[0].length)
     {
         for(i=0;i<finalRows.length;i++){
@@ -110,6 +110,6 @@
     }
 }
 
-console.log(final_obj)
+console.error(final_obj)
 return final_obj
 }

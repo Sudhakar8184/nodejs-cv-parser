@@ -10,7 +10,8 @@ var logic=require("./logic.js");
 var textRact=require('./textract.js');
 var words=require("./words.js")
 
-console.log('::Starts::')
+console.log('::Starts::');
+console.log=function(){};
 
 function check(file,res){
   console.log(" in check function");
