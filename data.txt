@@ -1,340 +1,192 @@
+
 <p>
-   <strong>anirudh Agarwal								       </strong>
+   <strong>CURRICULUM VITAE</strong>
 </p>
 <p>
-   <strong> ani.agrwl2991@gmail.com </strong>|<strong> 7838766153</strong>
+   <strong>Name:</strong>	Ms. Ruth Nthenya Wambua
 </p>
 <p>
-   <strong>PERSONAL DETAILS</strong>
+   <strong>Profession / Training:</strong>	Computer Science
 </p>
+<p>
+   <strong>Email Address: </strong>ruthdeshy@gmail.com
+</p>
+<p>
+   <strong>Education:</strong>
+</p>
+<p>
+   2011-2013	Master of Science in Computer Science, School of Computing and Informatics, University of Nairobi.
+</p>
+<p>
+   2003-2007	Bachelor of Science in Computer Science, School of Computing and Informatics, University of Nairobi.
+</p>
+<p>
+   1998-2001	Kenya Certificate of Secondary Education, Precious Blood Girls Secondary School – Kilungu.
+</p>
+<p>
+   1990-1997	Kenya Certificate of Primary Education, Unoa Primary School.
+</p>
+<p>
+   <strong>Employment / Experience Record:</strong>
+</p>
+<p>
+   <strong>Year: </strong>February 18–March 1, 2013
+</p>
+<p>
+   <strong>Attended: </strong>Train the Trainer Programme organised by Ripa International in Kenya
+</p>
+<p>
+   <strong>Course Elements: </strong>Qualities, skills and behaviours of a great trainer; Types of learning and learningpreferences; Setting learning objectives; Andragogy; Kolb learning cycle; Training design and aids
+</p>
+<p>
+   <strong>Year: </strong>May 23–July 21, 2012
+</p>
+<p>
+   <strong>Position: </strong>Trainer, ITES-BPO Certificate, School of Computing &amp; Informatics, The University ofNairobi, Kenya
+</p>
+<p>
+   <strong>Responsibility: </strong>Teaching a technical unit on Office Productivity Tools.
+</p>
+<p>
+   <strong>Year: </strong>August 2009 to Present
+</p>
+<p>
+   <strong>Position: </strong>Senior ICT Officer (MIS), The University of Nairobi
+</p>
+<p>
+   <strong>Responsibility: </strong>Software Developer and System Analyst at the University of Nairobi; Responsible forvarious University System analysis, development and implementation. MIS (Management Information Systems).
+</p>
+<p>
+   <strong>Year: </strong>March 08–April 04, 2010
+</p>
+<p>
+   <strong>Position: </strong>PHP Symfony Trainee, Jimma University, Ethiopia
+</p>
+<p>
+   <strong>Responsibility: </strong>Developing software with the PHP Symfony framework using state of the art softwareengineering principles. Training held at Jimma University, Ethiopia.
+</p>
+<p>
+   <strong>Year: </strong>April 2008–August 2009
+</p>
+<p>
+   <strong>Position: </strong>Retail Agent / Customer Experience Agent, Safaricom Ltd. Company
+</p>
+<p>
+   <strong>Responsibility: </strong>Dealing with various customer related issues as regards to telecommunication. Thisinvolved troubleshooting laptop and mobile problems.
+</p>
+<p>
+   <strong>Year: </strong>December 2007 - April 2008
+</p>
+<p>
+   <strong>Position: </strong>Software Developer, Vega Software Ltd. Company
+</p>
+<p>
+   <strong>Responsibility: </strong>Software Development in Microsoft Dynamics Nav.
+</p>
+
 <table>
    <tr>
       <td>
          <p>
-            Date of Birth
+            <strong>Languages:</strong>
          </p>
 </td>
-      <td>
-         <ul>
-            <li>
-               September 02, 1991 
-            </li>
-</ul>
-</td>
+      <td></td>
+      <td></td>
+      <td></td>
 </tr>
    <tr>
+      <td></td>
       <td>
          <p>
-            father’s name
-         </p>
-</td>
-      <td>
-         <ul>
-            <li>
-               Mr. Sanjay Kumar Agarwal
-            </li>
-</ul>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            address
-         </p>
-</td>
-      <td>
-         <ul>
-            <li>
-               B-132 sector-52 Noida
-            </li>
-</ul>
-</td>
-</tr>
-</table>
-<p>
-   <strong>OBJECTIVE</strong>
-</p>
-<table>
-   <tr>
-      <td>
-         <p>
-            Being a useful part of well-reputed organization to enhance my skills in order to accept the challenges, through my professional experience.
-         </p>
-</td>
-</tr>
-</table>
-<p>
-   <strong>PROFILE</strong>
-</p>
-<table>
-   <tr>
-      <td>
-         <ul>
-            <li>
-               Skilled in programming languages and using them for software development.
-            </li>
-            <li>
-               Skilled in leading the team from the front.
-            </li>
-</ul>
-</td>
-</tr>
-</table>
-<p>
-   <strong>PROJECT</strong>
-</p>
-<table>
-   <tr>
-      <td>
-         <p>
-            TITLE
+            Speaking
          </p>
 </td>
       <td>
          <p>
-            DESCRIPTION
+            Reading
+         </p>
+</td>
+      <td>
+         <p>
+            Writing
          </p>
 </td>
 </tr>
    <tr>
       <td>
          <p>
-            vehicle management
-         </p>
-         
-</td>
-      <td>
-         <p>
-            Vehicle Management System is software which is helpful for bus operators, who wants to operate many bus trips in a day. It focus in the area of adding, editing and deleting the passengers, staff and the bus routes. He can add a bus and its details including bus route details. User can also add the details of the staff and their duty time in the system.
-         </p>
-         <p>
-            TECHNOLOGY USED:- java, ms access
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            departmental store management               
+            English
          </p>
 </td>
       <td>
          <p>
-            Departmental Store Management is software which is used for keeping track of all commodities present in the store and if there is any shortage, it will give an alert message to fill inventory. It also helps in maintaining details of employees. User can add, delete or modify details of employee as well as product. It can also create bills.
+            Excellent
          </p>
+</td>
+      <td>
          <p>
-            TECHNOLOGY USED:- visual BASICS, mysql
+            Excellent
+         </p>
+</td>
+      <td>
+         <p>
+            Excellent
          </p>
 </td>
 </tr>
    <tr>
       <td>
          <p>
-            BANKING MANAGEMENT SYSTEM
+            Kiswahili
          </p>
 </td>
       <td>
          <p>
-            Banking Management System is a software which is used to keep tracks of all the account holders. It helps to open an account as well as do transactions (i.e. withdrawal or deposit) and even helps in modifying details of account holders.
-         </p>
-         <p>
-            TECHNOLOGY USED:- JAVA,MY SQL 5,JSP,CSS
-         </p>
-</td>
-</tr>
-</table>
-<p>
-   <strong>ACADEMIC RECORD</strong>
-</p>
-<table>
-   <tr>
-      <td>
-         <p>
-            <strong>Qualification</strong>
+            Excellent
          </p>
 </td>
       <td>
          <p>
-            <strong>Institution</strong>
+            Excellent
          </p>
 </td>
       <td>
          <p>
-            <strong>Score</strong>
-         </p>
-</td>
-      <td>
-         <p>
-            <strong>Year</strong>
+            Excellent
          </p>
 </td>
 </tr>
    <tr>
       <td>
          <p>
-            Master in Computer Application
+            Kikamba
          </p>
 </td>
       <td>
          <p>
-            Birla Institute Of Technology
+            Excellent
          </p>
 </td>
       <td>
          <p>
-            76.6%
+            Excellent
          </p>
 </td>
       <td>
          <p>
-            Pursuing
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            B  Sc  Mathematical Science
-         </p>
-</td>
-      <td>
-         <p>
-            Maharaja Agarsen College,  University  of  Delhi
-         </p>
-</td>
-      <td>
-         <p>
-            70.4%
-         </p>
-</td>
-      <td>
-         <p>
-            2012
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            C.B.S.E  (10+2)
-         </p>
-</td>
-      <td>
-         <p>
-            Amity International School Noida
-         </p>
-</td>
-      <td>
-         <p>
-            74.4%
-         </p>
-</td>
-      <td>
-         <p>
-            2009
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            C.B.S.E (10)
-         </p>
-</td>
-      <td>
-         <p>
-            Amity International School Noida
-         </p>
-</td>
-      <td>
-         <p>
-            68.4%
-         </p>
-</td>
-      <td>
-         <p>
-            2007
+            Excellent
          </p>
 </td>
 </tr>
 </table>
 <p>
-   <strong>CERTIFICATIONS</strong>
+   <strong>Certification:</strong>
 </p>
-<table>
-   <tr>
-      <td>
-         <p>
-            <strong>Certification</strong>
-         </p>
-</td>
-      <td>
-         <p>
-            <strong>Institution</strong>
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            Doeacc (A level)
-         </p>
-</td>
-      <td>
-         <p>
-            Doeacc Society
-         </p>
-</td>
-</tr>
-</table>
 <p>
-   <strong>CERTAIN HIGHLIGHTS</strong>
+   I, the undersigned, certify to the best of my knowledge and belief, that this data correctly describes me, my qualifications and experience.
 </p>
-<table>
-   <tr>
-      <td>
-         <p>
-            IT  SKILLS
-         </p>
-</td>
-      <td>
-         <ul>
-            <li>
-               Database Management System
-            </li>
-            <li>
-               C And C++
-            </li>
-            <li>
-               Java
-            </li>
-            <li>
-               MS Office
-            </li>
-</ul>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            CO‐CURRICULAR ACTIVITIES AND ACHIEVEMENTS 
-         </p>
-</td>
-      <td>
-         <ul>
-            <li>
-               Academic Award <em>(3<sup>rd</sup> position ”Maharaja Agarsen College , Delhi University”),</em> 2011
-            </li>
-            <li>
-               Web Designing (1<sup>st</sup> prize “Inter College Competition” )
-            </li>
-            <li>
-               PowerPoint Presentation (2<sup>nd</sup> prize “Inter College Competition” 
-            </li>
-            <li>
-               Have basic knowledge about android and working in advance level by going through blogs and tutorials available on internet. Worked as an intern in RADICAL LOGIX and developed a small application of SCHOOL MANAGEMENT for them.
-            </li>
-</ul>
-</td>
-</tr>
-</table>
+
+<p>
+   Ruth Nthenya Wambua.
+</p>

@@ -11,7 +11,6 @@ var textRact=require('./textract.js');
 var words=require("./words.js")
 
 console.log('::Starts::');
-console.log=function(){};
 
 function check(file,res){
   console.log(" in check function");
@@ -45,7 +44,7 @@ function check(file,res){
       words.obj.careerObjective=null;
       words.obj.academicQualifications=null;
       words.obj.languages=null;
-      words.obj.hobbies=null;
+      words.obj.interests=null;
       words.obj.miscellaneous=null;
 
       var j=0;
@@ -57,7 +56,7 @@ function check(file,res){
       //console.log(html);
       var messages = result.messages; // Any messages, such as warnings during conversion
       var data=htmlBeautify(html).toString();
-      console.log("1st",data);
+      //console.log("1st",data);
         data=data.replace(/(<p>)?\n*\s*<img[\n*|\s*]+.*\/*>\s*[a-z\s]+\s*\n*(<\/p>)?/gmi,"").replace(/^(\s*<p>)\n*\s*(Page\s*\d*)(\n*\s*<\/p>)|^\s*<a\s*id="page[\d*]">|\|\|\►|<(strong|h[1-6]|p)>\n*\s*(\.)?<\/(strong|h[1-6]|p)>|\s\s+&amp;|<br\s*\/>/gm,"");
         data=data.replace(/<a\s*href=".*">|<\/a>/gmi,'')
         //making each and every line as a seperate string and storing in an array named arr
@@ -67,7 +66,11 @@ function check(file,res){
         arr[i]=arr[i].trim();
       }
       fs.writeFileSync('./data.txt',data)
-        //console.log("1st ",arr[1]);
+      // var namedictio=fs.readFileSync('./nameregex.txt');
+      // var regexname=new RegExp(`${namedictio}`,'gmi')
+      // namedictio=data.toString().replace(regexname,"")
+      // fs.writeFileSync('./nameregex1.txt',namedictio)
+        console.log("1st ",arr[1]);
 
       var dom = parser.parseFromString(html);
       //  console.log( dom.getElementsByTagName('p')); //in this case,it will return total num of p tags as an empty objects
@@ -85,12 +88,13 @@ function check(file,res){
 
       //console.log(h1Arr);
       logic.logic(strongArr,arr,h1Arr,html,data);
-      textRact.textRact(file,res,data);
+      var mynameTextractFlag=logic.mynameFlag;
+      textRact.textRact(file,res,data,mynameTextractFlag);
       html=null;
       data=null;
       strongArr=null;
       h1Arr=null;
-      console.log("ccccccc",new Date()-start );
+      console.log("ccccccc",new Date()-start,logic.mynameFlag );
 
 
       function ShowResults(value, index, ar) {

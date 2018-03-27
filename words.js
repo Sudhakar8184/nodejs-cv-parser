@@ -32,7 +32,7 @@ module.exports.obj={
       careerObjective:null,
       academicQualifications:null,
       languages:null,
-      hobbies:null,
+      interests:null,
       miscellaneous:null
 
  }

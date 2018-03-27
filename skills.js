@@ -4,8 +4,8 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
   var execu = require("./execution.js")
   let count = 0;
   let count1 = 0;
-  console.log(data);
-  let keyUpgrade = `${myName}|Summary of Qualification(|s)|ACADEMIC RECORD|IT  SKILLS|CO‐CURRICULAR ACTIVITIES AND ACHIEVEMENTS |COMPUTER PROFICIENCY|Extra Curriculum achievements|CERTIFICATIONS\/LICENSES|KEY SKILLS COMPETENCIES|PERSONAL SUMMARY|KEY SKILLS &amp; COMPETENCIES|PROJECTS UNDERTAKEN|WORKSHOPS/CERTIFICATIONS/SEMINARS|EXTRA CIRRICULAR ACTIVITIES|AWARDS/HONOURS|LANGUAGES KNOWN|HOBBIES &amp; INTERESTS|Subject Based Academic Projects|REFERENCES|PROFESSIONAL TRAINING(|&amp;) PROJECTS|Qualitative Skill(|s)|Additional Skill(|s)|Campus Activitie(|s)|ACADEMIC CREDENTIAL(|S)|career summary|key project(|s)|Technical Skill(|s)|ACADEMIC QUALIFICATION(|S)|Professional Summary|PROFESSIONAL TRAINING & PROJECTS|Summary|Professional Objective|Employment Objective|Car(e|r)er Objective|Objective|Career Goal|Five Year Plan|Interests (|and) (|Hobbies)|Employment History|PROFESSIONAL DOSSIER|Work History|Work Experience|(Professional Experience(|s))|JOB PROFILE|Professional Background|Preference(|s)|Additional Experience|Career Related Experience|Related Experience|Industry Experience|Accounting Experience|Freelance Experience|Freelance|Army Experience|Military Experience|Strength(|s)|Military Background|Experience|Academic Background|Academic Experience|Program(|s)|Related Course(|s)|Course(|s)|Education and Training|Education|Educational Background|Educational Qualification(|s)|Educational Training|Academic Training|Professional Training|Training|Course Project Experience|Related Course Project(|s)|Internship Experience|Internship(|s)|Apprenticeship(|s)|College Activitie(|s)|Certification(|s)|Special Training|Training|Activities and Honor(|s)|Affiliation(|s)|Professional Affiliation(|s)|Professional Association(|s)|Association(|s)|Professional Membership(|s)|Membership(|s)|Athletic Involvement|Community Involvement|Civic Activitie(|s)|Extra-Curricular Activitie(|s)|POSITIONS OF RESPONSIBILITY|Reporting|EXTRA CURRICULAR (|ACHIEVEMENT(|s)|Activities)|Extra\\-?curricular|Professional Activitie(|s)|Volunteer Work|Volunteer Experience|Publication(|s)|CAREER HIGHLIGHTS|PROFESSIONAL QUALIFICATIONS AND AFFILIATIONS|Presentation(|s)|Convention(|s)|Credential(|s)|Skills (|&|and) Expertise|Areas of Experience|Areas of Expertise|Areas of Knowledge|Career Related Skill(|s)|Professional Skill(|s)|Specialized Skill(|s)|Computer Skill(|s)|Computer Knowledge|Software|Technologie(|s)|Technical Experience|Proficiencie(|s)|Language Competencies and Skill(|s)|Programming Language(|s)|Relevant Skills|Technology Skill(|s)|About Me|Skill(|s)|Academic Honor(|s)|Academic(|s)|Honor(|s)|Professional Development|Internship and Research Projects|Accolade(|s)|Endorsement(|s)|Achievement(|s)|Award(|s)|Distinction(|s)|Fellowship(|s)|Scholarship(|s)|Hobbie(|s)|Personal Interest(|s)|Strength(|s)|Interest(|s)|Miscellaneou(|s)|personal project(|s)|Procedures|group project(|s)|other project(|s)|project(|s)|(Language(|s)[ ]Proficiency)|Languages to|Language(|s)|personal detail(|s)|Accomplishment(|s)|personal information|SAP HCM SKILLS|OTHER EDUCATIONAL QUALIFICATION DETAILS|Declaration|Awards|Honors and Awards|profile|introduction|Career Profile|Key Skills|Voluntary Experience|Referees`
+  //console.log(data);
+  let keyUpgrade = `${myName}|RESEARCH INTERESTS|Summary of Qualification(|s)|Employment / Experience Record:|ACADEMIC RECORD|IT  SKILLS|CO‐CURRICULAR ACTIVITIES AND ACHIEVEMENTS |COMPUTER PROFICIENCY|Extra Curriculum achievements|CERTIFICATIONS\/LICENSES|KEY SKILLS\\s*(AND)?\\s*COMPETENCIES|PERSONAL SUMMARY|KEY SKILLS &amp; COMPETENCIES|PROJECTS UNDERTAKEN|WORKSHOPS/CERTIFICATIONS/SEMINARS|EXTRA CIRRICULAR ACTIVITIES|AWARDS/HONOURS|LANGUAGES KNOWN|HOBBIES &amp; INTERESTS|Subject Based Academic Projects|REFERENCES|PROFESSIONAL TRAINING(|&amp;) PROJECTS|Qualitative Skill(|s)|Additional Skill(|s)|Campus Activitie(|s)|ACADEMIC CREDENTIAL(|S)|career summary|key project(|s)|Technical Skill(|s)|ACADEMIC QUALIFICATION(|S)|Professional Summary|PROFESSIONAL TRAINING & PROJECTS|Summary|Professional Objective|Employment Objective|Car(e|r)er Objective|Objective|Career Goal|Five Year Plan|Interests (|and) (|Hobbies)|Employment History|PROFESSIONAL DOSSIER|Work History|Work Experience|(Professional Experience(|s))|JOB PROFILE|Professional Background|Preference(|s)|Additional Experience|Career Related Experience|Related Experience|Industry Experience|Accounting Experience|Freelance Experience|Freelance|Army Experience|Military Experience|Strength(|s)|Military Background|Experience|Academic Background|Academic Experience|Program(|s)|Related Course(|s)|Course(|s)|Education and Training|Education|Educational Background|Educational Qualification(|s)|Educational Training|Academic Training|Professional Training|Training|Course Project Experience|Related Course Project(|s)|Internship Experience|Internship(|s)|Apprenticeship(|s)|College Activitie(|s)|Certification(|s)|Special Training|Training|Activities and Honor(|s)|Affiliation(|s)|Professional Affiliation(|s)|Professional Association(|s)|Association(|s)|Professional Membership(|s)|Membership(|s)|Athletic Involvement|Community Involvement|Civic Activitie(|s)|Extra-Curricular Activitie(|s)|POSITIONS OF RESPONSIBILITY|Reporting|EXTRA CURRICULAR (|ACHIEVEMENT(|s)|Activities)|Extra\\-?curricular|Professional Activitie(|s)|Volunteer Work|Volunteer Experience|Publication(|s)|CAREER HIGHLIGHTS|PROFESSIONAL QUALIFICATIONS AND AFFILIATIONS|Presentation(|s)|Convention(|s)|Credential(|s)|Skills (|&|and) Expertise|Areas of Experience|Areas of Expertise|Areas of Knowledge|Career Related Skill(|s)|Professional Skill(|s)|Specialized Skill(|s)|Computer Skill(|s)|Computer Knowledge|Software|Technologie(|s)|Technical Experience|Proficiencie(|s)|Language Competencies and Skill(|s)|Programming Language(|s)|Relevant Skills|Technology Skill(|s)|About Me|Skill(|s)|Academic Honor(|s)|Academic(|s)|Honor(|s)|Professional Development|Internship and Research Projects|Accolade(|s)|Endorsement(|s)|Achievement(|s)|Award(|s)|Distinction(|s)|Fellowship(|s)|Scholarship(|s)|Hobbie(|s)|Personal Interest(|s)|Strength(|s)|Interest(|s)|Miscellaneou(|s)|personal project(|s)|Procedures|group project(|s)|other project(|s)|project(|s)|(Language(|s)[ ]Proficiency)|Languages to|Language(|s)|personal detail(|s)|Accomplishment(|s)|personal information|SAP HCM SKILLS|OTHER EDUCATIONAL QUALIFICATION DETAILS|Declaration|Awards|Honors and Awards|profile|introduction|Career Profile|Key Skills|Voluntary Experience|Referees`
 
   // console.log("Data is ********",data);
   // console.log("My strong arr is *******",strongArr);
@@ -30,42 +30,44 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
     var block_array1 = [];
     for (let i = 0; i < myKeys.length; i++) {
       let j = i;
-      blocks.length = 0;
+      blocks = null;
       let match1, match2, block_regex;
       match1 = myKeys[j];
       match2 = myKeys[++j];
       if (j == myKeys.length) {
-        console.log("ifhello")
+        //console.log("ifhello")
         blocks = data.match(new RegExp(`${match1}\\n?(.*\\n*)+`, 'gmi'));
         // console.error("&&&&&&&&&&&&&&& in if",blocks);
         // data=removedata(data,blocks)
         block_array1 = block_array1.concat(blocks);
-        // data=removedata(data,blocks)
+         data=removedata(data,blocks)
       }
       else {
-        console.log("elsehello")
+        //console.log("elsehello")
         block_regex = `(${match1})\\n?(.*\\n)+(\\s*${match2})`
         let keys1 = new RegExp(block_regex, 'gmi')
         if (keys1.test(data)) {
 
           blocks = data.match(keys1);
-          console.log("ifhello")
+          //console.log("ifhello")
           // console.error("&&&&&&&&&&&&&&& in if",blocks);
           // console.error(data)
           // console.error("&&&&&&&&&&&&&&& in else",data);
           block_array1 = block_array1.concat(blocks);
-          console.log("ifhello")
+          //console.log("ifhello")
           data = removedata(data, blocks, match2)
-          console.log(data);
+          //console.log(data);
 
         }
       }
     }
-    console.log("hello")
+    // console.log("hello")
     return block_array1;
   }
-
-  // console.error(block_array);
+  var block_array = block_array.filter(function (x) {
+    return (x !==null);
+  });
+   console.error(block_array);
   let proFlag = false, skillFlag = false, extraskillFlag = false, careerFlag = false, expFlag = false, eduFlag = false, langFlag = false, hobbieFlag = false;
   for (let i = 0; i < block_array.length; i++) {
     let skillFuc = [], careerFuc = [], projectFuc = [], eduFuc = [], expFuc = [], langFuc = [], extraskillFuc = [], hobbieFuc = [];
@@ -124,7 +126,7 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
     }
 
     if (eduFuc == null || eduFuc == undefined || eduFuc.length == 0) {
-      let edureg = ['academic', 'education']
+      let edureg = ['academic ', 'education']
       eduFuc = search(edureg, innerArray);
       if (eduFuc.length > 0) {
         eduFlag = true;
@@ -160,7 +162,10 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
     let reskillFlag = false;
     // console.error(myKeys1)
     var misblock_arr = block(misdata, myKeys)
-    //  console.error(misblock_arr)
+     console.error(misblock_arr)
+     var misblock_arr = misblock_arr.filter(function (x) {
+      return (x !==null);
+    });
     for (let i = 0; i < misblock_arr.length; i++) {
       let innerArray = misblock_arr[i].split('\n');
       let reskillFuc = [];
@@ -240,11 +245,11 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
   function removedata(fulldata, block, match2) {
 
     data1 = block.join('\n')
-    console.log("in remove1")
+    //console.log("in remove1")
     // console.error("BBBBBBBBBBBBBBBB",data1);
     if (data1 != null && data1 != undefined) {
       // console.error("ASSS>>>",data1)
-      console.log("in remove2")
+      //console.log("in remove2")
       let reg1 = new RegExp(`${match2}`, 'gmi')
       // console.error("AAAAA",reg,"SSSSs",myKeys[i])
       data1 = data1.replace(reg1, '')
@@ -259,7 +264,7 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
       // console.error("LLLLLLLLLLLLLLLLL",fulldata)
       // console.log(fulldata)
       fulldata = fulldata.replace(reg, '')
-      console.log(fulldata);
+      //console.log(fulldata);
       return fulldata
     }
   }
