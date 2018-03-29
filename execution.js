@@ -307,7 +307,7 @@ const fs=require('fs')
       // var str=exp.splice(1,exp.length-2).join('\n')
       // console.error("In experience function AAAAAAAAA",str)
       str=str.replace(/<table>|<\/table>|<td>|<\/td>|<tr>|<\/tr>|<th>|<\/th>|<thead>|<\/thead>|<tbody>|<\/tbody>|<(strong|h[1-6]|p)>\n*\s*(\.)?<\/(strong|h[1-6]|p)>/gmi,"")
-      str=str.replace(/(<\/strong>|<\/h[1-6])\n*\s*([a-z]+)?\n*\s*<\/p>\n*\s*<p>\n*\s*(<strong>|<h[1-6]>)/gmi,"")
+      str=str.replace(/(<\/strong>|<\/h[1-6])\n*\s*([a-z]+\s*)*?\n*\s*<\/p>\n*\s*<p>\n*\s*(<strong>|<h[1-6]>)/gmi,"")
       str=str.replace(/(Swenson page 2|(Roles (&amp;|and|)|key|)\s*Responsibilities\s*(\-\:|\:|\-|\:\-|\–|)(Handling)?|(Primary|Secondary|Job) Responsibilities\s*(\-\:|\:|\-|\:\-|\–|)|Key Accomplishment(s|)\s*(\-\:|\:|\-|\:\-|\–|)|Company’s Profile\s*(\-\:|\:|\-|\:\-|\–|)|Attended(\-\:|\:|\-|\:\-|\–|)|Course Elements(\-\:|\:|\-|\:\-|\–|)|Position(\-\:|\:|\-|\:\-|\–|)|Responsibility(\-\:|\:|\-|\:\-|\–|)|(<em>)?duties(<em>)?(\-\:|\:|\-|\:\-|\–|)|Page 1 of 3)/gmi,"")
       str=str.replace(/<(strong|h[1-6]|p|[a-z]+)>\n*\s*(\.)?(TITLE|DESCRIPTION)?\n*\s*<\/(strong|h[1-6]|p|[a-z]+)>/gmi,'')
  
@@ -569,21 +569,21 @@ function removedata(fulldata,block,match2){
   if(data1!= null && data1 != undefined){
     // console.error("ASSS>>>",data1)
     console.log("in remove2")
-      let reg1=new RegExp(`${match2}`,'gmi')
+      let reg1=new RegExp(`${match2}`,'mi')
       // console.error("AAAAA",reg,"SSSSs",myKeys[i])
       data1=data1.replace(reg1,'')
       // console.error('SSSSSS',data1)
 
       let regdata =data1.trim().replace(/\s+|\n+|\t/g, '\\n*\\s*').replace(/\(/gm,'\\(').replace(/\)/gm,'\\)').replace(/\//gmi,'\\/').replace(/\+/gmi,'\\+').replace(/\$/gmi,'\\$').replace(/\?/gmi,'\\?').replace(/\[/gmi,'\\[').replace(/\]/gmi,'\\]')
     let reg=new RegExp(`${ regdata }`,'gmi')
-    console.error("::::????????>>>>>>",regdata)
+    // console.error("::::????????>>>>>>",regdata)
 
-      console.error("::::????????>>>>>>",reg)
+    //   console.error("::::????????>>>>>>",reg)
       // console.error("LLLLLLLLLLLLLLLLL",misdata)
       // console.error("LLLLLLLLLLLLLLLLL",fulldata)
       // console.log(fulldata)
       fulldata=fulldata.replace(reg,'')
-      console.log(fulldata);
+    //   console.log(fulldata);
      return fulldata
   }
 }
@@ -698,7 +698,7 @@ for(let i=0;i<arr.length;i++)
 
  }
  }
- // console.error(arr)
+//  console.error("AAAAAAAAAAAAAAAAAA",arr)
  return diffdate(arr)
  }
 

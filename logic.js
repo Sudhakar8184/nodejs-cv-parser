@@ -151,7 +151,7 @@ module.exports.logic = function (strongArr, arr, h1Arr, html, data) {
 
     ffn = ffn.trim();
     ffn = ffn.replace(/(\t{1,}|Birthday|Gender|mobile|phone|email|(mobile|phone)\s+(num|no|number)|visa(\s+status)?|nationality|dob|date of birth)(.*)/, "❌$1")
-    ffn = ffn.replace(/❌.*/, '')
+    ffn = ffn.replace(/❌.*|(\\n|\s\s+|<p>|<?\/.*>)/, '')
     console.log(ffn)
 
     words.obj.details.fatherName = ffn.trim();
@@ -323,7 +323,7 @@ module.exports.logic = function (strongArr, arr, h1Arr, html, data) {
   if (/(- Email me on Indeed).*\n*\s*((<\/.*>)|<.*>)?\n*\s*(<\/.*>|<.*>)?\n*\s*.*\d/gmi.test(skill1.misdata)) {
     var mailId = skill1.misdata.toString().match(/(- Email me on Indeed).*\n*\s*((<\/.*>)|<.*>)?\n*\s*(<\/.*>|<.*>)?\n*\s*.*\d/gmi)
     console.log(mailId)
-    mailId = mailId.toString().replace(/- Email me on Indeed:/gm, '')
+    mailId = mailId.toString().replace(/(- Email me on Indeed:|\n|\s\s+|<.*>|<\/.*>)/gmi, '')
     console.log("email id is :", mailId);
     words.obj.details.email = mailId;
 

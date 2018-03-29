@@ -40,7 +40,10 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
         // console.error("&&&&&&&&&&&&&&& in if",blocks);
         // data=removedata(data,blocks)
         block_array1 = block_array1.concat(blocks);
-         data=removedata(data,blocks)
+        if(blocks!=null && blocks!=undefined){
+          data=removedata(data,blocks)
+        }
+         
       }
       else {
         //console.log("elsehello")
@@ -252,7 +255,7 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
     if (data1 != null && data1 != undefined) {
       // console.error("ASSS>>>",data1)
       //console.log("in remove2")
-      let reg1 = new RegExp(`${match2}`, 'gmi')
+      let reg1 = new RegExp(`${match2}`, 'mi')
       // console.error("AAAAA",reg,"SSSSs",myKeys[i])
       data1 = data1.replace(reg1, '')
       // console.error('SSSSSS',data1)
@@ -261,7 +264,7 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
       let reg = new RegExp(`${regdata}`, 'gmi')
       // console.error("::::????????>>>>>>", regdata)
 
-      console.error("::::????????>>>>>>", reg)
+      //console.error("::::????????>>>>>>", reg)
       // console.error("LLLLLLLLLLLLLLLLL",misdata)
       // console.error("LLLLLLLLLLLLLLLLL",fulldata)
       // console.log(fulldata)
