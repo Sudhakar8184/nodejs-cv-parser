@@ -159,6 +159,7 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
   misskill(misdata, myKeys)
   module.exports.misdata = misdata
   function misskill(misdata, myKeys1) {
+    console.error("~~~~~~~",misdata)
     let reskillFlag = false;
     // console.error(myKeys1)
     var misblock_arr = block(misdata, myKeys)
@@ -217,6 +218,7 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
     return answer;
   }
   function mis(fulldata, data1) {
+    // console.error("@@@@@@@@@@@@#############",data1);
     let str1 = ''
     for (let i = 0; i < data1.length; i++) {
       str1 = str1 + " " + data1[i]
@@ -231,9 +233,9 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
         data1 = data1.replace(reg, '')
         // console.error('SSSSSS',data1)
       }
-      let regdata = data1.trim().replace(/\s+|\n+|\t/g, '\\n*\\s*').replace(/\(/gm, '\\(').replace(/\)/gm, '\\)').replace(/\//gmi, '\\/').replace(/\+/gmi, '\\+').replace(/\$/gmi, '\\$').replace(/\?/gmi, '\\?')
+      let regdata = data1.trim().replace(/\s+|\n+|\t/g, '\\n*\\s*').replace(/\(/gm, '\\(').replace(/\)/gm, '\\)').replace(/\//gmi, '\\/').replace(/\+/gmi, '\\+').replace(/\$/gmi, '\\$').replace(/\?/gmi, '\\?').replace(/\]/gmi, '\\]').replace(/\[/gmi, '\\[')
       let reg = new RegExp(`${regdata}`, 'gmi')
-      // console.error("::::????????>>>>>>",reg)
+      console.error("::::????????>>>>>>",reg)
       // console.error("LLLLLLLLLLLLLLLLL",misdata)
       // console.error("LLLLLLLLLLLLLLLLL",fulldata)
       return fulldata.replace(reg, '')
@@ -259,7 +261,7 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
       let reg = new RegExp(`${regdata}`, 'gmi')
       // console.error("::::????????>>>>>>", regdata)
 
-      // console.error("::::????????>>>>>>", reg)
+      console.error("::::????????>>>>>>", reg)
       // console.error("LLLLLLLLLLLLLLLLL",misdata)
       // console.error("LLLLLLLLLLLLLLLLL",fulldata)
       // console.log(fulldata)

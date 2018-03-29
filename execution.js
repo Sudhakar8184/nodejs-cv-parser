@@ -13,7 +13,7 @@ const fs=require('fs')
  //console.log("my hobbie execu returned array is :",hobbieExecu);
  let misExecu =mis(misdata)
  if(misExecu!= undefined){
- words.obj.miscellaneous=misExecu
+     words.obj.miscellaneous=misExecu
  }
  let reskillExecu=activities(addreskill)
  if(reskillExecu!=undefined){
@@ -204,7 +204,7 @@ const fs=require('fs')
    }
 
    function breakStrong(ele,obj){
-      console.error("ele in breakStrong",ele);
+      //console.error("ele in breakStrong",ele);
        // let dateReg = /((\s*(19[5-9]\d|20[0-4]\d|2050))|(Jan|Apr|May|June|July|Aug|Sep|Oct|Nov|Dec)\s\d{2})/gi
        let dateReg = /(\s*([^\w]|^)(19[5-9]\d|20[0-4]\d|2050))/gi
        let degreeReg = /\s*(Bachelor(|s) of Science|Masters, Business Administration|MBA|Masters of Business Administration|Bachelor of Commerce|B\.S|HSC|SSC|PGDM|PGDCA|M.Tech|B.Tech|B\.Tech|Biotechnology|Diploma|\bBA\b|Doctorate |Bachelors of (|commerce)|B(|\W)Tech(|\W)|M(|\W)Tech(|\W)|XII|\bX\b|12th|1(2|0)<sup>th|10th|([A-Za-z]+\s*[A-Za-z]+)\s*(M|m)anagement)\s*/gmi
@@ -232,7 +232,7 @@ const fs=require('fs')
        let marksReg = /((\s*(\d{2}|\d{2}[\.](\d{1,2}))[\%])|(\s*\d{1}\.\d{1,2}\b)|\b(\d{1}|\d{2})\s*(cgpa|grades)\b|((cgpa(\s*:|\s*)|grades(\s*:|\s*)|percentage(\s*:|\s*))\s*((\d{1}.\d{1,2})|(\d{2}[\.](\d{1,2})|\d{2}))))/g
        //console.log( " ❌" , ele)
        ele = ele.replace(/\s\s+/gm,' ').split(',').filter( el => el.length > 1 ).map( el => el.replace(/\.$|<\w+>|<\/\w+>/g,'').replace(/\t/g,' '))
-       console.error( " ❌" , ele)
+       //console.error( " ❌" , ele)
        // obj.year = ele.map( el => dateReg.test(el) ? el.match(dateReg) : undefined).filter( el => el != undefined ).map( el => el.toString().trim())
        // let f = ele.map( el => dateReg.test(el) ? //console.log( " 👳‍♀", el.match(dateReg), ' ::' ,el) : undefined)
        // //console.log( " 🤼‍♀", f)
@@ -319,7 +319,7 @@ const fs=require('fs')
       //         return str
       //     }
       // }
-      console.error("In experience function AAAAAAAAA",str)
+      //console.error("In experience function AAAAAAAAA",str)
  
  
   var keys3 = /((\s*(<(strong|h[1-6]|p|[a-z]+)>(project\s*title|(y|Y)ear)(\-\:|\:|\-|\:\-|\–|)\n*\s*<\/(strong|h[1-6]|p|[a-z]+)>)((january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)(\.|)\s*(\d{4}|\d{2})\s*(\-|\–|\s*|\b.*\b)\s*((january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)(\.|)\s*(\d{4}|\d{1,2})|present|current))?)|((((((J|j)an|(F|f)eb|(M|m)ar|(A|a)pr|(M|m)ay|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(M|m)arch|(A|a)pril|(M|m)ay|(J|j)une|(J|j)uly|(A|a)ugust|(S|s)eptember|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}\s*(\-|\–|\s*|\b.*\b)\s*(((J|j)an|(F|f)eb|(|M|m)ar|(A|a)pr|(|M|m)ay|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(|M|m)arch|(A|a)pril|(|M|m)ay|(J|j)une|(J|j)uly|(A|a)ugust|september|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}|(P|p)resent|(C|c)urrent))|((\d{2}|\d{4})\s*[\/|\-]\s*(\d{4}|\d{2})\s*[\-|\–]?\s*([a-z]*\s*))+)(\(.*\)|)|(((J|j)an|(Ff)eb|(M|m)ar|(A|a)pr|(M|a)y|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(M|a)rch|april|(M|a)y|(J|j)une|(J|j)uly|(A|a)ugust|(S|s)eptember|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}))|^)(\s*<h[1|2|3]>|\s*<strong>)\n*(.*)(\n*\s*(<\/h[1|2|3]>|<\/strong>))\n*(((<[a-z]>)\n*\s*((([A-Za-z]+\s*\d{4}\s*[\-|\W ]?\s*[A-Za-z]+\s*(\d{4})?)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?\s*)+)(\\(.*\\))?)\n*\s*(<\/[a-z]+>))?|(^\s*(<[a-z]+><\/[a-z]+>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^\s*(<em><\/em>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^(\s*<p>)\n*\s*[A-Za-z]+\s([A-Za-z\s*\-\–]+?\d{4}[A-Za-z\s*\-\–]+?)+)(\n*\s*<\/p>))/gmi
@@ -452,7 +452,7 @@ const fs=require('fs')
      regexDuend=duration.toString().match(/(\-|\–|\b(to)\b).*/img)
      if(regexDuStart!=undefined&&regexDuStart!=null&&regexDuend!=undefined&&regexDuend!=null){
          
-         if((/\d{4}/gmi).test(regexDuStart.toString()) && (/\d{4}/gmi).test(regexDuend.toString())){
+         if((/\d{4}/gmi).test(regexDuStart.toString())){
        let totaldur=totalDuration(regexDuStart,regexDuend)
        if(totaldur!=null && totaldur!=undefined){
            console.error(totaldur)
@@ -588,7 +588,7 @@ function removedata(fulldata,block,match2){
   }
 }
 function mis(data2){
- let keys1 = /(^(\s*<li>)\n*.*(\n*\s*<\/li>)|^(\s*<p>)\n*.*(\n*\s*<\/p>))/gm
+ let keys1 = /(^(\s*<li>)\n*.*(\n*\s*<\/li>)|^(\s*<p>)\n*.*(\n*\s*<\/p>))|<.*>\n*\s*.*\n*\s*<\/.*>/gm
  let c=data2.match(keys1)
  if(c!=null&& c!=undefined){
  let exparr=c.map((ele)=>ele.replace(/<[a-z]+>|\|\|\•|\●|<\/[a-z]+>|<[a-z]+\/>|Languages|Tools|\t|\:|\n|\●|\•|►|\s\s+/gmi,'').trim())

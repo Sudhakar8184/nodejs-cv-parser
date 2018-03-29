@@ -1,192 +1,158 @@
-
+</a>
 <p>
-   <strong>CURRICULUM VITAE</strong>
+   <strong>Subathra Inbassegarane</strong>
 </p>
 <p>
-   <strong>Name:</strong>	Ms. Ruth Nthenya Wambua
+   <strong>Software Engineer</strong>
 </p>
 <p>
-   <strong>Profession / Training:</strong>	Computer Science
+   Chennai, Tamil Nadu - Email me on Indeed: <a href="https://www.indeed.com/r/Subathra-Inbassegarane/fd411da94cc14211?isid=rex-download&amp;ikw=download-top&amp;co=IN">indeed.com/r/Subathra-Inbassegarane/</a><a href="https://www.indeed.com/r/Subathra-Inbassegarane/fd411da94cc14211?isid=rex-download&amp;ikw=download-top&amp;co=IN">fd411da94cc14211</a>
+</p>
+<ul>
+   <li>
+      2.10 Years of experience in ORACLE SQL and UNIX. Involved in production support of ORACLE Database and windows application projects.
+   </li>
+</ul>
+<p>
+   Note: Ready to put hands on in any kind of UNIX and ORACLE Database Application projects.
 </p>
 <p>
-   <strong>Email Address: </strong>ruthdeshy@gmail.com
+   WORK EXPERIENCE
 </p>
 <p>
-   <strong>Education:</strong>
+   <strong>Software Engineer</strong>
 </p>
 <p>
-   2011-2013	Master of Science in Computer Science, School of Computing and Informatics, University of Nairobi.
+   HCL Technologies Limited - Bengaluru, Karnataka - September 2013 to July 2016 Professional Competencies:
+</p>
+<ul>
+   <li>
+      Hands on experience in SQL, UNIX and Windows servers.
+   </li>
+   <li>
+      Knowledge on ITIL and ITSM Service Management.
+   </li>
+   <li>
+      Working Knowledge in Windows and unix platform.
+   </li>
+   <li>
+      Interested to learn new technologies.
+   </li>
+</ul>
+<p>
+   <strong>Oracle SQL and UNIX Support Engineer</strong>
 </p>
 <p>
-   2003-2007	Bachelor of Science in Computer Science, School of Computing and Informatics, University of Nairobi.
+   HCL Technologies Limited -
 </p>
 <p>
-   1998-2001	Kenya Certificate of Secondary Education, Precious Blood Girls Secondary School – Kilungu.
+   September 2013 to July 2016
 </p>
 <p>
-   1990-1997	Kenya Certificate of Primary Education, Unoa Primary School.
+   Duration From Sep 2013 to July 2016
 </p>
 <p>
-   <strong>Employment / Experience Record:</strong>
+   Team Equities Risk Management (FO)
 </p>
 <p>
-   <strong>Year: </strong>February 18–March 1, 2013
+   Team Size 15
 </p>
 <p>
-   <strong>Attended: </strong>Train the Trainer Programme organised by Ripa International in Kenya
+   Applications EQRms, ITRS and Razor
 </p>
 <p>
-   <strong>Course Elements: </strong>Qualities, skills and behaviours of a great trainer; Types of learning and learningpreferences; Setting learning objectives; Andragogy; Kolb learning cycle; Training design and aids
+   Role Oracle SQL and UNIX Support Engineer
 </p>
 <p>
-   <strong>Year: </strong>May 23–July 21, 2012
+   Client info: Citigroup Inc. is an American multinational banking and financial services corporation headquartered in Manhattan, New York City and is all about global source of information and access to financial services provided by the Citi Bank Group.
 </p>
 <p>
-   <strong>Position: </strong>Trainer, ITES-BPO Certificate, School of Computing &amp; Informatics, The University ofNairobi, Kenya
+   Roles &amp;Responsibilities:
+</p>
+<ul>
+   <li>
+      Working as a Software Applications L1 Level Production Support Analystfor Global Equity Derivatives.
+   </li>
+   <li>
+      Monitoring and resolving alerts in ITRS Geneos active console to avoid major incidents.
+   </li>
+   <li>
+      Working on various types of database objects and connecting database server using Oracle. Preparation of technical documents based on the business blue print.
+   </li>
+</ul>
+<a id="page2"></a>
+<ul>
+   <li>
+      Good understanding of Infrastructure, Trouble Shooting and Excellent customer service skills with background in phone and email etiquette.
+   </li>
+   <li>
+      Involved in handling and resolving incidents, defects, problem tickets and change requests on priority basis within SLA timings.
+   </li>
+   <li>
+      Worked on Joins and Manipulating data using DML Queries with control access and Constraintspart in SQL.
+   </li>
+   <li>
+      Connecting host and performing file operations &amp; file compression and Backups for recovery using UNIX commands.
+   </li>
+   <li>
+      Involved in solving production support issues like failures, Bugs and system run errors.
+   </li>
+   <li>
+      Responsible for gathering troubleshooting issues and summarizing them into a weekly report for management.
+   </li>
+   <li>
+      Expertise in analyzing and resolving production issues and ability to work multiple tasks simultaneously.
+   </li>
+</ul>
+<p>
+   Career Highlights:
+</p>
+<ul>
+   <li>
+      Participate in all the major deployment activities in the application and got the high level appreciation from the management
+   </li>
+   <li>
+      Received appreciation for my dedication on the work and domain knowledge of the situations from the customers and from the managers
+   </li>
+</ul>
+<p>
+   EDUCATION
 </p>
 <p>
-   <strong>Responsibility: </strong>Teaching a technical unit on Office Productivity Tools.
+   <strong>Master of Computer Applicationsat Sri Manakula Vinayagar Engineering in Computer Applicationsat Sri Manakula Vinayagar Engineering</strong>
 </p>
 <p>
-   <strong>Year: </strong>August 2009 to Present
+   Pondicherry University  -  Puducherry, Puducherry
 </p>
 <p>
-   <strong>Position: </strong>Senior ICT Officer (MIS), The University of Nairobi
+   SKILLS
 </p>
 <p>
-   <strong>Responsibility: </strong>Software Developer and System Analyst at the University of Nairobi; Responsible forvarious University System analysis, development and implementation. MIS (Management Information Systems).
+   Technical Production Support Engineer (3 years), Oracle (3 years), SQL (3 years), UNIX (3 years)
 </p>
 <p>
-   <strong>Year: </strong>March 08–April 04, 2010
+   ADDITIONAL INFORMATION
 </p>
 <p>
-   <strong>Position: </strong>PHP Symfony Trainee, Jimma University, Ethiopia
+   Technical Skills:
 </p>
-<p>
-   <strong>Responsibility: </strong>Developing software with the PHP Symfony framework using state of the art softwareengineering principles. Training held at Jimma University, Ethiopia.
-</p>
-<p>
-   <strong>Year: </strong>April 2008–August 2009
-</p>
-<p>
-   <strong>Position: </strong>Retail Agent / Customer Experience Agent, Safaricom Ltd. Company
-</p>
-<p>
-   <strong>Responsibility: </strong>Dealing with various customer related issues as regards to telecommunication. Thisinvolved troubleshooting laptop and mobile problems.
-</p>
-<p>
-   <strong>Year: </strong>December 2007 - April 2008
-</p>
-<p>
-   <strong>Position: </strong>Software Developer, Vega Software Ltd. Company
-</p>
-<p>
-   <strong>Responsibility: </strong>Software Development in Microsoft Dynamics Nav.
-</p>
-
-<table>
-   <tr>
-      <td>
-         <p>
-            <strong>Languages:</strong>
-         </p>
-</td>
-      <td></td>
-      <td></td>
-      <td></td>
-</tr>
-   <tr>
-      <td></td>
-      <td>
-         <p>
-            Speaking
-         </p>
-</td>
-      <td>
-         <p>
-            Reading
-         </p>
-</td>
-      <td>
-         <p>
-            Writing
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            English
-         </p>
-</td>
-      <td>
-         <p>
-            Excellent
-         </p>
-</td>
-      <td>
-         <p>
-            Excellent
-         </p>
-</td>
-      <td>
-         <p>
-            Excellent
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            Kiswahili
-         </p>
-</td>
-      <td>
-         <p>
-            Excellent
-         </p>
-</td>
-      <td>
-         <p>
-            Excellent
-         </p>
-</td>
-      <td>
-         <p>
-            Excellent
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            Kikamba
-         </p>
-</td>
-      <td>
-         <p>
-            Excellent
-         </p>
-</td>
-      <td>
-         <p>
-            Excellent
-         </p>
-</td>
-      <td>
-         <p>
-            Excellent
-         </p>
-</td>
-</tr>
-</table>
-<p>
-   <strong>Certification:</strong>
-</p>
-<p>
-   I, the undersigned, certify to the best of my knowledge and belief, that this data correctly describes me, my qualifications and experience.
-</p>
-
-<p>
-   Ruth Nthenya Wambua.
-</p>
+<ul>
+   <li>
+      Languages: Oracle (SQL), Unix
+   </li>
+   <li>
+      Databases: Oracle 9i/10g and Sybase
+   </li>
+   <li>
+      Operating System: Windows XP/7, Unix
+   </li>
+   <li>
+      Packages: Ms-Office Products.
+   </li>
+   <li>
+      Tools: Putty (Unix), Geneos ITRS.
+   </li>
+   <li>
+      Ticketing tools: JIRA, Service Now
+   </li>
+</ul>

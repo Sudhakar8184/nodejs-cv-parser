@@ -12,6 +12,7 @@ console.log(mynameTextractFlag);
 var misce=execution.misc;
 var textArr=[];
 var dataArr=[];
+var adr_flag=false;
 textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), function( error, text ) {
   text=text.replace(/\b(\d|page|resume|cv|curriculum vitae)\b/gmi,'');
   // console.log('***************************************************************************',text)
@@ -72,18 +73,21 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
         ad_r=data1.match(/.*(- Email me on Indeed)/gmi);
         ad_r=ad_r.toString().replace(/\:|\s\s+|\n|address|\d{7,}|[A-Za-z]+\w+([.\w]+)+@[a-z]+([.][a-z]+){1,2}/g,'').replace(/- Email me on Indeed/g,'');
         console.log("address:",ad_r);
+        adr_flag=true;
       }
       else  if(/(([^(email\s*)]address\n*\s*(\n*(<\/.*>|<.*>|\:|\.|\-|\:\-|\–|\-)\s*\n*)+.*)|\b(((([^(email\s*)]address(\s|\.|\:|\-|\:\-|\–|\-))|((House)(\s|\s.|\:|\.|\:\-|\–|\-)(no|number)(\.|\:|\s|\:\-|\–|\-|))|((street)(\s|\s.|\:|\.|\:\-|\–|\-|)(no|number|))|((h\.no)(\s|\.|\:|\-|\:\-|\–|\-|)))(.*\n)))\b)/gmi.test(data1)){
       ad_r=data1.match(/(([^(email\s*)]address\n*\s*(\n*(<\/.*>|<.*>|\:|\.|\-|\:\-|\–|\-)\s*\n*)+.*)|\b(((([^(email\s*)]address(\s|\.|\:|\-|\:\-|\–|\-))|((House)(\s|\s.|\:|\.|\:\-|\–|\-)(no|number)(\.|\:|\s|\:\-|\–|\-|))|((street)(\s|\s.|\:|\.|\:\-|\–|\-|)(no|number|))|((h\.no)(\s|\.|\:|\-|\:\-|\–|\-|)))(.*\n)))\b)/gmi);
              ad_r=ad_r.toString().replace(/\:|\s\s+|\n|address|\d{7,}|[A-Za-z]+\w+([.\w]+)+@[a-z]+([.][a-z]+){1,2}|<\/.*>|<.*>/g,'');
        console.error("address:",ad_r);
+       adr_flag=true;
      }
      else{
        console.log("NO ad_r")
      }
 
       //pincode starts here
-           let text1=text+' ';
+      if(!adr_flag){
+        let text1=text+' ';
            let pincodereg, pincode;
               if(/[^\d]\d{5,6}[^a-z|[^@|^\d]/g.test(text1.toString())){
                  pincodereg=text1.toString().match(/[^\d]\d{5,6}[^a-z|[^@|^\d]/g)
@@ -95,7 +99,10 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
                   }
 
               }
+      }
+           
           else {
+            console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&UJM")
             words.obj.details.address.fullAddress=ad_r;
           }//pincodes end here
 
