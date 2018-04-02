@@ -96,8 +96,8 @@ const fs=require('fs')
        ele=ele.replace(/<(strong|h[1-6]|p|[a-z]+)>\n*\s*(\.)?<\/(strong|h[1-6]|p|[a-z]+)>/gmi,'')
        fs.writeFileSync('./expdata.txt',ele)
        //console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!! ele is",ele);
-       if (( parser.parseFromString(ele).getElementsByTagName('table') || parser.parseFromString(ele).getElementsByTagName('table') )&& ele.includes('<table>','</table>','<td>','</td>') ){  
-       
+       if (( parser.parseFromString(ele).getElementsByTagName('table') || parser.parseFromString(ele).getElementsByTagName('table') )&& ele.includes('<table>','</table>','<td>','</td>') ){
+
         arr[i] = tableData(data)
        }else if( parser.parseFromString(ele).getElementsByTagName('ul').length >= 1 ){
            //console.log(" 🤷‍♀asnkcnsalkn" )
@@ -207,12 +207,12 @@ const fs=require('fs')
       //console.error("ele in breakStrong",ele);
        // let dateReg = /((\s*(19[5-9]\d|20[0-4]\d|2050))|(Jan|Apr|May|June|July|Aug|Sep|Oct|Nov|Dec)\s\d{2})/gi
        let dateReg = /(\s*([^\w]|^)(19[5-9]\d|20[0-4]\d|2050))/gi
-       let degreeReg = /\s*(Bachelor(|s) of Science|Masters, Business Administration|MBA|Masters of Business Administration|Bachelor of Commerce|B\.S|HSC|SSC|PGDM|PGDCA|M.Tech|B.Tech|B\.Tech|Biotechnology|Diploma|\bBA\b|Doctorate |Bachelors of (|commerce)|B(|\W)Tech(|\W)|M(|\W)Tech(|\W)|XII|\bX\b|12th|1(2|0)<sup>th|10th|([A-Za-z]+\s*[A-Za-z]+)\s*(M|m)anagement)\s*/gmi
+       let degreeReg = /\s*(Bachelor(|s) of Science|Bachelor of(\s)*Engineering in Computer Science and Engineering|Masters, Business Administration|MBA|Masters of Business Administration|Bachelor of Commerce|B\.S|HSC|SSC|PGDM|PGDCA|M.Tech|B.Tech|B\.Tech|Biotechnology|Diploma|\bBA\b|Doctorate |Bachelors of (|commerce)|B(|\W)Tech(|\W)|M(|\W)Tech(|\W)|XII|\bX\b|12th|1(2|0)<sup>th|10th|([A-Za-z]+\s*[A-Za-z]+)\s*(M|m)anagement)\s*/gmi
        let degreeReg1=/\s*(.*<\/strong>)\s*/gm;
        let offo=ele.match(degreeReg);
        if(offo!=null && offo!=undefined){
          offo = offo.filter(function(x){
-           return (x !== (undefined || null || ''||' '));
+           return (x !== (undefined || null ||''||' '));
          });
        }
        if(offo==null && offo==undefined){
@@ -296,7 +296,7 @@ const fs=require('fs')
     console.log("In experience function",exp)
     if(exp !=null && exp != undefined)
     {
- 
+
       var str=exp.join('\n')
       for(let i=0;i<myKeys.length;i++){
           let reg=new RegExp(`${myKeys[i]}`,'gmi')
@@ -310,7 +310,7 @@ const fs=require('fs')
       str=str.replace(/(<\/strong>|<\/h[1-6])\n*\s*([a-z]+\s*)*?\n*\s*<\/p>\n*\s*<p>\n*\s*(<strong>|<h[1-6]>)/gmi,"")
       str=str.replace(/(Swenson page 2|(Roles (&amp;|and|)|key|)\s*Responsibilities\s*(\-\:|\:|\-|\:\-|\–|)(Handling)?|(Primary|Secondary|Job) Responsibilities\s*(\-\:|\:|\-|\:\-|\–|)|Key Accomplishment(s|)\s*(\-\:|\:|\-|\:\-|\–|)|Company’s Profile\s*(\-\:|\:|\-|\:\-|\–|)|Attended(\-\:|\:|\-|\:\-|\–|)|Course Elements(\-\:|\:|\-|\:\-|\–|)|Position(\-\:|\:|\-|\:\-|\–|)|Responsibility(\-\:|\:|\-|\:\-|\–|)|(<em>)?duties(<em>)?(\-\:|\:|\-|\:\-|\–|)|Page 1 of 3)/gmi,"")
       str=str.replace(/<(strong|h[1-6]|p|[a-z]+)>\n*\s*(\.)?(TITLE|DESCRIPTION)?\n*\s*<\/(strong|h[1-6]|p|[a-z]+)>/gmi,'')
- 
+
       var misexp = str
       // for(i=0;i<myKeys.length;i++){
       //     var reg=new RegExp(myKeys[i],'gmi')
@@ -320,12 +320,12 @@ const fs=require('fs')
       //     }
       // }
       //console.error("In experience function AAAAAAAAA",str)
- 
- 
+
+
   var keys3 = /((\s*(<(strong|h[1-6]|p|[a-z]+)>(project\s*title|(y|Y)ear)(\-\:|\:|\-|\:\-|\–|)\n*\s*<\/(strong|h[1-6]|p|[a-z]+)>)((january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)(\.|)\s*(\d{4}|\d{2})\s*(\-|\–|\s*|\b.*\b)\s*((january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)(\.|)\s*(\d{4}|\d{1,2})|present|current))?)|((((((J|j)an|(F|f)eb|(M|m)ar|(A|a)pr|(M|m)ay|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(M|m)arch|(A|a)pril|(M|m)ay|(J|j)une|(J|j)uly|(A|a)ugust|(S|s)eptember|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}\s*(\-|\–|\s*|\b.*\b)\s*(((J|j)an|(F|f)eb|(|M|m)ar|(A|a)pr|(|M|m)ay|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(|M|m)arch|(A|a)pril|(|M|m)ay|(J|j)une|(J|j)uly|(A|a)ugust|september|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}|(P|p)resent|(C|c)urrent))|((\d{2}|\d{4})\s*[\/|\-]\s*(\d{4}|\d{2})\s*[\-|\–]?\s*([a-z]*\s*))+)(\(.*\)|)|(((J|j)an|(Ff)eb|(M|m)ar|(A|a)pr|(M|a)y|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(M|a)rch|april|(M|a)y|(J|j)une|(J|j)uly|(A|a)ugust|(S|s)eptember|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}))|^)(\s*<h[1|2|3]>|\s*<strong>)\n*(.*)(\n*\s*(<\/h[1|2|3]>|<\/strong>))\n*(((<[a-z]>)\n*\s*((([A-Za-z]+\s*\d{4}\s*[\-|\W ]?\s*[A-Za-z]+\s*(\d{4})?)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?\s*)+)(\\(.*\\))?)\n*\s*(<\/[a-z]+>))?|(^\s*(<[a-z]+><\/[a-z]+>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^\s*(<em><\/em>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^(\s*<p>)\n*\s*[A-Za-z]+\s([A-Za-z\s*\-\–]+?\d{4}[A-Za-z\s*\-\–]+?)+)(\n*\s*<\/p>))/gmi
- 
+
   var matches4 = str.match(keys3)
- 
+
  if(matches4 == null){
      var keys4=/<p>\n*\s*([a-z]+)\s([a-z]+)\s([a-z]+)?\n*\s*<\/p>/gmi
      matches4 = str.match(keys4)
@@ -340,25 +340,25 @@ const fs=require('fs')
             role:null,
             miscellaneous:null
       }
- 
- 
+
+
       var keys1 = /(^(\s*<li>)\n*.*(\n*\s*<\/li>)|^(\s*<p>)\n*.*(\n*\s*<\/p>))/gm
       var c=str.match(keys1)
       if(c!=null&& c!=undefined){
       var exparr1;
              var exparr=c.map((ele)=>ele.replace(/<[a-z]+>|\|\•|<\/[a-z]+>|<[a-z]+\/>|\t|\:|\n|\s\s+/gmi,'').trim())
- 
+
              exparr = exparr.filter(function(x){
               return (x !== (undefined || null || ''));
             });
- 
+
              obj.role=exparr
              exparr1=Object.assign({},obj);
- 
+
       }
             return exparr1
            }else{
- 
+
   var b=[];
   var a=[];
   if(matches4.length > 1){
@@ -367,19 +367,19 @@ const fs=require('fs')
           var j=i;
           var matches6 = regarr[j].trim('\n')
           var matches5 = regarr[++j]
- 
+
           let regex = `(${ matches6 })\\n?(.*\\n)+?\n?(\\s*${ matches5 })`
           keys1 = new RegExp(regex,'gm')
- 
+
           if(str.match(keys1))
         {
           var h_i=str.match(keys1);
           h_j=h_i.join('\n').split('\n');
           // //console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",h_j);
- 
+
           if(h_j.length>5)
           {
- 
+
               b.push(h_i);
               str=removedata(str,h_i,matches5)
               // //console.log("h_i",h_i);
@@ -393,11 +393,11 @@ const fs=require('fs')
       //console.log(regarr)
       b.push(str.match(new RegExp(`${ regarr }\\n?(.*\\n)+`,'gm')))
   }
- 
+
   var b = b.filter((x)=>{
     if(x!=null)return x;
   });
- 
+
   // console.log("hello b WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",b)
   if(b!=null && b!= undefined){
   let c = b.map(element=> element.join('\n').split('\n'))
@@ -425,12 +425,13 @@ const fs=require('fs')
   experience.pop()
   experience.pop()
   experience=experience.join('\n')
-  //console.log("EEEEEEEEEEEEEEEEEEEE",experience)
+//   console.error("EEEEEEEEEEEEEEEEEEEE",experience)
   //    experience=experience.splice(0,experience.length-2)
   //    let expcompany = experience.split('\n').splice(0,5)
-      expcompany =experience.toString().match(/.*\b(IL|PA|HQ|MI|PVT|CA|LTD|CA|LLC|LLP|CN)\b/gm)
-     if(expcompany!=null&&expcompany!=null){
-      expcompany=expcompany.toString().replace(/<[a-z\d]+>|<\/[a-z\d]+>|<[a-z\d]+\/>|&amp;|\t|\:|(([A-Za-z]+\s*\d{4}[ \-|\–]?)|\d{2}\/\d{4})|Present|\–|\n|(\(.*\))|(([A-Za-z]+\s*\d{4}\s*[\-|\s*|]\s*)+\s*|\s\s+)|Page 1 of 3/gmi,'').trim().trim(',')
+      expcompany =experience.toString().match(/.*\b(IL|PA|HQ|MI|PVT|CA|LTD|CA|TX|LLC|LLP|CN|Ltd|Llc|Llp|HCL Technologies)/m)
+        
+      if(expcompany!=null&&expcompany!=null){
+      expcompany=expcompany[0].toString().replace(/<[a-z\d]+>|<\/[a-z\d]+>|<[a-z\d]+\/>|&amp;|\t|\:|(([A-Za-z]+\s*\d{4}[ \-|\–]?)|\d{2}\/\d{4})|Present|\–|\n|(\(.*\))|(([A-Za-z]+\s*\d{4}\s*[\-|\s*|]\s*)+\s*|\s\s+)|Page 1 of 3/gmi,'').trim().trim(',')
       obj.companyName=expcompany
      }
      let exptitle=experience.split('\n').splice(0,3)
@@ -448,10 +449,10 @@ const fs=require('fs')
   if(duration != null && duration != undefined){
      if((/.*(\-|\–|\b(to)\b)/img).test(duration.toString())){
      regexDuStart=duration.toString().match(/.*(\-|\–|\b(to)\b)/img)
- 
+
      regexDuend=duration.toString().match(/(\-|\–|\b(to)\b).*/img)
      if(regexDuStart!=undefined&&regexDuStart!=null&&regexDuend!=undefined&&regexDuend!=null){
-         
+
          if((/\d{4}/gmi).test(regexDuStart.toString())){
        let totaldur=totalDuration(regexDuStart,regexDuend)
        if(totaldur!=null && totaldur!=undefined){
@@ -459,9 +460,9 @@ const fs=require('fs')
           obj.duration=totaldur
        }
      }
- 
+
      }
- 
+
      obj.startDate=regexDuStart.toString().replace(/(\-|\–|\b(to)\b)/gmi,'');
       obj.endDate=regexDuend.toString().replace(/(\-|\–|\b(to)\b)/gmi,'');
     }else{
@@ -477,7 +478,7 @@ const fs=require('fs')
           //console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",role)
           regex=new RegExp(exptitle,'i');
           regex1=new RegExp(duration,'i');
- 
+
       role=role.map(ele => {
           ele=ele.toString().replace(/<[a-z]+>|<\/[a-z]+>|<[a-z]+\/>|&amp;|\t|\–|\-|\:|\|((([A-Za-z]+\s*\d{4}\s*[\-| ]\s*[a-z]*\s*)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?[a-z]*\s*)+)(\(.*\))?|\n|<(.*)>|\●|\•|►|\s\s+/gmi,'').trim(',')
        return ele
@@ -491,7 +492,7 @@ const fs=require('fs')
         });
      obj.role=role
      }
- 
+
      if(keys2.test(experience)){
       let description=experience.match(keys2)
       if(description!=null && description!= undefined){
@@ -499,7 +500,7 @@ const fs=require('fs')
           let regex=new RegExp(`${exptitle}`,'gi');
          let  regex1=new RegExp(`${expcompany}`,'gi');
         description=description.map((ele)=>ele.replace(regex,'').replace(regex1,'').replace(/((([A-Za-z]+(\.|)\s*\d{4}\s*(\-|\s*|\b.*\b)\s*([A-Za-z]+(\.|)\s*\d{4}|present))|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?[a-z]*\s*)+)(\(.*\)|)|([A-Za-z]+(\.|)\s*\d{4}))|<[a-z]+>|<\/[a-z]+>|<[a-z]+\/>|&amp;|\t|\–|\-|\:|((([A-Za-z]+\s*\d{4}\s*[\-| ]\s*[a-z]*\s*)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?[a-z]*\s*)+)(\(.*\))?|\n|\(|\)|\\(.*\\)|job responsibilitie(s|)|key accomplishment(s|)|Responsibilitie(s|)|<(.*)>|\s\s+|\●|\•|►|\s*\n*\/gmi,'').trim().trim(','))
- 
+
       }
        description = description.filter(function(x){
           return (x !== (undefined || null || ''));
@@ -507,19 +508,19 @@ const fs=require('fs')
         if(description!=null && description!= undefined && description.length != 0){
           obj.description=description
         }
- 
+
      }
- 
+
      var misstr=b[j].toString()
- 
+
      for(let i=0;i<matches4.length;i++){
       var regarr = matches4[i].replace(/\s+|\n+|\t/gm, '\\n*\\s*').replace(/\(/gm,'\\(').replace(/\)/gm,'\\)')
       let reg=new RegExp(`${regarr}`,'gmi')
- 
+
       var misstr=misstr.replace(reg,'')
- 
+
       misexp=misexp.replace(reg,'')
- 
+
       }
       // console.error(misstr)
       let regdata =misstr.trim().replace(/\s+|\n+|\t/g, '\\n*\\s*').replace(/\(/gm,'\\(').replace(/\)/gm,'\\)').replace(/\//gmi,'\\/').replace(/\+/gmi,'\\+').replace(/\$/gmi,'\\$')
@@ -528,14 +529,14 @@ const fs=require('fs')
          misexp=misexp.replace(reg,"")
       // console.error("::::????????>>>>>>",misexp)
       // console.error(j,b.length)
- 
+
       if(misexp!=null && misexp!=undefined ){
           let keys1 = /(^(\s*<li>)\n*.*(\n*\s*<\/li>)|^(\s*<p>)\n*.*(\n*\s*<\/p>))/gm
            let c=misexp.match(keys1)
            if(c!=null&& c!=undefined){
- 
+
            let exparr=c.map((ele)=>ele.replace(/<[a-z]+>|\|\•|<\/[a-z]+>|<[a-z]+\/>|\t|\:|\n|\s\s+/gmi,'').trim())
- 
+
                   exparr = exparr.filter(function(x){
                    return (x !== (undefined || null || ''));
                  });
@@ -543,20 +544,20 @@ const fs=require('fs')
                   // console.error("::::????????>>>>>>",misexp)
                   obj.miscellaneous=exparr
               }
- 
+
        }
- 
- 
+
+
    }
- 
+
       final_experience[j]=Object.assign({},obj);
   }
   return final_experience;
   }
   }
- 
+
   }
- 
+
   }
 
 

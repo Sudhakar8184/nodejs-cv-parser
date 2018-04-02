@@ -1,359 +1,134 @@
+
 <p>
-   <strong>Resume </strong>
+   <strong>Tlaloc Garcia</strong>
 </p>
 <p>
-   <strong>Shreya Jain</strong>
+   <strong>Information Technology Specialist - California Institute of Arts and Technology</strong>
 </p>
 <p>
-   240 Burwood highwayBurwood VIC 3125Phone:Mobile: 0405840019jain@deakin.edu.au
+   San Diego, CA - Email me on Indeed: indeed.com/r/Tlaloc-Garcia/20265432e8b8289d
 </p>
 <p>
-   <strong>Career Profile</strong>
+   Willing to relocate: Anywhere
 </p>
 <p>
-   Third year Bachelor of Information Technology student with an excellent work ethic and an ability to learn and adapt to a changing environment. project experience in software and website development. Demonstrated excellent customer service and ability to develop strong working relationships.
+   Authorized to work in the US for any employer
 </p>
 <p>
-   <strong>Education</strong>
-</p>
-<table>
-   <tr>
-      <td>
-         <p>
-            <strong>Diploma of Computing</strong>Deakin College, MelbourneGrade: 89.8
-         </p>
-</td>
-      <td>
-         <p>
-            <strong>03/2015 - 10/2015</strong>
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            <strong>Bachelor of Information Technology</strong>Deakin University, MelbourneMajors: IT Security and Programming
-         </p>
-</td>
-      <td>
-         <p>
-            <strong>03/2016 - current</strong>
-         </p>
-</td>
-</tr>
-</table>
-<p>
-   <strong>Key Skills</strong>
+   WORK EXPERIENCE
 </p>
 <p>
-   <strong>Communication</strong>
+   <strong>Information Technology Specialist</strong>
 </p>
 <p>
-   Good written and verbal communication skills. (IELTS bands- 8.5)
+   California Institute of Arts and Technology  -  San Diego, CA -
 </p>
 <p>
-   <strong>Teamwork</strong>
+   October 2017 to Present
 </p>
-<ul>
-   <li>
-      Able to communicate effectively with others
-   </li>
-   <li>
-      Able to recognize and understand the viewpoints of others
-   </li>
-   <li>
-      Able to appreciate the contribution you are expected to make
-   </li>
-</ul>
 <p>
-   <strong>IT skills</strong>
+   California
 </p>
-<ol>
-   <li>
-      Have worked with the following languages: 
-   </li>
-</ol>
-<ul>
-   <li>
-      Java
-   </li>
-   <li>
-      C
-   </li>
-   <li>
-      C++
-   </li>
-   <li>
-      C#
-   </li>
-   <li>
-      HTML
-   </li>
-   <li>
-      JavaScript
-   </li>
-</ul>
-<ol>
-   <li>
-      Have knowledge about networking, including configuring the devices and setting up networks.
-   </li>
-   <li>
-      Good knowledge of database management using SQL and MySQL.
-   </li>
-   <li>
-      Hardware skills: 
-   </li>
-</ol>
-<ul>
-   <li>
-      Have knowledge about installing windows, software, applications, antivirus and patches
-   </li>
-   <li>
-      Working knowledge of modern networking devices and printers
-   </li>
-   <li>
-      Skilled in installing and troubleshooting computer hardware and peripherals.
-   </li>
-</ul>
 <p>
-   <strong>Professional Development</strong>
+   -Maintain, manage, troubleshoot and upgrade computer systems and servers for performance and security related issues.
 </p>
-<table>
-   <tr>
-      <td>
-         <p>
-            <strong>Diploma of Computing</strong>Deakin College
-         </p>
-</td>
-      <td>
-         <p>
-            <strong>10/2015</strong>
-         </p>
-</td>
-</tr>
-   <tr>
-      <td colspan="2">
-         <p>
-            Completed Diploma of Computing with a weighted average mark of 89.8.
-         </p>
-         <p>
-            Achieved <strong>Deakin College 2015 Academic Scholarship Award</strong>.
-         </p>
-         <p>
-            Learnt the following IT skills:
-         </p>
-         <ul>
-            <li>
-               C#
-            </li>
-            <li>
-               HTML
-            </li>
-            <li>
-               PHP
-            </li>
-            <li>
-               python
-            </li>
-            <li>
-               CSS
-            </li>
-</ul>
-</td>
-</tr>
-</table>
 <p>
-   <strong>Work Experience</strong>
+   -Provide end-user support for a variety of web applications.
 </p>
-<table>
-   <tr>
-      <td>
-         <p>
-            <strong>Crew MemberHungry Jacks</strong>
-         </p>
-</td>
-      <td>
-         <p>
-            <strong>01/2017 - current</strong>
-         </p>
-</td>
-</tr>
-   <tr>
-      <td colspan="2">
-         <ul>
-            <li>
-               Taking customer orders
-            </li>
-            <li>
-               Serving customer food and drinks
-            </li>
-            <li>
-               Handling cash
-            </li>
-            <li>
-               Cleaning the store
-            </li>
-</ul>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            <strong>Student mentor</strong>Navitas
-         </p>
-</td>
-      <td>
-         <p>
-            <strong>07/2015 – 03/2016</strong>
-         </p>
-</td>
-</tr>
-   <tr>
-      <td colspan="2">
-         <ul>
-            <li>
-               Help organize the events in Deakin College
-            </li>
-            <li>
-               Assisting the new students in their enrolment
-            </li>
-            <li>
-               Printing out their timetables and id cards
-            </li>
-            <li>
-               guiding the campus tours
-            </li>
-</ul>
-</td>
-</tr>
-   <tr>
-      <td colspan="2"></td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            <strong>Front-of-house staff</strong>Monster Pizza
-         </p>
-</td>
-      <td>
-         <p>
-            <strong>02/2015 – 12/2016</strong>
-         </p>
-</td>
-</tr>
-   <tr>
-      <td colspan="2">
-         <ul>
-            <li>
-               Taking customer calls
-            </li>
-            <li>
-               confirming and printing online orders
-            </li>
-            <li>
-               using the EFTPOS machine for transactions
-            </li>
-            <li>
-               operating the console
-            </li>
-</ul>
-</td>
-</tr>
-   <tr>
-      <td></td>
-      <td></td>
-</tr>
-   <tr>
-      <td colspan="2"></td>
-</tr>
-</table>
 <p>
-   <strong>Voluntary Experience</strong>
+   -Troubleshoot information technology-related issues for both hardware and software.
 </p>
-<table>
-   <tr>
-      <td>
-         <p>
-            <strong>Personal care Worker</strong>Opal Gracedale
-         </p>
-</td>
-      <td>
-         <p>
-            <strong>11/2015 - 12/2015</strong>
-         </p>
-</td>
-</tr>
-   <tr>
-      <td colspan="2">
-         <ul>
-            <li>
-               Providing person centered care to the elderly in Opal Gracedale aged care.
-            </li>
-            <li>
-               assisting the residents in the activities of daily living.
-            </li>
-</ul>
-</td>
-</tr>
-</table>
-<table>
-   <tr>
-      <td>
-         <p>
-            <strong>Creative Lead</strong>Googleplex LPU
-         </p>
-</td>
-      <td>
-         <p>
-            <strong>10/2013 - 06/2014</strong>
-         </p>
-</td>
-</tr>
-   <tr>
-      <td colspan="2">
-         <p>
-            Core team member of the GooglePlex LPU.
-         </p>
-         <p>
-            <strong>Achievements</strong>
-         </p>
-         <ul>
-            <li>
-               Hosted Googleplex LPU Fest 2013
-            </li>
-            <li>
-               Won the first prize for drawing Google Doodle in Google Development Group LPU Fest
-            </li>
-            <li>
-               Won the second prize in the innovative application idea category.
-            </li>
-</ul>
-</td>
-</tr>
-   <tr>
-      <td></td>
-      <td></td>
-</tr>
-   <tr>
-      <td colspan="2"></td>
-</tr>
-</table>
 <p>
-   <strong>Referees</strong>
+   -Coordinate the set-up of data services, as well as phone, computer, and printer installation.
 </p>
-<table>
-   <tr>
-      <td>
-         <p>
-            <strong>Workplace</strong>Vishesh GuptaStudent Committee 
-         </p>
-         <p>
-            0420898817
-         </p>
-         <p>
-            vgupta@deakin.edu.au
-         </p>
-</td>
-      <td></td>
-</tr>
-</table>
+<p>
+   -Direct the planning, implementation, and maintenance of all information technology products.
+</p>
+<p>
+   <strong>Army Motor Transport Operator</strong>
+</p>
+<p>
+   United States Army  -  Fort Bliss, TX -
+</p>
+<p>
+   February 2009 to September 2012
+</p>
+<p>
+   Operate single-unit vehicles with a capacity of five tons or less in all conditions of weather and terrain. Perform simple vehicular maintenance, keep records of operation performance. Served as chauffeur depending on the type of unit which I was assigned. Performed the same duties for tractors, semitrailers, tank transporters, and other vehicles with a capacity of more than five tons. Qualified Expert with the following weapons: M-4, M249, 240-B and 50 calibers MG. Familiar with 9mm, 12 Gauge Shotgun, AT-4 Rocket Launcher, M-203, 50 Cal. Sniper Rifle. All military movements and patrols. Proficient in mounting and dismounting from helicopters. Proficient in rappelling from helicopters and mountain terrains. Drive and maneuver HMMWV (Humvee), Light Medium Tactical Vehicle (M1078), Cargo, Personnel Carriers with trailers and (MRABS) Mine resistant ambush protected vehicle. Proficient in all invasive, offensive and defensive combat maneuvers to include night and day land navigation with and without maps.
+</p>
+<p>
+   <strong>Customer Service Representative</strong>
+</p>
+<p>
+   Marshalls  -  San Diego, CA -
+</p>
+<p>
+   September 2008 to February 2009
+</p>
+<p>
+   92108 (619)497-0773
+</p>
+
+<p>
+   Deliver an excellent customer service experience including selling, suggesting additional related merchandise, maintaining merchandise stocks, and store appearance. Actively developed both new and existing customer relationships. Completed customer transactions in a timely manner. Assisted in training new hires and current associates. General customer service operations.
+</p>
+<p>
+   EDUCATION
+</p>
+<p>
+   <strong>Associate of Applied Science degree in Computer Information Systems</strong>
+</p>
+<p>
+   California Institute of Arts and Technology  -  San Diego, CA
+</p>
+<p>
+   <strong>Liberal Arts</strong>
+</p>
+<p>
+   San Diego State University  -  San Diego, CA
+</p>
+<p>
+   <strong>Psychology</strong>
+</p>
+<p>
+   San Diego City College  -  San Diego, CA
+</p>
+<p>
+   SKILLS
+</p>
+<p>
+   Mechanic (4 years), Audio Editing (5 years)
+</p>
+<p>
+   MILITARY SERVICE
+</p>
+<p>
+   Service Country: US
+</p>
+<p>
+   Branch: Active Army
+</p>
+<p>
+   Rank: SPC
+</p>
+<p>
+   February 2009 to September 2012
+</p>
+<p>
+   Commendations:
+</p>
+<p>
+   Afghanistan Campaign Medal with Campaign Star, Army Achievement Medal, Army Good Conduct Medal, National Defense Service Medal, Global War on Terrorism Medal, Army Service Medal, Overseas Service Medal, NATO Medal.
+</p>
+<p>
+   CERTIFICATIONS/LICENSES
+</p>
+<p>
+   <strong>Comptia A+ Ce</strong>
+</p>
+<p>
+   April 2015 to April 2021
+</p>
+<p>
+   Comptia A+ Ce Certification
+</p>

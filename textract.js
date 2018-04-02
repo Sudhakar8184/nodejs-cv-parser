@@ -104,6 +104,8 @@ textract.fromFileWithPath(path.join(__dirname,"/converted/"+file+".docx"), funct
           else {
             console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&UJM")
             words.obj.details.address.fullAddress=ad_r;
+            ad_r=ad_r.split(',')
+            words.obj.details.address.state=ad_r[1]
           }//pincodes end here
 
        let arr1=a.split('~'); //high data
