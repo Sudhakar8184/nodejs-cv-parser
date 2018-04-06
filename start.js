@@ -51,6 +51,7 @@ function check(file,res){
       var strongArr=[],h1Arr=[];
 
       var html = result.value; // The generated HTML
+      // fs.writeFileSync('./data.txt',html);
       html=html.replace(/(<p>)?\n*\s*<img[\n*|\s*]+.*\/>\s*[a-z\s]+\s*\n*(<\/p>)?/gm,"").replace(/^(\s*<p>)\n*\s*(Page\s*\d*)(\n*\s*<\/p>)|^\s*<a\s*id="page[\d*]">/gm,"");
     //  html=html.replace(/\s*<a[\n*|\s*].*(\/)?>\s*\n*.*\s*\n*<\/a>/gmi,"")
       //console.log(html);
