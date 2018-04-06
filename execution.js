@@ -336,8 +336,9 @@ const fs=require('fs')
           title:null,
             startDate:null,
             endDate:null,
-            description:null,
-            role:null,
+            descriptionAndRole:null,
+            // description:null,
+            // role:null,
             miscellaneous:null
       }
 
@@ -408,8 +409,9 @@ const fs=require('fs')
             startDate:null,
             endDate:null,
             duration:null,
-            description:null,
-            role:null,
+            descriptionAndRole:null,
+            // description:null,
+            // role:null,
             miscellaneous:null
       }
   for(let j=0;j<b.length;j++){
@@ -418,8 +420,9 @@ const fs=require('fs')
       obj.startDate=null;
       obj.endDate=null;
       obj.duration=null;
-      obj.description=null;
-      obj.role=null;
+      obj.descriptionAndRole=null;
+     // description:null,
+    // role:null,
       obj.miscellaneous=null;
   let experience=b[j].toString().split('\n')
   experience.pop()
@@ -447,69 +450,86 @@ const fs=require('fs')
   expdur=expdur.map(ele=>ele.replace(/.*\b\d{3}\b.*/gmi,''))
   let duration = expdur.toString().match(/((((jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\.|)\s*(\d{4}|\d{1,2})\s*(\-|\–|\s*|\b.*\b)\s*((jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\.|)\s*(\d{4}|\d{1,2})|present|current)\s*(\,)?\s*(\d{4})?)|((\d{2}|\d{4})\s*[\/|\-]\s*(\d{4}|\d{2})\s*[\-|\–]?\s*([a-z]*\s*))+)(\(.*\)|)|((jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\.|)\s*\d{4}))/gmi)
   if(duration != null && duration != undefined){
-     if((/.*(\-|\–|\b(to)\b)/img).test(duration.toString())){
-     regexDuStart=duration.toString().match(/.*(\-|\–|\b(to)\b)/img)
 
-     regexDuend=duration.toString().match(/(\-|\–|\b(to)\b).*/img)
-     if(regexDuStart!=undefined&&regexDuStart!=null&&regexDuend!=undefined&&regexDuend!=null){
-
-         if((/\d{4}/gmi).test(regexDuStart.toString())){
-       let totaldur=totalDuration(regexDuStart,regexDuend)
-       if(totaldur!=null && totaldur!=undefined){
-           console.error(totaldur)
-          obj.duration=totaldur
-       }
+    duration = duration.toString().replace(/((\()(\d*\s*(month(|s)|year(|s))\s*)*(\)))/gmi,'').replace(/(\,)/,'');
+   regexDuStart=duration.toString().match(/^\s*((\d{4}|\d{1,2})[\/\-](\d{4}|\d{2})|((\d{4})?\s*(\.|\th|\rd|\st)?\s*(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)\s*(\.|\th|\rd|\st)?\s*(\d{4})?))/img)
+   console.error("dDDDDDDDDDDDD",duration);
+   regexDuend=duration.toString().match(/(\-|\â€“|\b(to)\b)\s*((\d{4}|\d{1,2})[\/\-](\d{4}|\d{2})|((\d{4})?\s*(\.|th|d|st)?\s*(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)\s*(\.|th|rd|st)?\s*(\d{4})?)|present|current)\s*(\,)?\s*$/gim)
+   console.error(regexDuStart);
+   console.error(regexDuend);
+   if(regexDuStart!=undefined&&regexDuStart!=null&&regexDuend!=undefined&&regexDuend!=null){
+       console.error("inside")
+       if((/\d{4}/gmi).test(regexDuStart.toString()) && (/(\d{4}|^\s*(\-|\â€“|\b(to)\b)\s*(present|current))/gmi).test(regexDuend.toString())){
+           console.error("inside inside")
+     let totaldur=totalDuration(regexDuStart,regexDuend)
+     if(totaldur!=null && totaldur!=undefined){
+       console.error("inside inside inside")
+         console.error(totaldur)
+        obj.duration=totaldur;
      }
-
-     }
-
-     obj.startDate=regexDuStart.toString().replace(/(\-|\–|\b(to)\b)/gmi,'');
-      obj.endDate=regexDuend.toString().replace(/(\-|\–|\b(to)\b)/gmi,'');
-    }else{
-        obj.endDate=duration;
-    }
+   }
+   obj.startDate = regexDuStart.toString().replace(/(^\-|^\â€“|\b(to)\b)/gmi,'').replace(/\s\s+/gmi,' ');
+   obj.endDate = regexDuend.toString().replace(/(\,|^\-|^\â€“|\b(to)\b)/gmi,'').replace(/\s\s+/gmi,' ');
+   }else{
+      obj.endDate=duration;
   }
-     let keys1 = /(^(\s*<li>)\n*.*(\n*\s*<\/li>))/gm
-     let keys2=/^(\s*<p>)\n*.*(\n*\s*<\/p>)?/gm
-  //    //console.log("eeeeeeeeeeeeeeeeeeeeeeeeee",experience)
-     if(keys1.test(experience)){
-      let role=experience.match(keys1)
-      if(role!=null && role!= undefined){
-          //console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",role)
-          regex=new RegExp(exptitle,'i');
-          regex1=new RegExp(duration,'i');
+}
+//      let keys1 = /(^(\s*<li>)\n*.*(\n*\s*<\/li>))/gm
+//      let keys2=/^(\s*<p>)\n*.*(\n*\s*<\/p>)?/gm
+//   //    //console.log("eeeeeeeeeeeeeeeeeeeeeeeeee",experience)
+//      if(keys1.test(experience)){
+//       let role=experience.match(keys1)
+//       if(role!=null && role!= undefined){
+//           //console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",role)
+//           regex=new RegExp(exptitle,'i');
+//           regex1=new RegExp(duration,'i');
 
-      role=role.map(ele => {
-          ele=ele.toString().replace(/<[a-z]+>|<\/[a-z]+>|<[a-z]+\/>|&amp;|\t|\–|\-|\:|\|((([A-Za-z]+\s*\d{4}\s*[\-| ]\s*[a-z]*\s*)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?[a-z]*\s*)+)(\(.*\))?|\n|<(.*)>|\●|\•|►|\s\s+/gmi,'').trim(',')
-       return ele
-     });
-     role=role.map((element)=>{
-            return element.trim()
-        })
-      }
-       role = role.filter(function(x){
-          return (x !== (undefined || null ||' '|| ''));
-        });
-     obj.role=role
-     }
+//       role=role.map(ele => {
+//           ele=ele.toString().replace(/<[a-z]+>|<\/[a-z]+>|<[a-z]+\/>|&amp;|\t|\–|\-|\:|\|((([A-Za-z]+\s*\d{4}\s*[\-| ]\s*[a-z]*\s*)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?[a-z]*\s*)+)(\(.*\))?|\n|<(.*)>|\●|\•|►|\s\s+/gmi,'').trim(',')
+//        return ele
+//      });
+//      role=role.map((element)=>{
+//             return element.trim()
+//         })
+//       }
+//        role = role.filter(function(x){
+//           return (x !== (undefined || null ||' '|| ''));
+//         });
+//      obj.role=role
+//      }
 
-     if(keys2.test(experience)){
-      let description=experience.match(keys2)
-      if(description!=null && description!= undefined){
-          //console.log("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ",description)
-          let regex=new RegExp(`${exptitle}`,'gi');
-         let  regex1=new RegExp(`${expcompany}`,'gi');
-        description=description.map((ele)=>ele.replace(regex,'').replace(regex1,'').replace(/((([A-Za-z]+(\.|)\s*\d{4}\s*(\-|\s*|\b.*\b)\s*([A-Za-z]+(\.|)\s*\d{4}|present))|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?[a-z]*\s*)+)(\(.*\)|)|([A-Za-z]+(\.|)\s*\d{4}))|<[a-z]+>|<\/[a-z]+>|<[a-z]+\/>|&amp;|\t|\–|\-|\:|((([A-Za-z]+\s*\d{4}\s*[\-| ]\s*[a-z]*\s*)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?[a-z]*\s*)+)(\(.*\))?|\n|\(|\)|\\(.*\\)|job responsibilitie(s|)|key accomplishment(s|)|Responsibilitie(s|)|<(.*)>|\s\s+|\●|\•|►|\s*\n*\/gmi,'').trim().trim(','))
+//      if(keys2.test(experience)){
+//       let description=experience.match(keys2)
+//       if(description!=null && description!= undefined){
+//           //console.log("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ",description)
+//           let regex=new RegExp(`${exptitle}`,'gi');
+//          let  regex1=new RegExp(`${expcompany}`,'gi');
+//         description=description.map((ele)=>ele.replace(regex,'').replace(regex1,'').replace(/((([A-Za-z]+(\.|)\s*\d{4}\s*(\-|\s*|\b.*\b)\s*([A-Za-z]+(\.|)\s*\d{4}|present))|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?[a-z]*\s*)+)(\(.*\)|)|([A-Za-z]+(\.|)\s*\d{4}))|<[a-z]+>|<\/[a-z]+>|<[a-z]+\/>|&amp;|\t|\–|\-|\:|((([A-Za-z]+\s*\d{4}\s*[\-| ]\s*[a-z]*\s*)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?[a-z]*\s*)+)(\(.*\))?|\n|\(|\)|\\(.*\\)|job responsibilitie(s|)|key accomplishment(s|)|Responsibilitie(s|)|<(.*)>|\s\s+|\●|\•|►|\s*\n*\/gmi,'').trim().trim(','))
 
-      }
-       description = description.filter(function(x){
-          return (x !== (undefined || null || ''));
-        });
-        if(description!=null && description!= undefined && description.length != 0){
-          obj.description=description
-        }
+//       }
+//        description = description.filter(function(x){
+//           return (x !== (undefined || null || ''));
+//         });
+//         if(description!=null && description!= undefined && description.length != 0){
+//           obj.description=description
+//         }
 
-     }
+//      }
+ let descriptionRole = mis(experience);
+ if(descriptionRole != null && descriptionRole !=undefined){
+    let regex=new RegExp(`${exptitle}`,'gi');
+    let  regex1=new RegExp(`${expcompany}`,'gi');
+    let  regduration=new RegExp(`${duration}`,'gi');
+    console.log(regduration)
+    descriptionRole=descriptionRole.map((ele)=>ele.replace(regex,'').replace(regex1,''));
+    descriptionRole=descriptionRole.map((ele)=>ele.replace(regduration,''));
+    descriptionRole
+    descriptionRole = descriptionRole.filter(function(x){
+        return (x !== '');
+      });
+      descriptionRole=descriptionRole.toString().replace(/&amp;|\t|\–|\-|\:|\|\n|<(.*)>|\●|\•|►|\s\s+/gmi,'')
+    obj.descriptionAndRole = descriptionRole
+ }
 
      var misstr=b[j].toString()
 

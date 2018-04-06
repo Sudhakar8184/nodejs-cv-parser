@@ -1,205 +1,340 @@
 <p>
-
+   <strong>anirudh Agarwal								       </strong>
 </p>
 <p>
-   <strong>Neetu Walia</strong>
+   <strong> ani.agrwl2991@gmail.com </strong>|<strong> 7838766153</strong>
 </p>
 <p>
-   <strong>HR Manager</strong>
+   <strong>PERSONAL DETAILS</strong>
 </p>
-<p>
-   Mohali, Punjab
-</p>
-<p>
-   neetuwalia3_ane@indeedemail.com - +91-9988770881
-</p>
-<p>
-   WORK EXPERIENCE
-</p>
-<p>
-   <strong>HR Manager</strong>
-</p>
-<p>
-   Creative Future Consulenza  -  Mohali, Punjab -
-</p>
-<p>
-   2017-03 - Present
-</p>
-<p>
-   <strong>Sr. HR Executive</strong>
-</p>
-<p>
-   Macwill Information Systems Pvt. Ltd  -  Mohali, Punjab -
-</p>
-<p>
-   2013-09 - 2016-12
-</p>
-<p>
-   Job Responsibilities:
-</p>
-<p>
-   Talent Acquisition:
-</p>
-<ul>
-   <li>
-      Managing the complete recruitment life-cycle for sourcing the best talent from diverse sources after identification of manpower requirements for new / existing Departments.
-   </li>
-   <li>
-      Working in close consultation with business heads and superiors to understand future manpower &amp; skill requirement.
-   </li>
-   <li>
-      Preparing the job description.
-   </li>
-   <li>
-      Sourcing, Screening, Short listing of resumes.
-   </li>
-   <li>
-      Networking through References, Consultants, Web Portals, Newspaper Advertisements, etc.
-   </li>
-   <li>
-      Scheduling &amp; coordinating interviews; conducting preliminary interviews.
-   </li>
-   <li>
-      Coordinating with respective Channel Heads for final interview rounds and subsequent selection.
-   </li>
-   <li>
-      Reference checks and salary negotiations and preparing Offer Letter of candidates.
-   </li>
+<table>
+   <tr>
+      <td>
+         <p>
+            Date of Birth
+         </p>
+</td>
+      <td>
+         <ul>
+            <li>
+               September 02, 1991 
+            </li>
 </ul>
-<p>
-   Induction and Orientation:
-</p>
-<ul>
-   <li>
-      Handling recruitment process from Joining to Exit.
-   </li>
-   <li>
-      Conducting joining protocol as per pre-defined process and policies.
-   </li>
-   <li>
-      Coordinating with different department heads for induction of new joined.
-   </li>
-   <li>
-      Orientation to enterprise systems, attendance management &amp; policies to newly joined
-   </li>
-   <li>
-      Finalizing the offers; handling joining formalities and organizing induction for new employees.
-   </li>
+</td>
+</tr>
+   <tr>
+      <td>
+         <p>
+            father’s name
+         </p>
+</td>
+      <td>
+         <ul>
+            <li>
+               Mr. Sanjay Kumar Agarwal
+            </li>
 </ul>
-<p>
-   Operations:
-</p>
-<ul>
-   <li>
-      Monitoring six monthly/yearly appraisals
-   </li>
-   <li>
-      Handling Employee Grievances
-   </li>
-   <li>
-      Maintaining employee files and records
-   </li>
-   <li>
-      Handling the preliminary exit interview
-   </li>
-   <li>
-      Completing full &amp; final settlement formalities within the stipulated time frame.
-   </li>
-   <li>
-      Issuing experience certificates, warning mail, letters &amp; Disciplinary Actions (deductions) for any misconduct.
-   </li>
-   <li>
-      Organizing meeting of HR staff fortnightly to discuss various points for improvement of the existing system.
-   </li>
-   <li>
-      Organize Employee Engagement Activities like Birthday bash, New events &amp; Fun-Related Activities, Festival Celebrations, and Employee's Seminar.
-   </li>
+</td>
+</tr>
+   <tr>
+      <td>
+         <p>
+            address
+         </p>
+</td>
+      <td>
+         <ul>
+            <li>
+               B-132 sector-52 Noida
+            </li>
 </ul>
+</td>
+</tr>
+</table>
 <p>
-
+   <strong>OBJECTIVE</strong>
 </p>
-<ul>
-   <li>
-      Maintained the daily attendance and monthly attendance (Bio-metric system)
-   </li>
-   <li>
-      Set up all necessary personnel files and maintains related records.
-   </li>
-   <li>
-      Responsible for updating daily activities and coordination with all departments.
-   </li>
+<table>
+   <tr>
+      <td>
+         <p>
+            Being a useful part of well-reputed organization to enhance my skills in order to accept the challenges, through my professional experience.
+         </p>
+</td>
+</tr>
+</table>
+<p>
+   <strong>PROFILE</strong>
+</p>
+<table>
+   <tr>
+      <td>
+         <ul>
+            <li>
+               Skilled in programming languages and using them for software development.
+            </li>
+            <li>
+               Skilled in leading the team from the front.
+            </li>
 </ul>
+</td>
+</tr>
+</table>
 <p>
-   Salary Administration:
+   <strong>PROJECT</strong>
 </p>
-<ul>
-   <li>
-      Maintaining leave record and attendance record of employees independently and calculating salaries.
-   </li>
-   <li>
-      Deductions from salary for any misconduct.
-   </li>
-   <li>
-      Hands-on experience in working on ERP system for HR &amp; Payroll.
-   </li>
+<table>
+   <tr>
+      <td>
+         <p>
+            TITLE
+         </p>
+</td>
+      <td>
+         <p>
+            DESCRIPTION
+         </p>
+</td>
+</tr>
+   <tr>
+      <td>
+         <p>
+            vehicle management
+         </p>
+         
+</td>
+      <td>
+         <p>
+            Vehicle Management System is software which is helpful for bus operators, who wants to operate many bus trips in a day. It focus in the area of adding, editing and deleting the passengers, staff and the bus routes. He can add a bus and its details including bus route details. User can also add the details of the staff and their duty time in the system.
+         </p>
+         <p>
+            TECHNOLOGY USED:- java, ms access
+         </p>
+</td>
+</tr>
+   <tr>
+      <td>
+         <p>
+            departmental store management               
+         </p>
+</td>
+      <td>
+         <p>
+            Departmental Store Management is software which is used for keeping track of all commodities present in the store and if there is any shortage, it will give an alert message to fill inventory. It also helps in maintaining details of employees. User can add, delete or modify details of employee as well as product. It can also create bills.
+         </p>
+         <p>
+            TECHNOLOGY USED:- visual BASICS, mysql
+         </p>
+</td>
+</tr>
+   <tr>
+      <td>
+         <p>
+            BANKING MANAGEMENT SYSTEM
+         </p>
+</td>
+      <td>
+         <p>
+            Banking Management System is a software which is used to keep tracks of all the account holders. It helps to open an account as well as do transactions (i.e. withdrawal or deposit) and even helps in modifying details of account holders.
+         </p>
+         <p>
+            TECHNOLOGY USED:- JAVA,MY SQL 5,JSP,CSS
+         </p>
+</td>
+</tr>
+</table>
+<p>
+   <strong>ACADEMIC RECORD</strong>
+</p>
+<table>
+   <tr>
+      <td>
+         <p>
+            <strong>Qualification</strong>
+         </p>
+</td>
+      <td>
+         <p>
+            <strong>Institution</strong>
+         </p>
+</td>
+      <td>
+         <p>
+            <strong>Score</strong>
+         </p>
+</td>
+      <td>
+         <p>
+            <strong>Year</strong>
+         </p>
+</td>
+</tr>
+   <tr>
+      <td>
+         <p>
+            Master in Computer Application
+         </p>
+</td>
+      <td>
+         <p>
+            Birla Institute Of Technology
+         </p>
+</td>
+      <td>
+         <p>
+            76.6%
+         </p>
+</td>
+      <td>
+         <p>
+            Pursuing
+         </p>
+</td>
+</tr>
+   <tr>
+      <td>
+         <p>
+            B  Sc  Mathematical Science
+         </p>
+</td>
+      <td>
+         <p>
+            Maharaja Agarsen College,  University  of  Delhi
+         </p>
+</td>
+      <td>
+         <p>
+            70.4%
+         </p>
+</td>
+      <td>
+         <p>
+            2012
+         </p>
+</td>
+</tr>
+   <tr>
+      <td>
+         <p>
+            C.B.S.E  (10+2)
+         </p>
+</td>
+      <td>
+         <p>
+            Amity International School Noida
+         </p>
+</td>
+      <td>
+         <p>
+            74.4%
+         </p>
+</td>
+      <td>
+         <p>
+            2009
+         </p>
+</td>
+</tr>
+   <tr>
+      <td>
+         <p>
+            C.B.S.E (10)
+         </p>
+</td>
+      <td>
+         <p>
+            Amity International School Noida
+         </p>
+</td>
+      <td>
+         <p>
+            68.4%
+         </p>
+</td>
+      <td>
+         <p>
+            2007
+         </p>
+</td>
+</tr>
+</table>
+<p>
+   <strong>CERTIFICATIONS</strong>
+</p>
+<table>
+   <tr>
+      <td>
+         <p>
+            <strong>Certification</strong>
+         </p>
+</td>
+      <td>
+         <p>
+            <strong>Institution</strong>
+         </p>
+</td>
+</tr>
+   <tr>
+      <td>
+         <p>
+            Doeacc (A level)
+         </p>
+</td>
+      <td>
+         <p>
+            Doeacc Society
+         </p>
+</td>
+</tr>
+</table>
+<p>
+   <strong>CERTAIN HIGHLIGHTS</strong>
+</p>
+<table>
+   <tr>
+      <td>
+         <p>
+            IT  SKILLS
+         </p>
+</td>
+      <td>
+         <ul>
+            <li>
+               Database Management System
+            </li>
+            <li>
+               C And C++
+            </li>
+            <li>
+               Java
+            </li>
+            <li>
+               MS Office
+            </li>
 </ul>
-<p>
-   Performance Appraisal &amp; Training &amp; Development:
-</p>
-<p>
-   • Distributing Performance Appraisal forms to employees and HODs and to look after the fast and smooth appraisal process, to prepare assessment appraisal sheet.
-</p>
-<p>
-   <strong>HR Executive</strong>
-</p>
-<p>
-   Engineers Career Group  -  Chandigarh, Chandigarh -
-</p>
-<p>
-   2013-03 - 2013-08
-</p>
-<p>
-   <strong>Business Associate</strong>
-</p>
-<p>
-   HCL - CDC  -  Mohali, Punjab -
-</p>
-<p>
-   2012-09 - 2013-02
-</p>
-<p>
-   EDUCATION
-</p>
-<p>
-   <strong>MBA in Human Resource</strong>
-</p>
-<p>
-   RIMT-School of Management Studies  -  Gobindgarh, Mandi, IN
-</p>
-<p>
-   2012
-</p>
-<p>
-   <strong>Bachelor of Arts</strong>
-</p>
-<p>
-   Punjab University  -  Chandigarh, Chandigarh
-</p>
-<p>
-   2009
-</p>
-<p>
-   <strong>Basic knowledge of Computer</strong>
-</p>
-<p>
-   Punjab School Education Board 2003
-</p>
-<p>
-   ADDITIONAL INFORMATION
-</p>
-<p>
-   Playing Video games &amp; Badminton
-</p>
-<p>
-   • Positive attitude
-</p>
+</td>
+</tr>
+   <tr>
+      <td>
+         <p>
+            CO‐CURRICULAR ACTIVITIES AND ACHIEVEMENTS 
+         </p>
+</td>
+      <td>
+         <ul>
+            <li>
+               Academic Award <em>(3<sup>rd</sup> position ”Maharaja Agarsen College , Delhi University”),</em> 2011
+            </li>
+            <li>
+               Web Designing (1<sup>st</sup> prize “Inter College Competition” )
+            </li>
+            <li>
+               PowerPoint Presentation (2<sup>nd</sup> prize “Inter College Competition” 
+            </li>
+            <li>
+               Have basic knowledge about android and working in advance level by going through blogs and tutorials available on internet. Worked as an intern in RADICAL LOGIX and developed a small application of SCHOOL MANAGEMENT for them.
+            </li>
+</ul>
+</td>
+</tr>
+</table>
