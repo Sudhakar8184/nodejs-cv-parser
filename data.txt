@@ -1,340 +1,140 @@
 <p>
-   <strong>anirudh Agarwal								       </strong>
+   <strong>Jason VanNimwegen</strong>
 </p>
 <p>
-   <strong> ani.agrwl2991@gmail.com </strong>|<strong> 7838766153</strong>
+   10600 Gemini Drive  Riverside, CA 92503  (909) 641-8058  j_vannimwegen@yahoo.com
 </p>
 <p>
-   <strong>PERSONAL DETAILS</strong>
+   <strong>Senior Business Analyst</strong>
 </p>
-<table>
-   <tr>
-      <td>
-         <p>
-            Date of Birth
-         </p>
-</td>
-      <td>
-         <ul>
-            <li>
-               September 02, 1991 
-            </li>
+<p>
+   <strong>Business Analyst generalist with experience in data analysis and reporting projects. Technical expertise with the Alteryx analytics platform against a SQL backend and Tableau presentation layer.</strong>
+</p>
+<ul>
+   <li>
+      Fast learner who can quickly acquire the knowledge needed to evaluate metrics, test hypotheses and achieve measurable and actionable outcomes in a new operation; seamlessly made transition from education to healthcare industries.
+   </li>
+   <li>
+      Problem solver with repeated success in leveraging database technology through interpreting data to improve business processes.
+   </li>
 </ul>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            father’s name
-         </p>
-</td>
-      <td>
-         <ul>
-            <li>
-               Mr. Sanjay Kumar Agarwal
-            </li>
+<p>
+   <strong><em>Performance Review Excerpts</em></strong>
+</p>
+<p>
+   “Jason’s performance is a <strong>stellar example</strong> of someone stepping up to fill a leadership void on the team. In the absence of a manager for the team, he managed the team assignments … and was <strong>successful</strong> with several of the key projects within our overall Call Center Strategy.”
+</p>
+<p>
+   “Jason is an <strong>active change agent</strong> in the organization … [he] exhibits the highest level of dedication to support change … and works hard to make it transparent to end users.”
+</p>
+<p>
+   “Jason is a <strong>very valuable team member</strong> and is <strong>well-respected</strong><strong>by his peers and business partners. </strong>He is seen as a <strong>team player</strong> and takes the necessary steps on an ongoing basis to increase his knowledge. He has done an <strong>exceptional job</strong> leading the dashboard development …”
+</p>
+<p>
+   <strong>Experience</strong>
+</p>
+<p>
+   <strong>Kaiser Permanente – Corona, CA</strong>
+</p>
+<p>
+   <strong>Senior Business Consultant (Jan. 2009 to Present)</strong>
+</p>
+<p>
+   Lead reporting and data analysis project plans for call centers serving California, Colorado, mid-Atlantic, and Northwest states; internal departments (regulatory, sales, marketing); and employer groups.
+</p>
+<ul>
+   <li>
+      Function as a technical and data analysis SME for Pega CRM and Genesys telephony systems, provide data integration for <strong>end-to-end view of customer </strong>contacts and develop custom reports using Alteryx.
+   </li>
+   <li>
+      Wrote specs for an ETL project aggregation layer using Alteryx that enabled rapid data analysis on customer service workflow data, <strong>reducing turn-around time</strong> from hours to minutes.
+   </li>
+   <li>
+      Design an early warning ICD/10 <strong>Tableau dashboard with an Alteryx backend</strong> to monitor up stream provider claims activity and customer contact volume.
+   </li>
+   <li>
+      Develop a line of business cost allocation model, for a nine figure budget, in Excel using pivot tables, VLOOKUP’s and graphs with an Alteryx back end for multi-platform data wrangling and consolidation. 
+   </li>
+   <li>
+      Wrote a data map between telephony and contact documentation SQL database systems. Output from data mapping process is used through the Measure and Analyze Six Sigma project phases to <strong>increase customer satisfaction and reduce call handle time.</strong>
+   </li>
+   <li>
+      Wrote business requirements for forecasting models to<strong> predict impact</strong> of Health Care Reform initiatives to contact center call volume, including cross collaboration with PMO and other matrixed departments.
+   </li>
+   <li>
+      Wrote a data analysis model to justify inter-departmental budget transfers. The model combines tracking data from three disparate database systems: CRM, telephony, and workforce forecasting.
+   </li>
+   <li>
+      Collaborated with a department that frequently had urgent requests, resulting in a <strong>better working relationship</strong> between the department and the analytics team, and less escalated requests.
+   </li>
+   <li>
+      Recommended improvements for a service center that enabled its staff to achieve several <strong>year-over-year improvements </strong>from March 2010 to March 2011—including a double-digit increase in the percentage of calls answered within the target time.
+   </li>
 </ul>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            address
-         </p>
-</td>
-      <td>
-         <ul>
-            <li>
-               B-132 sector-52 Noida
-            </li>
+<p>
+   <strong>New York Life, Mass Mutual, Southern California </strong>
+</p>
+<h4>
+   Financial Services Professional  (Jan. 2006 to Oct. 2008)
+</h4>
+<p>
+   Served in three commission-only sales positions with insurance and financial companies. Earned distinction of "Executive Council" at New York Life, a rare accomplishment for a new agent, and increased internal referrals at AAA, contributing to the team meeting the cross-selling goal. 
+</p>
+<p>
+   <em>(Exact dates and job titles associated with each position available upon request for employment verification.)</em>
+</p>
+<p>
+   <strong>Corona-Norco Unified School District – Corona, CA</strong>
+</p>
+<p>
+   <strong>Supervisor-Technology and Assessment (Jan. 2002 to Jan. 2006)</strong>
+</p>
+<p>
+   Analyzed existing data models and improved existing data processes and conducted internal consulting to assess business practices and recommend improvements.
+</p>
+<ul>
+   <li>
+      Design and implementation of project plan for a high-profile strategic initiative to migrate data from a variety of complex database (db) sources into a single database, <strong>ensuring regulatory compliance</strong> with both state and national agencies.
+   </li>
+   <li>
+      Implemented a COTS database (db) program to scan 350,000 documents yearly and produce reports, <strong>reducing turnaround time from several weeks to less than 24 hours</strong>.
+   </li>
+   <li>
+      Developed MS Access dashboard single-screen views drawing from 5 different complex database (db) modules.
+   </li>
+   <li>
+      Developed multi-dimensional data models using <strong>SPSS statistical analysis</strong> software to analyze data contained in five database modules and wrote reports for end-users.
+   </li>
 </ul>
-</td>
-</tr>
-</table>
 <p>
-   <strong>OBJECTIVE</strong>
+   <strong>Corona-Norco Unified School District – Corona, CA</strong>
 </p>
-<table>
-   <tr>
-      <td>
-         <p>
-            Being a useful part of well-reputed organization to enhance my skills in order to accept the challenges, through my professional experience.
-         </p>
-</td>
-</tr>
-</table>
 <p>
-   <strong>PROFILE</strong>
+   <strong>Data Analyst (Computer Operator) (Aug. 1999 to Dec. 2002)</strong>
 </p>
-<table>
-   <tr>
-      <td>
-         <ul>
-            <li>
-               Skilled in programming languages and using them for software development.
-            </li>
-            <li>
-               Skilled in leading the team from the front.
-            </li>
+<p>
+   Spearheaded new processes that enabled district to track data for the first time.
+</p>
+<ul>
+   <li>
+      Created a project plan for a centralized reporting methodology that delivered confidential student information; reduced research time for 2,500 personnel from weeks to one day. 
+   </li>
+   <li>
+      Developed new methods to disaggregate student achievement and demographic data using SPSS statistical analysis software.
+   </li>
 </ul>
-</td>
-</tr>
-</table>
 <p>
-   <strong>PROJECT</strong>
+   <strong>Education</strong>
 </p>
-<table>
-   <tr>
-      <td>
-         <p>
-            TITLE
-         </p>
-</td>
-      <td>
-         <p>
-            DESCRIPTION
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            vehicle management
-         </p>
-         
-</td>
-      <td>
-         <p>
-            Vehicle Management System is software which is helpful for bus operators, who wants to operate many bus trips in a day. It focus in the area of adding, editing and deleting the passengers, staff and the bus routes. He can add a bus and its details including bus route details. User can also add the details of the staff and their duty time in the system.
-         </p>
-         <p>
-            TECHNOLOGY USED:- java, ms access
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            departmental store management               
-         </p>
-</td>
-      <td>
-         <p>
-            Departmental Store Management is software which is used for keeping track of all commodities present in the store and if there is any shortage, it will give an alert message to fill inventory. It also helps in maintaining details of employees. User can add, delete or modify details of employee as well as product. It can also create bills.
-         </p>
-         <p>
-            TECHNOLOGY USED:- visual BASICS, mysql
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            BANKING MANAGEMENT SYSTEM
-         </p>
-</td>
-      <td>
-         <p>
-            Banking Management System is a software which is used to keep tracks of all the account holders. It helps to open an account as well as do transactions (i.e. withdrawal or deposit) and even helps in modifying details of account holders.
-         </p>
-         <p>
-            TECHNOLOGY USED:- JAVA,MY SQL 5,JSP,CSS
-         </p>
-</td>
-</tr>
-</table>
 <p>
-   <strong>ACADEMIC RECORD</strong>
+   <strong>Masters of Business Administration, </strong>2004<strong> – </strong>University of Phoenix
 </p>
-<table>
-   <tr>
-      <td>
-         <p>
-            <strong>Qualification</strong>
-         </p>
-</td>
-      <td>
-         <p>
-            <strong>Institution</strong>
-         </p>
-</td>
-      <td>
-         <p>
-            <strong>Score</strong>
-         </p>
-</td>
-      <td>
-         <p>
-            <strong>Year</strong>
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            Master in Computer Application
-         </p>
-</td>
-      <td>
-         <p>
-            Birla Institute Of Technology
-         </p>
-</td>
-      <td>
-         <p>
-            76.6%
-         </p>
-</td>
-      <td>
-         <p>
-            Pursuing
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            B  Sc  Mathematical Science
-         </p>
-</td>
-      <td>
-         <p>
-            Maharaja Agarsen College,  University  of  Delhi
-         </p>
-</td>
-      <td>
-         <p>
-            70.4%
-         </p>
-</td>
-      <td>
-         <p>
-            2012
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            C.B.S.E  (10+2)
-         </p>
-</td>
-      <td>
-         <p>
-            Amity International School Noida
-         </p>
-</td>
-      <td>
-         <p>
-            74.4%
-         </p>
-</td>
-      <td>
-         <p>
-            2009
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            C.B.S.E (10)
-         </p>
-</td>
-      <td>
-         <p>
-            Amity International School Noida
-         </p>
-</td>
-      <td>
-         <p>
-            68.4%
-         </p>
-</td>
-      <td>
-         <p>
-            2007
-         </p>
-</td>
-</tr>
-</table>
 <p>
-   <strong>CERTIFICATIONS</strong>
+   <strong>Technology Skills </strong>
 </p>
-<table>
-   <tr>
-      <td>
-         <p>
-            <strong>Certification</strong>
-         </p>
-</td>
-      <td>
-         <p>
-            <strong>Institution</strong>
-         </p>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            Doeacc (A level)
-         </p>
-</td>
-      <td>
-         <p>
-            Doeacc Society
-         </p>
-</td>
-</tr>
-</table>
 <p>
-   <strong>CERTAIN HIGHLIGHTS</strong>
+   T-SQL and Oracle SQL  Alteryx (data wrangling and analysis) Tableau
 </p>
-<table>
-   <tr>
-      <td>
-         <p>
-            IT  SKILLS
-         </p>
-</td>
-      <td>
-         <ul>
-            <li>
-               Database Management System
-            </li>
-            <li>
-               C And C++
-            </li>
-            <li>
-               Java
-            </li>
-            <li>
-               MS Office
-            </li>
-</ul>
-</td>
-</tr>
-   <tr>
-      <td>
-         <p>
-            CO‐CURRICULAR ACTIVITIES AND ACHIEVEMENTS 
-         </p>
-</td>
-      <td>
-         <ul>
-            <li>
-               Academic Award <em>(3<sup>rd</sup> position ”Maharaja Agarsen College , Delhi University”),</em> 2011
-            </li>
-            <li>
-               Web Designing (1<sup>st</sup> prize “Inter College Competition” )
-            </li>
-            <li>
-               PowerPoint Presentation (2<sup>nd</sup> prize “Inter College Competition” 
-            </li>
-            <li>
-               Have basic knowledge about android and working in advance level by going through blogs and tutorials available on internet. Worked as an intern in RADICAL LOGIX and developed a small application of SCHOOL MANAGEMENT for them.
-            </li>
-</ul>
-</td>
-</tr>
-</table>
+<p>
+   Toad Data Point  Crystal Reports (SAP application)
+</p>

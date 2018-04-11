@@ -17,12 +17,16 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
   var addSkill = [], addCareer = [], addProject = [], addExp = [], addEdu = [], addLang = [], addSkillextra = [], addHobbie = [], addreskill = [];
 
   let finalKeys = new RegExp(`(\s*([^\\w*]<strong>|[^\\w*]<p>|[^\\w*]?\s*<h[1|3|2]\>)(\\n*|\\s*|\\t*)(${keyUpgrade})((\\W){1,4})*(\\n*|\\s*\\t*)(<\/strong>|<\/p>|<\/h[1|2|3]>)(\\n*))`, 'gim')
-  var myKeys = data.match(finalKeys);
+  myKeys = data.match(finalKeys);
   // console.error("my cv keywords array would be ***",myKeys);
-  myKeys = myKeys.map(element => element.trim().replace(/\s+|\n+/g, '\\n*\\s*'))
-  console.error("my updated cv keys are : ", myKeys);
+  if (myKeys != null && myKeys != undefined) {
+    myKeys = myKeys.map(element => element.trim().replace(/\s+|\n+/g, '\\n*\\s*'))
+    console.error("my updated cv keys are : ", myKeys);
+    var block_array = block(data, myKeys);
+  }
 
-  var block_array = block(data, myKeys);
+
+
 
   function block(data, myKeys) {
     //  data1=data
@@ -38,11 +42,12 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
         blocks = data.match(new RegExp(`${match1}\\n?(.*\\n*)+`, 'gmi'));
         // console.error("&&&&&&&&&&&&&&& in if",blocks);
         // data=removedata(data,blocks)
-        block_array1 = block_array1.concat(blocks);
-        if(blocks!=null && blocks!=undefined){
-          data=removedata(data,blocks)
+
+        if (blocks != null && blocks != undefined) {
+          block_array1 = block_array1.concat(blocks);
+          data = removedata(data, blocks)
         }
-         
+
       }
       else {
         //console.log("elsehello")
@@ -55,10 +60,13 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
           // console.error("&&&&&&&&&&&&&&& in if",blocks);
           // console.error(data)
           // console.error("&&&&&&&&&&&&&&& in else",data);
-          block_array1 = block_array1.concat(blocks);
-          //console.log("ifhello")
-          data = removedata(data, blocks, match2)
-          //console.log(data);
+          if (blocks != null && blocks != undefined) {
+            block_array1 = block_array1.concat(blocks);
+            //console.log("ifhello")
+            data = removedata(data, blocks, match2)
+            //console.log(data);
+
+          }
 
         }
       }
@@ -67,7 +75,7 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
     return block_array1;
   }
   var block_array = block_array.filter(function (x) {
-    return (x !==null);
+    return (x !== null);
   });
   //  console.error(block_array);
   let proFlag = false, skillFlag = false, extraskillFlag = false, careerFlag = false, expFlag = false, eduFlag = false, langFlag = false, hobbieFlag = false;
@@ -77,7 +85,7 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
     let innerArray = block_array[i].split('\n');
 
     if (skillFuc == null || skillFuc == undefined || skillFuc.length == 0) {
-      let skillreg = ['technical skills', 'technology skills', 'key skills', 'relevant skills','it  skills','it skills'];
+      let skillreg = ['technical skills', 'technology skills', 'key skills', 'relevant skills', 'it  skills', 'it skills'];
       skillFuc = search(skillreg, innerArray);
       // if (skillFuc.length > 0) {
       //   skillFlag = true;
@@ -86,7 +94,7 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
     }
 
     if (extraskillFuc == null || extraskillFuc == undefined || extraskillFuc.length == 0) {
-      let extraskillreg = ['certification','qualitative skills', 'interpersonal','additional skills', 'areas of expertise', 'strength', 'extra', 'achievement'];
+      let extraskillreg = ['certification', 'qualitative skills', 'interpersonal', 'additional skills', 'areas of expertise', 'strength', 'extra', 'achievement'];
       extraskillFuc = search(extraskillreg, innerArray);
       // if (extraskillFuc.length > 0) {
       //   // console.error("skill fun",extraskillFuc)
@@ -166,12 +174,12 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
     // console.error(myKeys1)
     var misblock_arr = block(misdata, myKeys)
     //  console.error(misblock_arr)
-     var misblock_arr = misblock_arr.filter(function (x) {
-      return (x !==null);
+    var misblock_arr = misblock_arr.filter(function (x) {
+      return (x !== null);
     });
-    
-    
-    
+
+
+
     for (let i = 0; i < misblock_arr.length; i++) {
       let innerArray = misblock_arr[i].split('\n');
       let reskillFuc = [];
@@ -211,7 +219,7 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
       }
       else if ((targetArr[1]).toLowerCase().includes(arrayArg[i])) {
         console.log(targetArr[1]);
-        
+
         misdata = mis(misdata, targetArr)
         // console.error("BB????",targetArr)
         // console.log("hello")
