@@ -71,20 +71,10 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
     // console.log("hello")
     return block_array1;
   }
-<<<<<<< HEAD
-  if(block_array!=null){
-    var block_array = block_array.filter(function (x) {
-      return (x !== null);
-    });
-  }
-  
-  //  console.error(block_array);
-=======
   var block_array = block_array.filter(function (x) {
     return (x !== null);
   });
    console.error(block_array);
->>>>>>> 91056fedf3b45d88b84e729359863e08d4bb3786
   let proFlag = false, skillFlag = false, extraskillFlag = false, careerFlag = false, expFlag = false, eduFlag = false, langFlag = false, hobbieFlag = false;
   for (let i = 0; i < block_array.length; i++) {
     let skillFuc = [], careerFuc = [], projectFuc = [], eduFuc = [], expFuc = [], langFuc = [], extraskillFuc = [], hobbieFuc = [];
