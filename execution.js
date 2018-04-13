@@ -10,7 +10,7 @@ module.exports.execu = function (data, addSkill, addSkillextra, addCareer, addLa
     const readline = require('readline')
     const fs = require('fs')
     // console.error(misdata)
-    //console.log("my hobbie execu returned array is :",hobbieExecu);
+    console.log("my hobbie execu returned array is :",addLang);
     let misExecu = mis(misdata)
     if (misExecu != undefined) {
         words.obj.miscellaneous = misExecu
@@ -21,7 +21,7 @@ module.exports.execu = function (data, addSkill, addSkillextra, addCareer, addLa
     }
     let hobbieExecu = activities(addHobbie)
     if (hobbieExecu != undefined) {
-        words.obj.interests = hobbieExecu;
+        words.obj.hobbies = hobbieExecu;
     }
     let skillExecu = activities(addSkill)
     //console.log("my skill execu returned array is :",skillExecu);
@@ -43,6 +43,7 @@ module.exports.execu = function (data, addSkill, addSkillextra, addCareer, addLa
     let langExecu = activities(addLang)
     //console.log("my lang execu returned array is :",langExecu);
     if (langExecu != undefined) {
+        // console.log('language',langExecu)
         langExecu = langExecu.toString().replace(/(Speaking|Reading|writing|excellent|read|write|and|speak)(\W)?/gmi, '')
         words.obj.languages = langExecu
     }
@@ -52,7 +53,7 @@ module.exports.execu = function (data, addSkill, addSkillextra, addCareer, addLa
     if (projectExecu != undefined) {
         words.obj.project = projectExecu
     }
-    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",addExp)
+    // console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",addExp)
     let expExecu = experience(addExp)
     //console.log("my experience execu returned array is :",expExecu);
     if (expExecu != undefined) {
@@ -78,7 +79,9 @@ module.exports.execu = function (data, addSkill, addSkillextra, addCareer, addLa
                 // console.error("AAAAA",str,"SSSSs",myKeys[i])
                 str = str.replace(reg, '')
             }
+            console.log("Language",str);
             let returnArr = mis(str)
+            console.log("Language",returnArr);
             return returnArr;
         }
     }
@@ -292,7 +295,7 @@ module.exports.execu = function (data, addSkill, addSkillextra, addCareer, addLa
     }
 
     function experience(exp) {
-        console.log("In experience function", exp)
+        // console.log("In experience function", exp)
         if (exp != null && exp != undefined) {
             
 
@@ -306,11 +309,11 @@ module.exports.execu = function (data, addSkill, addSkillextra, addCareer, addLa
             // var str=exp.splice(1,exp.length-2).join('\n')
             // console.error("In experience function AAAAAAAAA",str)
             
-            str = str.replace(/<table>|<\/table>|<td>|<\/td>|<tr>|<\/tr>|<th>|<\/th>|<thead>|<\/thead>|<tbody>|<\/tbody>|<(strong|h[1-6]|p)>\n*\s*(\.)?<\/(strong|h[1-6]|p)>/gmi, "")
+            str = str.replace(/<table>|<\/table>|<td>|<\/td>|<tr>|<\/tr>|<th>|<\/th>|<thead>|<\/thead>|<tbody>|<\/tbody>|<(strong|h[1-6]|p)>\n*\s*(\.)?<\/(strong|h[1-6]|p)>|(\W\:|\d\.)/gmi, "")
             
-            str = str.replace(/(<\/strong>|<\/h[1-6])\n*\s*([a-z]+\s*)*?\n*\s*<\/p>\n*\s*<p>\n*\s*(<strong>|<h[1-6]>)/gmi, "")
+            str = str.replace(/(<\/strong>|<\/h[1-6])\n*\s*(([a-z]+\s*)*)?\n*\s*<\/p>\n*\s*<p>\n*\s*(<strong>|<h[1-6]>)/gmi, "")
             
-            str = str.replace(/(Swenson page 2|(Roles (&amp;|and|)|key|)\s*Responsibilities\s*(\-\:|\:|\-|\:\-|\–|)(Handling)?|(Primary|Secondary|Job) Responsibilities\s*(\-\:|\:|\-|\:\-|\–|)|Key Accomplishment(s|)\s*(\-\:|\:|\-|\:\-|\–|)|Company’s Profile\s*(\-\:|\:|\-|\:\-|\–|)|Attended(\-\:|\:|\-|\:\-|\–|)|Course Elements(\-\:|\:|\-|\:\-|\–|)|Position(\-\:|\:|\-|\:\-|\–|)|Responsibility(\-\:|\:|\-|\:\-|\–|)|(<em>)?duties(<em>)?(\-\:|\:|\-|\:\-|\–|)|Page 1 of 3)/gmi, "")
+            str = str.replace(/(Swenson page 2|(Roles (&amp;|and|)|key|)\s*Responsibilities\s*(\-\:|\:|\-|\:\-|\–|)(Handling)?|(Primary|Secondary|Job) Responsibilities\s*(\-\:|\:|\-|\:\-|\–|)|Key Accomplishment(s|)\s*(\-\:|\:|\-|\:\-|\–|)|Company’s Profile\s*(\-\:|\:|\-|\:\-|\–|)|Attended(\-\:|\:|\-|\:\-|\–|)|Course Elements(\-\:|\:|\-|\:\-|\–|)|Position(\-\:|\:|\-|\:\-|\–|)|Responsibility(\-\:|\:|\-|\:\-|\–|)|(<em>)?duties(<em>)?(\-\:|\:|\-|\:\-|\–|)|Environment(\-\:|\:|\-|\:\-|\–|)|Languages(\/)Databases(\-\:|\:|\-|\:\-|\–|)|Project\s*Description(\-\:|\:|\-|\:\-|\–|)|Page 1 of 3)/gmi, "")
             
             str = str.replace(/<(strong|h[1-6]|p|[a-z]+)>\n*\s*(\.)?(TITLE|DESCRIPTION)?\n*\s*<\/(strong|h[1-6]|p|[a-z]+)>/gmi, '')
             
@@ -322,10 +325,10 @@ module.exports.execu = function (data, addSkill, addSkillextra, addCareer, addLa
             //         return str
             //     }
             // }
-            //console.error("In experience function AAAAAAAAA",str)
+            // console.error("In experience function AAAAAAAAA",str)
             
 
-            var keys3 = /((\s*(<(strong|h[1-6]|p|[a-z]+)>(project\s*title|(y|Y)ear)(\-\:|\:|\-|\:\-|\–|)\n*\s*<\/(strong|h[1-6]|p|[a-z]+)>)((january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)(\.|)\s*(\d{4}|\d{2})\s*(\-|\–|\s*|\b.*\b)\s*((january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)(\.|)\s*(\d{4}|\d{1,2})|present|current))?)|((((((J|j)an|(F|f)eb|(M|m)ar|(A|a)pr|(M|m)ay|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(M|m)arch|(A|a)pril|(M|m)ay|(J|j)une|(J|j)uly|(A|a)ugust|(S|s)eptember|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}\s*(\-|\–|\s*|\b.*\b)\s*(((J|j)an|(F|f)eb|(|M|m)ar|(A|a)pr|(|M|m)ay|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(|M|m)arch|(A|a)pril|(|M|m)ay|(J|j)une|(J|j)uly|(A|a)ugust|september|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}|(P|p)resent|(C|c)urrent))|((\d{2}|\d{4})\s*[\/|\-]\s*(\d{4}|\d{2})\s*[\-|\–]?\s*([a-z]*\s*))+)(\(.*\)|)|(((J|j)an|(Ff)eb|(M|m)ar|(A|a)pr|(M|a)y|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(M|a)rch|april|(M|a)y|(J|j)une|(J|j)uly|(A|a)ugust|(S|s)eptember|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}))|^)(\s*<h[1|2|3]>|\s*<strong>)\n*(.*)(\n*\s*(<\/h[1|2|3]>|<\/strong>))\n*(((<[a-z]>)\n*\s*((([A-Za-z]+\s*\d{4}\s*[\-|\W ]?\s*[A-Za-z]+\s*(\d{4})?)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?\s*)+)(\\(.*\\))?)\n*\s*(<\/[a-z]+>))?|(^\s*(<[a-z]+><\/[a-z]+>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^\s*(<em><\/em>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^(\s*<p>)\n*\s*[A-Za-z]+\s([A-Za-z\s*\-\–]+?\d{4}[A-Za-z\s*\-\–]+?)+)(\n*\s*<\/p>))/gmi
+            var keys3 = /((\s*(<(strong|h[1-6]|p|[a-z]+)>\n*\s*((P|p)roject\s*(title|((N|n)ame))|(y|Y)ear)(\-\:|\:\s*(.*)?|\-|\:\-|\–|)\n*\s*<\/(strong|h[1-6]|p|[a-z]+)>)((january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)(\.|)\s*(\d{4}|\d{2})\s*(\-|\–|\s*|\b.*\b)\s*((january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)(\.|)\s*(\d{4}|\d{1,2})|present|current))?)|((((((J|j)an|(F|f)eb|(M|m)ar|(A|a)pr|(M|m)ay|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(M|m)arch|(A|a)pril|(M|m)ay|(J|j)une|(J|j)uly|(A|a)ugust|(S|s)eptember|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}\s*(\-|\–|\s*|\b.*\b)\s*(((J|j)an|(F|f)eb|(|M|m)ar|(A|a)pr|(|M|m)ay|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(|M|m)arch|(A|a)pril|(|M|m)ay|(J|j)une|(J|j)uly|(A|a)ugust|september|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}|(P|p)resent|(C|c)urrent))|((\d{2}|\d{4})\s*[\/|\-]\s*(\d{4}|\d{2})\s*[\-|\–]?\s*([a-z]*\s*))+)(\(.*\)|)|(((J|j)an|(Ff)eb|(M|m)ar|(A|a)pr|(M|a)y|(J|j)un|(J|j)ul|(A|a)ug|(S|s)ep|(S|s)ept|(O|o)ct|(N|n)ov|(D|d)ec|(J|j)anuary|(F|f)ebruary|(M|a)rch|april|(M|a)y|(J|j)une|(J|j)uly|(A|a)ugust|(S|s)eptember|(O|o)ctober|(N|n)ovember|(D|d)ecember)(\.|)\s*\d{4}))|^)(\s*<h[1|2|3]>|\s*<strong>)\n*(.*)(\n*\s*(<\/h[1|2|3]>|<\/strong>))\n*(((<[a-z]>)\n*\s*((([A-Za-z]+\s*\d{4}\s*[\-|\W ]?\s*[A-Za-z]+\s*(\d{4})?)+\s*)|(\d{2}\s*[\/]\s*\d{4}\s*[\-]?\s*)+)(\\(.*\\))?)\n*\s*(<\/[a-z]+>))?|(^\s*(<[a-z]+><\/[a-z]+>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^\s*(<em><\/em>)(\s*<h[1|2|3]>|\s*<strong>)\n*.*(\n*\s*(<\/h[1|2|3]>|<\/strong>)))|(^(\s*<p>)\n*\s*[A-Za-z]+\s([A-Za-z\s*\-\–]+?\d{4}[A-Za-z\s*\-\–]+?)+)(\n*\s*<\/p>))/gmi
 
             var matches4 = str.match(keys3)
             
@@ -444,7 +447,7 @@ module.exports.execu = function (data, addSkill, addSkillextra, addCareer, addLa
                         let exptitle = experience.split('\n').splice(0, 3)
                         if (exptitle != null && exptitle != undefined) {
                             let regex = new RegExp(`${expcompany}`, 'gim');
-                            exptitle = exptitle.toString().replace(/((((jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\.|)\s*(\d{4}|\d{1,2})\s*(\-|\–|\s*|\b.*\b)\s*((jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\.|)\s*(\d{4}|\d{1,2})|present|current)(\,)?\s*(\d{4})?)|((\d{2}|\d{4})\s*[\/|\-]\s*(\d{4}|\d{2})\s*[\-|\–]?\s*([a-z]*\s*))+)(\(.*\)|)|((jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\.|)\s*\d{4}))|<[a-z\d]+>|<\/[a-z\d]+>|<[a-z\d]+\/>|&amp;|\t|\:|(([A-Za-z]+\s*\d{4}[ \-|\–]?)|\d{2}\/\d{4})|Present|\–|\n|(\(.*\))|(([A-Za-z]+\s*\d{4}\s*[\-|\s*|]\s*)+\s*|\s\s+)|Page 1 of 3|year|\d{4}|\,/gmi, '').replace(regex, '').trim()
+                            exptitle = exptitle.toString().replace(/((((jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\.|)\s*(\d{4}|\d{1,2})\s*(\-|\–|\s*|\b.*\b)\s*((jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\.|)\s*(\d{4}|\d{1,2})|present|current)(\,)?\s*(\d{4})?)|((\d{2}|\d{4})\s*[\/|\-]\s*(\d{4}|\d{2})\s*[\-|\–]?\s*([a-z]*\s*))+)(\(.*\)|)|((jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec|january|february|march|april|may|june|july|august|september|october|november|december)(\.|)\s*\d{4}))|<[a-z\d]+>|<\/[a-z\d]+>|<[a-z\d]+\/>|&amp;|\t|\:|(([A-Za-z]+\s*\d{4}[ \-|\–]?)|\d{2}\/\d{4})|Present|\–|\n|(\(.*\))|(([A-Za-z]+\s*\d{4}\s*[\-|\s*|]\s*)+\s*|\s\s+)|Page 1 of 3|year|\d{4}|\,|((P|p)roject\s*(title|((N|n)ame)))/gmi, '').replace(regex, '').trim()
                             exptitle = exptitle.replace(/^\s*(\,)*\s*|\s*(\,)*\s*$/gmi, '')
                             obj.title = exptitle
                         }
@@ -458,12 +461,12 @@ module.exports.execu = function (data, addSkill, addSkillextra, addCareer, addLa
                             duration = duration.toString().replace(/((\()(\d*\s*(month(|s)|year(|s))\s*)*(\)))/gmi, '').replace(/(\,)/, '');
                             regexDuStart = duration.toString().match(/^\s*((\d{4}|\d{1,2})[\/\-](\d{4}|\d{2})|((\d{4})?\s*(\.|\th|\rd|\st)?\s*(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)\s*(\.|\th|\rd|\st)?\s*(\d{4})?))/img)
                             console.error("dDDDDDDDDDDDD", duration);
-                            regexDuend = duration.toString().match(/(\-|\â€“|\b(to)\b)\s*((\d{4}|\d{1,2})[\/\-](\d{4}|\d{2})|((\d{4})?\s*(\.|th|d|st)?\s*(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)\s*(\.|th|rd|st)?\s*(\d{4})?)|present|current)\s*(\,)?\s*$/gim)
+                            regexDuend = duration.toString().match(/(\-|\–|\b(to)\b)\s*((\d{4}|\d{1,2})[\/\-](\d{4}|\d{2})|((\d{4})?\s*(\.|th|d|st)?\s*(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)\s*(\.|th|rd|st)?\s*(\d{4})?)|present|current)\s*(\,)?\s*$/gim)
                             console.error(regexDuStart);
                             console.error(regexDuend);
                             if (regexDuStart != undefined && regexDuStart != null && regexDuend != undefined && regexDuend != null) {
                                 console.error("inside")
-                                if ((/\d{4}/gmi).test(regexDuStart.toString()) && (/(\d{4}|^\s*(\-|\â€“|\b(to)\b)\s*(present|current))/gmi).test(regexDuend.toString())) {
+                                if ((/\d{4}/gmi).test(regexDuStart.toString()) && (/(\d{4}|^\s*(\-|\–|\b(to)\b)\s*(present|current))/gmi).test(regexDuend.toString())) {
                                     console.error("inside inside")
                                     let totaldur = totalDuration(regexDuStart, regexDuend)
                                     if (totaldur != null && totaldur != undefined) {
@@ -472,8 +475,8 @@ module.exports.execu = function (data, addSkill, addSkillextra, addCareer, addLa
                                         obj.duration = totaldur;
                                     }
                                 }
-                                obj.startDate = regexDuStart.toString().replace(/(^\-|^\â€“|\b(to)\b)/gmi, '').replace(/\s\s+/gmi, ' ');
-                                obj.endDate = regexDuend.toString().replace(/(\,|^\-|^\â€“|\b(to)\b)/gmi, '').replace(/\s\s+/gmi, ' ');
+                                obj.startDate = regexDuStart.toString().replace(/(^\-|^\–|\b(to)\b)/gmi, '').replace(/\s\s+/gmi, ' ');
+                                obj.endDate = regexDuend.toString().replace(/(\,|^\-|^\–|\b(to)\b)/gmi, '').replace(/\s\s+/gmi, ' ');
                             } else {
                                 obj.endDate = duration;
                             }
@@ -524,14 +527,17 @@ module.exports.execu = function (data, addSkill, addSkillextra, addCareer, addLa
                             let regex = new RegExp(`${exptitle}`, 'gi');
                             let regex1 = new RegExp(`${expcompany}`, 'gi');
                             let regduration = new RegExp(`${duration}`, 'gi');
-                            console.log(regduration)
+                            // console.log(regduration)
+                            // console.log("roless",descriptionRole)
                             descriptionRole = descriptionRole.map((ele) => ele.replace(regex, '').replace(regex1, ''));
-                            descriptionRole = descriptionRole.map((ele) => ele.replace(regduration, ''));
-                            descriptionRole
+                            descriptionRole = descriptionRole.map((ele) => ele.replace(regduration, '').trim());
+
                             descriptionRole = descriptionRole.filter(function (x) {
                                 return (x !== '');
                             });
-                            descriptionRole = descriptionRole.toString().replace(/&amp;|\t|\–|\-|\:|\|\n|<(.*)>|\●|\•|►|\s\s+/gmi, '')
+                            // console.log("rolessRespons",descriptionRole)
+                            // descriptionRole = descriptionRole.map((ele)=> ele.replace(/&amp;|\t|\–|\-|\:|\|\n|<(.*)>|\●|\•|►|\s\s+/gmi, '')
+                            //  )
                             obj.descriptionAndRole = descriptionRole
                         }
 
@@ -613,14 +619,16 @@ module.exports.execu = function (data, addSkill, addSkillextra, addCareer, addLa
         }
     }
     function mis(data2) {
-        let keys1 = /(^(\s*<li>)\n*.*(\n*\s*<\/li>)|^(\s*<p>)\n*.*(\n*\s*<\/p>))|<.*>\n*\s*.*\n*\s*<\/.*>/gm
+        let keys1 = /(^(\s*<li>)\n*.*(\n*\s*<\/li>)|^\s*(<p>)?\n*.*(\n*\s*<\/p>))|<.*>\n*\s*.*\n*\s*<\/.*>/gm
         let c = data2.match(keys1)
         if (c != null && c != undefined) {
-            let exparr = c.map((ele) => ele.replace(/<[a-z]+>|\|\|\•|\●|<\/[a-z]+>|<[a-z]+\/>|Languages|Tools|\t|\:|\n|\●|\•|►|\s\s+/gmi, '').trim())
+            // console.error("::::????????>>>>>>",c)
+            let exparr = c.map((ele) => ele.replace(/<[a-z]+>|\|\|\•|\●|<\/[a-z]+>|<[a-z]+\/>|Languages|Tools|\t|\:|\n|\●|\•|►|\s\s+|&amp;|\–|\-|<(.*)>/gmi, '').trim())
             if (exparr != null && exparr != undefined) {
                 exparr = exparr.filter(function (x) {
                     return (x !== (undefined || null || ''));
                 });
+                
                 return exparr
             }
         }
