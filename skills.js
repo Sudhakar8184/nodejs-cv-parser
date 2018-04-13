@@ -74,9 +74,12 @@ module.exports.skill1 = function (data, strongArr, h1Arr, update_arr, myName) {
     // console.log("hello")
     return block_array1;
   }
-  var block_array = block_array.filter(function (x) {
-    return (x !== null);
-  });
+  if(block_array!=null){
+    var block_array = block_array.filter(function (x) {
+      return (x !== null);
+    });
+  }
+  
   //  console.error(block_array);
   let proFlag = false, skillFlag = false, extraskillFlag = false, careerFlag = false, expFlag = false, eduFlag = false, langFlag = false, hobbieFlag = false;
   for (let i = 0; i < block_array.length; i++) {
