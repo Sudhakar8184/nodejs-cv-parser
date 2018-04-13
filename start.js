@@ -44,7 +44,7 @@ function check(file,res){
       words.obj.careerObjective=null;
       words.obj.academicQualifications=null;
       words.obj.languages=null;
-      words.obj.interests=null;
+      words.obj.hobbies=null;
       words.obj.miscellaneous=null;
 
       var j=0;
@@ -60,7 +60,7 @@ function check(file,res){
       // fs.writeFileSync('./data.txt',data)
       //console.log("1st",data);
         data=data.replace(/(<p>)?\n*\s*<img[\n*|\s*]+.*\/*>\s*[a-z\s]+\s*\n*(<\/p>)?/gmi,"").replace(/^(\s*<p>)\n*\s*(Page\s*\d*)(\n*\s*<\/p>)|^\s*<a\s*id="page[\d*]">|\|\|\►|<(strong|h[1-6]|p)>\n*\s*(\.)?<\/(strong|h[1-6]|p)>|\s\s+&amp;|<br\s*\/>/gm,"");
-        data=data.replace(/<a\s*href=(".*?")>|<\/a>/gmi,'')
+        data=data.replace(/<a\s*href=(".*?")>|<\/a>|<\/strong><strong>/gmi,'')
         //making each and every line as a seperate string and storing in an array named arr
       var arr=[];
       arr=data.split('\n');

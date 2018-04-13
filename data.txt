@@ -1,140 +1,119 @@
 <p>
-   <strong>Jason VanNimwegen</strong>
+   <strong>Cory Wright</strong>
 </p>
 <p>
-   10600 Gemini Drive  Riverside, CA 92503  (909) 641-8058  j_vannimwegen@yahoo.com
+   3835 North Ashland Apt. 1G. Chicago, IL 60613
 </p>
 <p>
-   <strong>Senior Business Analyst</strong>
+   517.214.5559/ Wrigh175@gmail.com
 </p>
 <p>
-   <strong>Business Analyst generalist with experience in data analysis and reporting projects. Technical expertise with the Alteryx analytics platform against a SQL backend and Tableau presentation layer.</strong>
+   <strong>Professional Experience</strong>
+</p>
+<p>
+   <strong>National Production Planner</strong>
+</p>
+<p>
+   <em>Kraft Foods- Northfield HQ        </em>August 2014 - October 2014
+</p>
+<p>
+   Successfully managed Customer Fill Rate, Waste, and Days Forward Coverage for $300MM On-Demand Coffee category that included Tassimo and Kraft K-Cups. Managed finished goods production on over 140 skus, 8 internal production lines, 5 external manufacturing locations, and 12 distribution locations
+</p>
+<p>
+   <strong>Key Accomplishments:</strong>
 </p>
 <ul>
    <li>
-      Fast learner who can quickly acquire the knowledge needed to evaluate metrics, test hypotheses and achieve measurable and actionable outcomes in a new operation; seamlessly made transition from education to healthcare industries.
+      Created the supply plan and execution of $200MM Kraft K-cups transition to Keurig Green Mountain production plant within 3 months,  surpassing standard 6-month lead-time timeline
    </li>
    <li>
-      Problem solver with repeated success in leveraging database technology through interpreting data to improve business processes.
+      Reduced Days Forward Coverage of finished goods inventory by ~$3MM (42 Days) 
+   </li>
+   <li>
+      Decreased finished goods waste by $5.2MM in 2013 vs. 2012 on US Tassimo
+   </li>
+   <li>
+      Accomplished Lean Six Sigma Green Belt Certification by implementing a Kanban at third party warehouses which  reduced inventory by $1.5MM below monthly target  of $6.3MM target for US Tassimo 
    </li>
 </ul>
 <p>
-   <strong><em>Performance Review Excerpts</em></strong>
+   <strong>Project Commercialization Manager</strong>
 </p>
 <p>
-   “Jason’s performance is a <strong>stellar example</strong> of someone stepping up to fill a leadership void on the team. In the absence of a manager for the team, he managed the team assignments … and was <strong>successful</strong> with several of the key projects within our overall Call Center Strategy.”
+   <em>Kraft Foods- Glenview HQ </em>                   				         April 2010 - August 2012
 </p>
 <p>
-   “Jason is an <strong>active change agent</strong> in the organization … [he] exhibits the highest level of dedication to support change … and works hard to make it transparent to end users.”
+   Directed commercialization process for the Philadelphia Cream Cheese category generating over $1B dollars in gross revenue. Led cross-functional team in the development and implementation of revenue growth projects, productivity goal projects, and priorities of the category
 </p>
 <p>
-   “Jason is a <strong>very valuable team member</strong> and is <strong>well-respected</strong><strong>by his peers and business partners. </strong>He is seen as a <strong>team player</strong> and takes the necessary steps on an ongoing basis to increase his knowledge. He has done an <strong>exceptional job</strong> leading the dashboard development …”
-</p>
-<p>
-   <strong>Experience</strong>
-</p>
-<p>
-   <strong>Kaiser Permanente – Corona, CA</strong>
-</p>
-<p>
-   <strong>Senior Business Consultant (Jan. 2009 to Present)</strong>
-</p>
-<p>
-   Lead reporting and data analysis project plans for call centers serving California, Colorado, mid-Atlantic, and Northwest states; internal departments (regulatory, sales, marketing); and employer groups.
+   <strong>Key Accomplishments:</strong>
 </p>
 <ul>
    <li>
-      Function as a technical and data analysis SME for Pega CRM and Genesys telephony systems, provide data integration for <strong>end-to-end view of customer </strong>contacts and develop custom reports using Alteryx.
+      Implemented process to prioritize R&amp;D resources for the Philadelphia Cream Cheese Category
    </li>
    <li>
-      Wrote specs for an ETL project aggregation layer using Alteryx that enabled rapid data analysis on customer service workflow data, <strong>reducing turn-around time</strong> from hours to minutes.
+      Developed  framework for Portfolio Management Review process within IBP  for  the cheese business unit
    </li>
    <li>
-      Design an early warning ICD/10 <strong>Tableau dashboard with an Alteryx backend</strong> to monitor up stream provider claims activity and customer contact volume.
-   </li>
-   <li>
-      Develop a line of business cost allocation model, for a nine figure budget, in Excel using pivot tables, VLOOKUP’s and graphs with an Alteryx back end for multi-platform data wrangling and consolidation. 
-   </li>
-   <li>
-      Wrote a data map between telephony and contact documentation SQL database systems. Output from data mapping process is used through the Measure and Analyze Six Sigma project phases to <strong>increase customer satisfaction and reduce call handle time.</strong>
-   </li>
-   <li>
-      Wrote business requirements for forecasting models to<strong> predict impact</strong> of Health Care Reform initiatives to contact center call volume, including cross collaboration with PMO and other matrixed departments.
-   </li>
-   <li>
-      Wrote a data analysis model to justify inter-departmental budget transfers. The model combines tracking data from three disparate database systems: CRM, telephony, and workforce forecasting.
-   </li>
-   <li>
-      Collaborated with a department that frequently had urgent requests, resulting in a <strong>better working relationship</strong> between the department and the analytics team, and less escalated requests.
-   </li>
-   <li>
-      Recommended improvements for a service center that enabled its staff to achieve several <strong>year-over-year improvements </strong>from March 2010 to March 2011—including a double-digit increase in the percentage of calls answered within the target time.
+      Successfully commercialized $30MM Philadelphia Cooking Crème Platform in 2011
    </li>
 </ul>
 <p>
-   <strong>New York Life, Mass Mutual, Southern California </strong>
-</p>
-<h4>
-   Financial Services Professional  (Jan. 2006 to Oct. 2008)
-</h4>
-<p>
-   Served in three commission-only sales positions with insurance and financial companies. Earned distinction of "Executive Council" at New York Life, a rare accomplishment for a new agent, and increased internal referrals at AAA, contributing to the team meeting the cross-selling goal. 
+   <strong>Network Fulfillment Planner				</strong>
 </p>
 <p>
-   <em>(Exact dates and job titles associated with each position available upon request for employment verification.)</em>
+   <em>Kraft Foods - Aurora Mixing Center / Glenview HQ</em>			     October 2006-March 2010
 </p>
 <p>
-   <strong>Corona-Norco Unified School District – Corona, CA</strong>
+   Responsible for Customer Fill Rate, Waste, and Deployment of  $500MM Kraft Sandwich Cheese category from 2 Kraft manufacturing plants and 3 External Manufacturing locations to 7 Mixing Centers
 </p>
 <p>
-   <strong>Supervisor-Technology and Assessment (Jan. 2002 to Jan. 2006)</strong>
-</p>
-<p>
-   Analyzed existing data models and improved existing data processes and conducted internal consulting to assess business practices and recommend improvements.
+   <strong>Key Accomplishments:</strong>
 </p>
 <ul>
    <li>
-      Design and implementation of project plan for a high-profile strategic initiative to migrate data from a variety of complex database (db) sources into a single database, <strong>ensuring regulatory compliance</strong> with both state and national agencies.
+      Increased Sandwich Cheese Customer Fill Rate 0.7% to 98.4%  in 2009 vs. 2008 
    </li>
    <li>
-      Implemented a COTS database (db) program to scan 350,000 documents yearly and produce reports, <strong>reducing turnaround time from several weeks to less than 24 hours</strong>.
+      Narrowed liquidation/food bank dollars on Sandwich Cheese by 42% resulting $204M savings in 2009 vs. 2008
    </li>
    <li>
-      Developed MS Access dashboard single-screen views drawing from 5 different complex database (db) modules.
-   </li>
-   <li>
-      Developed multi-dimensional data models using <strong>SPSS statistical analysis</strong> software to analyze data contained in five database modules and wrote reports for end-users.
+      Reduced liquidation/food bank on Retail Sandwich Cheese by 16% or $383M in 2008 vs. 2007
    </li>
 </ul>
 <p>
-   <strong>Corona-Norco Unified School District – Corona, CA</strong>
+   <strong>Operations Supervisor</strong>
 </p>
 <p>
-   <strong>Data Analyst (Computer Operator) (Aug. 1999 to Dec. 2002)</strong>
+   <em>Kraft Foods - Post Division, Battle Creek, MI</em>			       	       May 2004- October 2006
 </p>
 <p>
-   Spearheaded new processes that enabled district to track data for the first time.
+   Responsible for safety and supervision of up to 41 hourly employees and 9 production lines within the largest Post Cereal union facility. Maintained working relationship with the union by following the terms of the collective bargaining agreement
+</p>
+<p>
+   <strong>Key Accomplishments:</strong>
 </p>
 <ul>
    <li>
-      Created a project plan for a centralized reporting methodology that delivered confidential student information; reduced research time for 2,500 personnel from weeks to one day. 
+      Developed start up plan for Fruity Pebbles and Raisin Bran processes to attain 64% of scheduled cases within the first 24 hours
    </li>
    <li>
-      Developed new methods to disaggregate student achievement and demographic data using SPSS statistical analysis software.
+      Implemented Honey Bunches of Oats process start-up creating $8.4M in annual savings
+   </li>
+   <li>
+      Conceptualized Bran Cooker sequencing project resulting in $5.4M in annual saving
+   </li>
+   <li>
+      Led Battle Creek Chapter of African Americans in Operations
    </li>
 </ul>
 <p>
    <strong>Education</strong>
 </p>
 <p>
-   <strong>Masters of Business Administration, </strong>2004<strong> – </strong>University of Phoenix
+   Michigan State University, East Lansing, MI
 </p>
 <p>
-   <strong>Technology Skills </strong>
-</p>
-<p>
-   T-SQL and Oracle SQL  Alteryx (data wrangling and analysis) Tableau
-</p>
-<p>
-   Toad Data Point  Crystal Reports (SAP application)
+   B.S., Food Industry Management
 </p>
